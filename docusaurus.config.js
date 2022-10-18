@@ -10,6 +10,7 @@ const config = {
   tagline: 'Vazco Form Builder Documentation',
   url: 'https://vazco.github.io/form-builder-documentation/',
   baseUrl: '/',
+  trailingSlash: false,
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
