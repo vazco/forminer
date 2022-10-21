@@ -8,8 +8,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Form Builder',
   tagline: 'Vazco Form Builder Documentation',
-  url: 'https://vazco.github.io/form-builder-documentation/',
-  baseUrl: '/',
+  url: 'https://vazco.github.io',
+  baseUrl: '/form-builder-documentation/',
   trailingSlash: false,
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',

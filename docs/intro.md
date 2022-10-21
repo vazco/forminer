@@ -3,46 +3,24 @@ sidebar_position: 1
 slug: /
 ---
 
-# Tutorial Intro
+# Form Builder Documentation
 
-Let's discover **Docusaurus in less than 5 minutes**.
+### Table of Content
 
-## Getting Started
+1.  [Schema description (Form definition)](/)
+2.  [Supported technologies/stack](/)
+3.  [Technical requirements (versions)](/)
+4.  [Translations (i18n)](/)
+5.  [Handling custom components](/)
+6.  Installation of FB - coming soon
+7.  Validation of DisplayIF - coming soon
+8.  Handling lists - coming soon
+9.  Nesting of fields - coming soon
+10.  Recipes / use cases - coming soon
 
-Get started by **creating a new site**.
+### We value your feedback!
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+Please answer few questions to make the Form Builder and documentation better.
 
-### What you'll need
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfpkZRy2TDDDmQZOMaL2BZPybdEY9ypgtU3tiMcQvMPY39cSA/viewform?embedded=true" width="640" height="1200" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
 
-- [Node.js](https://nodejs.org/en/download/) version 16.14 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
-
-## Generate a new site
-
-Generate a new Docusaurus site using the **classic template**.
-
-The classic template will automatically be added to your project after you run the command:
-
-```bash
-npm init docusaurus@latest my-website classic
-```
-
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
-
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
