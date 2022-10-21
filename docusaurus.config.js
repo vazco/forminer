@@ -27,7 +27,9 @@ const config = {
     defaultLocale: 'en',
     locales: ['en'],
   },
-
+  plugins: [
+    'docusaurus-plugin-hotjar',
+  ],
   presets: [
     [
       'classic',
@@ -126,6 +128,9 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+      },
+      hotjar: {
+        applicationId: '3212446',
       },
     }),
 };
