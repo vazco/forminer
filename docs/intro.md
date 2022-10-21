@@ -22,5 +22,5 @@ slug: /
 
 Please answer few questions to make the Form Builder and documentation better.
 
-[//]: # (<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfpkZRy2TDDDmQZOMaL2BZPybdEY9ypgtU3tiMcQvMPY39cSA/viewform?embedded=true" width="640" height="1200" frameBorder="0" marginHeight="0" marginWidth="0">Loading…</iframe>)
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfpkZRy2TDDDmQZOMaL2BZPybdEY9ypgtU3tiMcQvMPY39cSA/viewform?embedded=true" width="640" height="1200" frameBorder="0" marginHeight="0" marginWidth="0">Loading…</iframe>
 
