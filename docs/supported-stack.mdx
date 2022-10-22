@@ -1,0 +1,23 @@
+---
+description: Check what technology stack is required to use the Form Builder
+---
+
+# Supported technologies/stack
+
+FormBuilder's primary requirement is to use [React](https://reactjs.org/). The components for that tool are written within this library and are built to use [TypeScript](https://www.typescriptlang.org/) and [Sass](https://sass-lang.com/). You're good to go if your current application already uses TypeScript and Sass. If not, you may need to configure your bundler (e.g., [Parcel](https://parceljs.org/), [Webpack](https://webpack.js.org/), etc.) to handle such files. Another option is to transpile (translate) all of the code manually, before incorporating it into your project.
+
+## Other libraries/frameworks
+
+If you’re using another frontend framework it’s not all lost! In any major frontend framework like Angular, Vue, Svelte, Ember, and many more there is a possibility to [install React](https://www.npmjs.com/package/react). After doing that next step would be to check React documentation on how to implement it correctly in your app - [Integrating with Other View Libraries](https://reactjs.org/docs/integrating-with-other-libraries.html#integrating-with-other-view-libraries).
+
+One of real life examples: you can create a simple React-based app (e.g. with [Create React App](https://create-react-app.dev/)) that will be used by forms creators, and use an application built with Angular for your customers that uses React and render the proper forms within it.
+
+## FAQ
+
+:::info Can I use it on the project with Angular/Svelte/Vue?
+Yes, as per the explanation above
+:::
+
+:::info What are the technological limitations of Form Builder - with what stack it will work? <br/> What are possible workarounds for other technologies? What is not possible at all?
+If you are able to install and use React with your current project then it’s possible to use Form Builder. Please also check the dependencies section of technical documentation.
+:::
