@@ -51,7 +51,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'Vazco Form Builder',
+        title: 'Form Builder',
         logo: {
           alt: 'Form Builder logo',
           src: 'img/vazco-icon.png',
