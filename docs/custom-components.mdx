@@ -1,7 +1,8 @@
 ---
 description: Learn how to use your own components
 ---
-import mapFieldVideo from './assets/10158082.mp4';
+
+import mapFieldVideo from '../assets/10158082.mp4';
 
 # Handling custom components
 
@@ -19,7 +20,6 @@ To start using custom fields you need to:
 
 2. Pass the custom field definition to your `FormBuilder` and `Form`s.
 
-
 ## Creating a custom field
 
 You can easily expand the basic set of form fields by creating your own, freely customizable, custom fields. The only requirement is that they need to be uniforms-compatible. Such fields can be created using the two helpers provided by uniforms: [connectField](https://uniforms.tools/docs/api-helpers/#connectfield) and [useField](https://uniforms.tools/docs/api-helpers/#usefield).
@@ -28,7 +28,7 @@ Both provide various props related to form management and allow hook your compon
 
 Take a look at this example implementation of the custom dropdown that loads options from a remote source, in this case, films from a Star Wars API.
 
-```typescript jsx
+```tsx
 import React, { useEffect, useState } from 'react';
 import { HTMLFieldProps, useField } from 'uniforms';
 
@@ -71,7 +71,7 @@ export function StarWarsMovieField(props: StarWarsMovieFieldProps) {
 
 Once your custom fields are ready, you need to pass this information on to `FormBuilder` and your `Form`s. Both accept a `components` prop, which is a map of component definitions. A component definition is a React component itself and other options needed to render it correctly. The default configuration is described in the `createDefaultComponents` function. To be able to use a custom field, we add it to the existing component map:
 
-```typescript jsx
+```tsx
 import * as theme from 'uniforms-material';
 import { FieldType, createDefaultComponents } from '../FormBuilder';
 
@@ -79,11 +79,11 @@ const components = createDefaultComponents(theme);
 
 components.StarWarsMovieField = {
   component: StarWarsMovieField,
-  dataTypes: [FieldType.String]
+  dataTypes: [FieldType.String],
 };
 ```
 
-Notice the `dataTypes` property above. It represents the data types that the component is capable of handling. In this case, it means that the StarWarsMovieField can handle string values. The `dataTypes` property also allows you to group the components capable of handling the field, by the field’s type. In other words, if you set `dataTypes` to string, your component will appear in the list of selectable components that support this type in the Advanced section in the UI. If you provide multiple types in the `dataTypes` (e.g. string and number), then in both cases it will be possible to select this component to handle the field. If you leave the array empty, you won't be able to select the component to handle your field from the UI.
+Notice the `dataTypes` property above. It represents the data types that the component is capable of handling. In this case, it means that the StarWarsMovieField can handle string values. The `dataTypes` property also allows you to group the components capable of handling the field, by the field's type. In other words, if you set `dataTypes` to string, your component will appear in the list of selectable components that support this type in the Advanced section in the UI. If you provide multiple types in the `dataTypes` (e.g. string and number), then in both cases it will be possible to select this component to handle the field. If you leave the array empty, you won't be able to select the component to handle your field from the UI.
 
 It is worth mentioning that in the same way, you can also override standard fields, such as TextField.
 
@@ -91,15 +91,15 @@ It is worth mentioning that in the same way, you can also override standard fiel
 
 With a custom field defined as above, you can go to your FormBuilder instance and create a new text field. Inside of Edit field pane scroll down to the Advanced section and expand it to see the Component dropdown. Select your custom component and you're ready to go!
 
-![](./assets/1015827.gif)
+![](../assets/1015827.gif)
 
 ## Example #2 - Map component
 
-Another example of a custom field could be a map field. Let’s say we need our form not only to display the map but also to allow users to pick the location and capture the coordinates. To do so, we can create a dedicated `MapField` component.
+Another example of a custom field could be a map field. Let's say we need our form not only to display the map but also to allow users to pick the location and capture the coordinates. To do so, we can create a dedicated `MapField` component.
 
-In the example below, we use the `GoogleMapReact` component from the `google-map-react` package to render a map and the `useField` hook from the `uniforms` package to let it manage the state. Apart from the map, we also display selected coordinates. Notice that we stringify and parse the object value, that’s because FormBuilder handles only primitives.
+In the example below, we use the `GoogleMapReact` component from the `google-map-react` package to render a map and the `useField` hook from the `uniforms` package to let it manage the state. Apart from the map, we also display selected coordinates. Notice that we stringify and parse the object value, that's because FormBuilder handles only primitives.
 
-```typescript jsx
+```tsx
 import GoogleMapReact from 'google-map-react';
 import React from 'react';
 import { HTMLFieldProps, useField } from 'uniforms';
@@ -108,7 +108,7 @@ type MapFieldProps = HTMLFieldProps<string, HTMLSelectElement>;
 
 const mapDefaults = {
   center: { lat: 51.11243862359008, lng: 17.02195684736274 },
-  zoom: 12
+  zoom: 12,
 };
 
 const safeParse = (str: string) => {
@@ -147,5 +147,5 @@ export function MapField(props: MapFieldProps) {
 Check the video below to see how to use the map component in the user interface:
 
 <video controls>
-  <source src={mapFieldVideo}/>
+  <source src={mapFieldVideo} />
 </video>

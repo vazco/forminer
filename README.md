@@ -17,9 +17,9 @@ $ npm start
 #### How to add new page
 
 1. Add new `.mdx` file in the `docs` directory.
-   * Fill it with content.
-   * Remember to add description using frontmatter.
-   * Check Docusaurus documentation for additional components and MDX formatting / styling to make your content interesting.
+   - Fill it with content.
+   - Remember to add description using frontmatter.
+   - Check Docusaurus documentation for additional components and MDX formatting / styling to make your content interesting.
 1. Add your filename in the `sidebars.js` file in a desired section.
 
 ### Build
