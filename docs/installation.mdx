@@ -7,7 +7,7 @@ description: Quick start
 In this section, we will walk through FB's installation process on the [CRA](https://create-react-app.dev/) (create-react-app) example.
 
 1.  Ensure you have the right versions of node and npm  
-    Look at [Technical requirements (versions)](https://vazco1.atlassian.net/wiki/spaces/FB/pages/1277973).
+    Look at [Technical requirements (versions)](technical-requirements.mdx).
 2.  Create a new project with a typescript template
 
     ```shell
@@ -15,7 +15,7 @@ In this section, we will walk through FB's installation process on the [CRA](htt
     ```
 
 3.  Ensure you have the right versions of `react` and `react-dom`  
-    Look at [Technical requirements (versions)](https://vazco1.atlassian.net/wiki/spaces/FB/pages/1277973).
+    Look at [Technical requirements (versions)](technical-requirements.mdx).
 
     If your `react` and `react-dom` versions are correct skip this point, otherwise if they are higher than those mentioned in the article above you have to downgrade them. To do so:  
     a) Change the packages' versions in the `package.json` to be:
@@ -584,7 +584,7 @@ export default translations;
 a) Select a [uniforms](https://uniforms.tools/) theme
 
 At this point, you will need one of the uniforms themes. You can check the list of themes [here](https://uniforms.tools/docs/installation/).  
-You can install any theme, but remember to install it at `3.10.0` version.
+You can install any theme, but remember to install it at `3.4.0` version.
 
 For the purpose of this installation example, we will proceed with `uniforms-material` theme. To do it run the command:
 
@@ -722,7 +722,7 @@ Then, verify your application works as expected. You should see the view present
 
 ![](../assets/14614569.png)
 
-If you will encounter problems running the app at this point please look at the 8. FormBuilder problems solving.
+If you will encounter problems running the app at this point please look at the [FormBuilder problems solving](#formbuilder-problems-solving).
 
 f) Add styles
 
@@ -750,9 +750,9 @@ npm i sass
 
 From now on you can generate the FormBuilder's code! Have fun!
 
-8\. FormBuilder problems solving
+### FormBuilder problems solving
 
-8.1 To run the app with no issues currently, it's needed to update the `tsconfig.json` file and add:
+1\. To run the app with no issues currently, it's needed to update the `tsconfig.json` file and add:
 
 ```json
   "include": []
@@ -820,7 +820,7 @@ export { default as ValidatedForm } from './ValidatedForm';
 export { default as ValidatedQuickForm } from './ValidatedQuickForm';
 ```
 
-8.2 Issues with `tsconfig.json` that includes `src` directory, for example:
+2\. Issues with `tsconfig.json` that includes `src` directory, for example:
 
 ```json
 {
