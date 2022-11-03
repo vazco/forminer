@@ -31,6 +31,9 @@
 
 video {
   max-width: 100%;
+  /* Center videos. */  
+  display: block;
+  margin: auto;
 }
 
 /* Center images. */
