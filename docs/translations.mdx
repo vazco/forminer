@@ -1,22 +1,22 @@
 ---
-description: How to translate the FB UI and forms itself
+description: How to translate the FormBuilder UI and forms itself
 ---
 
 # Translations (i18n)
 
-We can think about this topic from two sides, depending on the user’s perspective:
+We can think about this topic from two sides, depending on the user's perspective:
 
 1. **The FormBuilder interface**, facing the users who create forms.
 
 2. **The form view**, for the users who are filling the forms built with FormBuilder.
 
-As it also impacts the way how it’s handled in the code, we’ll split this document into two sections.
+As it also impacts the way how it's handled in the code, we'll split this document into two sections.
 
 ## Translating the FormBuilder interface
 
 The FormBuilder UI (labels, titles, tooltips, etc.) is completely translatable with a centralized i18n system. At its core is the `Translations` type, defining all of the required strings (e.g., `StyleTooltip`) and formatters (e.g., `RemovePageConfirmation`). Once you have a complete `Translations` object, pass it to the `FormBuilder` component in the `translations` prop:
 
-```typescript
+```tsx
 import { NS } from '../FormBuilder/const/namespace';
 import { Translations } from '../FormBuilder/const/types';
 
@@ -25,22 +25,22 @@ const translations: Translations = {
   RemovePageConfirmation(pageNumber) {
     return `Are you sure you want to remove entire Page ${pageNumber}? Your fields might be lost.`;
   },
-  StyleTooltip: 'Define CSS styles to be used in rendered container of the field.JSON format',
-}
+  StyleTooltip:
+    'Define CSS styles to be used in rendered container of the field.JSON format',
+};
 ```
 
 See `example-demo/lib/translations.tsx` for an example configuration to start with.
 
 ## Translating the forms
 
-While there’s no built-in way of doing that, you can treat the translatable values (labels, placeholders, etc.) as translation keys. For example: instead of using the first name field’s label as “First name”, use “labels.firstName”. Then, you can use it in one of these two ways:
+While there's no built-in way of doing that, you can treat the translatable values (labels, placeholders, etc.) as translation keys. For example: instead of using the first name field's label as "First name", use "labels.firstName". Then, you can use it in one of these two ways:
 
 1. Translate them directly **in the components**. This requires you to provide custom field and widget components but also gives you the most flexibility.
 
 2. Translate them **in the form definition**. As the form definition is simply a JSON object (as described in [Form definition](form-definition)), you can modify it freely before passing it down to the `FormBuilder` component. That means you could translate all of the values up front and render a translated form. This requires some additional code but is seamless from the FormBuilder perspective.
 
-
-In both scenarios, as the labels are provided as-is, you can use any tool to actually translate them. To visualize this example better, here’s a code sample translating the labels using an external library:
+In both scenarios, as the labels are provided as-is, you can use any tool to actually translate them. To visualize this example better, here's a code sample translating the labels using an external library:
 
 ```diff
  <Form
@@ -53,7 +53,7 @@ In both scenarios, as the labels are provided as-is, you can use any tool to act
  />
 ```
 
-```typescript
+```tsx
 import translate from 'some-i18n-library';
 
 function translateModel(model: Model) {
@@ -62,9 +62,9 @@ function translateModel(model: Model) {
     views: model.views.map(view => ({
       ...view,
       label: translate(view.label),
-    }))
+    })),
   };
 }
 ```
 
-Of course, you can translate other fields too, as well as provide the translations with more context, e.g., the field’s name or used component.
+Of course, you can translate other fields too, as well as provide the translations with more context, e.g., the field's name or used component.

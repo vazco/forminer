@@ -32,3 +32,20 @@
 video {
   max-width: 100%;
 }
+
+/* Center images. */
+img:only-child {
+  display: block;
+  margin: auto;
+}
+
+/* Expand tables. */
+table {
+  display: table;
+  width: 100%;
+}
+
+/* Make admonitions preserve the case. */
+.theme-admonition > :first-child {
+  text-transform: unset;
+}
