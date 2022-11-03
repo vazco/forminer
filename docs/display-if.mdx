@@ -1,6 +1,9 @@
 ---
 description: Learn how the conditional rendering work
 ---
+import simpleDisplayIfVideo from '../assets/11304976.mp4';
+import moreComplexDisplayIfVideo from '../assets/11698191.mp4';
+import displayIfValidationVideo from '../assets/13762563.mp4';
 
 # Display If
 
@@ -21,7 +24,9 @@ The list of supported operators is as follows:
 
 Let's start simple. Imagine we have a form where we ask for feedback and we want to ask about potential improvements, but only if someone is not satisfied. Take a look at the form below:
 
-![](../assets/11304976.mp4)
+<video controls>
+  <source src={simpleDisplayIfVideo} />
+</video>
 
 In this example, the text field is displayed only when the value of the boolean field is false. Let's take a look at the code representation of the form:
 
@@ -141,7 +146,9 @@ On the root level, there is a `AND` operator. It resolves to true once all of th
 
 Let's expand on the previous form. Now we want to ask about potential improvements not only when someone is not satisfied, but also when he is willing to share them. Take a look:
 
-![](../assets/11698191.mp4)
+<video controls>
+  <source src={moreComplexDisplayIfVideo} />
+</video>
 
 Here's the code of the form:
 
@@ -288,7 +295,9 @@ In terms of validation, forms created with FormBuilder follow the rule _the fiel
 
 To demonstrate the thing, we will use the same form as in the "Simple example" from the "Expressions, operators & conditions" section. Please note that both fields are marked as required in the form schema. View the video below to see how the form behaves when we submit it:
 
-[displayIfValidation.mp4](../assets/13762563.mp4)
+<video controls>
+  <source src={displayIfValidationVideo} />
+</video>
 
 As you can see, the `enjoyedFormBuilder` field is always present in the submitted model, as it has a default value and it's not displayed conditionally.
 
