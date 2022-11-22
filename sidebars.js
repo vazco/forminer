@@ -24,6 +24,7 @@ const sidebars = {
       collapsed: false,
       collapsible: false,
       items: [
+        'what-is-form-builder',
         'supported-stack',
         'technical-requirements',
         'installation',
