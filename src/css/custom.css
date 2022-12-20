@@ -31,7 +31,7 @@
 
 video {
   max-width: 100%;
-  /* Center videos. */  
+  /* Center videos. */
   display: block;
   margin: auto;
 }
@@ -51,4 +51,14 @@ table {
 /* Make admonitions preserve the case. */
 .theme-admonition > :first-child {
   text-transform: unset;
+}
+
+/* Make demo iframe full height. */
+.demo-container {
+  display: flex;
+}
+
+.demo-container > iframe {
+  width: 100%;
+  height: auto;
 }
