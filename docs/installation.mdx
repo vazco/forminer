@@ -6,81 +6,162 @@ description: Quick start
 
 In this section, we will walk through FB's installation process on the [CRA](https://create-react-app.dev/) (create-react-app) example.
 
-1.  Ensure you have the right versions of node and npm  
-    Look at [Technical requirements (versions)](technical-requirements.mdx).
-2.  Create a new project with a typescript template
+## `node` and `npm` version
 
-    ```shell
-    $ npx create-react-app [project-name] --template typescript
-    ```
+Ensure you have the right versions of node and npm. Look at [Technical requirements (versions)](technical-requirements.mdx).
 
-3.  Ensure you have the right versions of `react` and `react-dom`  
-    Look at [Technical requirements (versions)](technical-requirements.mdx).
+## Create a new project
 
-    If your `react` and `react-dom` versions are correct skip this point, otherwise if they are higher than those mentioned in the article above you have to downgrade them. To do so:  
-    a) Change the packages' versions in the `package.json` to be:
+Create a new project with a typescript template
 
-    ```json
+```shell
+$ npx create-react-app [project-name] --template typescript
+```
+
+## `react` and `react-dom` version
+
+Ensure you have the right versions of `react` and `react-dom`. Look at [Technical requirements (versions)](technical-requirements.mdx).
+
+If your `react` and `react-dom` versions are correct skip this point and go to [install required dependencies](#install-required-dependencies) section, otherwise if they are higher than those mentioned in the article above you have to downgrade them.
+
+### Change the packages' versions in the `package.json`
+
+Proper versions of your `react` packages should be:
+
+<details><summary>See the code</summary>
+
+```json
+"@testing-library/react": "12.1.5",
+"@types/react": "17.0.2",
+"react": "17.0.2",
+"react-dom": "17.0.2",
+```
+
+</details>
+
+The dependencies' section should look as follows.
+
+<details><summary>See the code</summary>
+
+```json
+"dependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "12.1.5",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.11.68",
     "@types/react": "17.0.2",
+    "@types/react-dom": "^18.0.6",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    ```
+    "react-scripts": "5.0.1",
+    "typescript": "^4.8.4",
+    "web-vitals": "^2.1.4"
+},
+```
 
-    The dependencies sections should look as follows:
+</details>
 
-    ![](../assets/14483461.png)
+### Remove `package-lock.json` file and `node_modules` directory
 
-    b) Remove `package-lock.json` file (be careful and **do not** delete `package.json` file) and `node_modules` directory.
+Be careful and **do not** delete <code>package.json</code> file.
 
-    c) Install dependencies
+### Install dependencies
 
-    To do so run the command:
+To do so run the command:
 
-    ```shell
-    npm i
-    ```
+```shell
+npm i
+```
 
-    d) Check your `index.tsx` file
+### Check your `index.tsx` file
 
-    If your file has a code that uses `ReactDOM.createRoot`:
+If your file has a code that uses `ReactDOM.createRoot` and looks like this.
 
-    ![](../assets/14811141.png)
+<details><summary>See the code</summary>
 
-    update it to look as follows:
+```tsx
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
 
-    ![](../assets/14876677.png)
+const root = ReactDOM.createRoot(
+  document.getElementById('root') as HTMLElement,
+);
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+);
 
-4.  Install required dependencies
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
+```
 
-    ```shell
-    npm i --save-exact ajv@7.1.1 ajv-errors@2.0.0 ajv-formats@1.5.1 classnames@2.2.6 react-dnd@14.0.4 react-dnd-html5-backend@14.0.2 react-dnd-mouse-backend@1.0.0-rc.2 react-dnd-multi-backend@6.0.2 react-dnd-touch-backend@14.1.1 react-popper@1.3.11 uniforms@3.4.0 uniforms-bridge-json-schema@3.4.0
+</details>
 
-    npm i --save-exact --save-dev @types/classnames@2.2.11 @types/lodash@4.14.168 @types/invariant@2.2.34
-    ```
+update it to look as follows
 
-    Remember to add `--save-exact` flag in order to install packages at exact versions.
+<details><summary>See the code</summary>
 
-    **Watch out!**  
-    If you're using `npm` at a version higher than `16.14.17` (not recommended) apart from `--save-exact` flag you will also have to add `--legacy-peer-deps`. The command will look as follows:
+```tsx
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
 
-    ```shell
-    npm i --save-exact --legacy-peer-deps ajv@7.1.1 ajv-errors@2.0.0 ...
-    ```
+const root = document.getElementById('root') as HTMLElement;
 
-5.  Copy and paste the `FormBuilder` directory to the `[project-name]/src`
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  root,
+);
+```
 
-    ![](../assets/14942211.png)
+</details>
 
-6.  Create FormBuilder's helpers
+## Install required dependencies
 
-    As your `FormBuilder` folder is already present in the `src` directory, now it's time to add `Containers` and `translations`.
+```shell
+npm i --save-exact ajv@7.1.1 ajv-errors@2.0.0 ajv-formats@1.5.1 classnames@2.2.6 react-dnd@14.0.4 react-dnd-html5-backend@14.0.2 react-dnd-mouse-backend@1.0.0-rc.2 react-dnd-multi-backend@6.0.2 react-dnd-touch-backend@14.1.1 react-popper@1.3.11 uniforms@3.4.0 uniforms-bridge-json-schema@3.4.0
 
-    a) Create `Containers.tsx` file in `src/components/Containers`
+npm i --save-exact --save-dev @types/classnames@2.2.11 @types/lodash@4.14.168 @types/invariant@2.2.34
+```
 
-    ![](../assets/14614537.png)
+Remember to add `--save-exact` flag in order to install packages at exact versions.
 
-    Example code for `Containers.tsx` can be copied and pasted as below:
+**Watch out!**
+If you're using `npm` at a version higher than `16.14.17` (not recommended) apart from `--save-exact` flag you will also have to add `--legacy-peer-deps`. The command will look as follows:
+
+```shell
+npm i --save-exact --legacy-peer-deps ajv@7.1.1 ajv-errors@2.0.0 ...
+```
+
+## Add FormBuilder directory
+
+Copy `FormBuilder` directory and paste it to the `[project-name]/src`
+
+![](../assets/14942211.png)
+
+## Create FormBuilder's helpers
+
+As your `FormBuilder` folder is already present in the `src` directory, now it's time to add `Containers` and `translations`.
+
+### Add containers
+
+Create `Containers.tsx` file in `src/components/Containers`
+
+![](../assets/14614537.png)
+
+Example code for `Containers.tsx` can be copied and pasted as below.
+
+<details><summary>See the code</summary>
 
 ```tsx
 import React, { CSSProperties, Fragment } from 'react';
@@ -399,11 +480,17 @@ const containers: ContainerDefinitions = {
 export default containers;
 ```
 
-b) Create `translations.tsx` file in `src/lib`
+</details>
+
+### Add translations
+
+Create `translations.tsx` file in `src/lib`.
 
 ![](../assets/14549005.png)
 
-Example code for `translations.tsx` can be copied and pasted as below:
+Example code for `translations.tsx` can be copied and pasted as below.
+
+<details><summary>See the code</summary>
 
 ```tsx
 import React from 'react';
@@ -579,11 +666,13 @@ const translations: Translations = {
 export default translations;
 ```
 
-7\. Add `FormBuilderExample`
+</details>
 
-a) Select a [uniforms](https://uniforms.tools/) theme
+## Integrate FormBuilder with the application
 
-At this point, you will need one of the uniforms themes. You can check the list of themes [here](https://uniforms.tools/docs/installation/).  
+### Add [uniforms](https://uniforms.tools/) theme
+
+At this point, you will need one of the uniforms themes. You can check the list of themes [here](https://uniforms.tools/docs/installation/).
 You can install any theme, but remember to install it at `3.4.0` version.
 
 For the purpose of this installation example, we will proceed with `uniforms-material` theme. To do it run the command:
@@ -598,13 +687,15 @@ In the example, the Material UI components will also be used so let's install it
 npm i --save-exact @material-ui/core@4.11.3
 ```
 
-b) Create `FormBuilderExample.tsx` file in `src/components/FormBuilderExample`
+### Create example component
+
+Create `FormBuilderExample.tsx` file in `src/components/FormBuilderExample`.
 
 ![](../assets/14549017.png)
 
-c) Add the component's code
+Example code for `FormBuilderExample.tsx` can be copied and pasted as below.
 
-In the `FormBuilderExample.tsx` you can copy and paste the following code:
+<details><summary>See the code</summary>
 
 ```tsx
 import React, { useEffect, ReactNode, ReactElement } from 'react';
@@ -695,9 +786,13 @@ export const FormBuilderExample = (): ReactElement => {
 export default FormBuilderExample;
 ```
 
-d) Update `App.tsx` code
+</details>
 
-Go to `src/App.tsx` file and paste the code as follows:
+### Update `App.tsx` code
+
+Go to `src/App.tsx` file and paste the code as follows.
+
+<details><summary>See the code</summary>
 
 ```tsx
 import React, { ReactElement } from 'react';
@@ -710,7 +805,9 @@ const App = (): ReactElement => {
 export default App;
 ```
 
-e) Run the application
+</details>
+
+### Run the application
 
 Use command:
 
@@ -722,9 +819,9 @@ Then, verify your application works as expected. You should see the view present
 
 ![](../assets/14614569.png)
 
-If you will encounter problems running the app at this point please look at the [FormBuilder problems solving](#formbuilder-problems-solving).
+If you will encounter problems running the app at this point please look at the [troubleshooting section](#troubleshooting).
 
-f) Add styles
+### Add styles
 
 The last part of the installation process is to add the required styles to make FB look the expected way.
 
@@ -737,22 +834,48 @@ npm i sass
 - Rename `src/index.css` file to `index.scss`
 - Update `index.scss` file content to be:
 
+<details><summary>See the code</summary>
+
 ```sass
 @import './FormBuilder/variables.scss';
 @import './FormBuilder/index.scss';
 ```
 
-- Update `src/index.tsx` file  
-  Change `import './index.css';` to `import './index.scss';`
+</details>
+
+- Update `src/index.tsx` styles file import.
+
+From
+
+<details><summary>See the code</summary>
+
+```tsx
+import './index.css';
+```
+
+</details>
+
+to
+
+<details><summary>See the code</summary>
+
+```tsx
+import './index.scss';
+```
+
+</details>
+
 - Rerun the application
 
 ![](../assets/14778407.png)
 
 From now on you can generate the FormBuilder's code! Have fun!
 
-### FormBuilder problems solving
+## Troubleshooting
 
-1\. To run the app with no issues currently, it's needed to update the `tsconfig.json` file and add:
+### To do
+
+To run the app using Babel with Typescript with no issues currently, it's needed to update the `tsconfig.json` file and add:
 
 ```json
   "include": []
@@ -760,21 +883,67 @@ From now on you can generate the FormBuilder's code! Have fun!
 
 Next, solve the known issues listed below:
 
-a) Duplicate declaration "Expression" error
+#### Duplicate declaration "Expression" error
 
-![](../assets/14712839.png)
+```shell
+TypeError: Duplicate declaration "Expression"
+  22 | };
+  23 |
+> 24 | function Expression({
+     |          ^^^^^^^^^^
+  25 |   expressionError,
+  26 |   name,
+  27 |   onChange,
+    at normalizeFile.next (<anonymous>)
+    at run.next (<anonymous>)
+    at transform.next (<anonymous>)
+LOG from ./node_modules/sass-loader/dist/cjs.js sass-loader ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[7].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[7].use[2]!./node_modules/resolve-url-loader/index.js??ruleSet[1].rules[1].oneOf[7].use[3]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[7].use[4]!./src/index.scss
+
+```
 
 Go to `src/FormBuilder/components/ExpressionBuilder/Expression.tsx` file and change `Expression` function name to any other, for example, `Expression2`.
 
-![](../assets/14876700.png)
+<details><summary>See the code</summary>
 
-![](../assets/14811157.png)
+```tsx
+function Expression2({
+    expressionError,
+    name,
+    onChange,
+    setExpressionError,
+    translations,
+    value,
+}: ExpressionProps) {}
+   const { model } = useForm<{ schema?: FieldType[] }>();
+   // ...
+}
 
-b) Export was not found errors
+```
 
-![](../assets/14549023.png)
+```tsx
+export const ExpressionField = connectField<ExpressionProps>(Expression2, {
+  initialValue: false,
+});
+```
+
+</details>
+
+#### Export was not found errors
+
+```shell
+ERROR in ./src/FormBuilder/components/uniforms/index.ts 3:0-67
+export 'AutoFieldProps' (reexported as 'AutoFieldProps') was not found in './AutoField' (possible exports: default)
+
+ERROR in ./src/FormBuilder/components/uniforms/index.ts 4:0-70
+export 'AutoFieldsProps' (reexported as 'AutoFieldsProps') was not found in './AutoFields' (possible exports: default)
+
+ERROR in ./src/FormBuilder/components/uniforms/index.ts 7:0-67
+export 'BoolFieldProps' (reexported as 'BoolFieldProps') was not found in './BoolField' (possible exports: default)
+```
 
 Go to `src/FormBuilder/components/uniforms/index.ts` file and change the file as follows:
+
+<details><summary>See the code</summary>
 
 ```tsx
 export { default as AutoField } from './AutoField';
@@ -820,7 +989,13 @@ export { default as ValidatedForm } from './ValidatedForm';
 export { default as ValidatedQuickForm } from './ValidatedQuickForm';
 ```
 
-2\. Issues with `tsconfig.json` that includes `src` directory, for example:
+</details>
+
+### Current limitation
+
+Currently, we're not able to support `tsconfig.json` while using Babel with Typescript that includes `src` directory, for example:
+
+<details><summary>See the code</summary>
 
 ```json
 {
@@ -845,4 +1020,6 @@ export { default as ValidatedQuickForm } from './ValidatedQuickForm';
 }
 ```
 
-Currently, we trying our best to resolve all remaining issues connected with TypeScript validation.
+</details>
+
+We trying our best to resolve all remaining issues related to Babel/TypeScript.
