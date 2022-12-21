@@ -89,8 +89,19 @@ table {
   margin-left: 12px;
 }
 
+/* Make "Docs" link icon not visible on desktop. */
+.docs-nav-item:after {
+  content: none;
+}
+
+/* Styling for mobile navigation. */
 @media (max-width: 996px) {
   .navbar__items .buy-now-nav-item {
     display: none;
+  }
+
+  .docs-nav-item:after {
+    content: '→' !important;
+    margin-left: 4px;
   }
 }
