@@ -16,7 +16,7 @@ const sidebars = {
   docs: [
     {
       type: 'category',
-      label: 'Form Builder Documentation',
+      label: 'Form Builder Docs',
       link: {
         type: 'doc',
         id: 'intro',
