@@ -62,11 +62,13 @@ const config = {
         },
         items: [
           {
+            type: 'link',
             href: 'https://www.vazco.eu/form-builder#pricing',
             html: 'Pricing',
             position: 'right',
           },
           {
+            type: 'link',
             to: 'demo',
             label: 'Demo',
             position: 'right',
@@ -75,15 +77,18 @@ const config = {
             type: 'doc',
             docId: 'intro',
             label: 'Docs',
+            className: 'docs-nav-item',
             position: 'right',
           },
           {
+            type: 'link',
             href: 'https://www.vazco.eu/',
             html: 'Custom solutions',
             position: 'right',
 
           },
           {
+            type: 'link',
             href: 'https://www.vazco.eu/form-builder#contact-form',
             html: 'Buy now',
             className: 'buy-now-nav-item',
