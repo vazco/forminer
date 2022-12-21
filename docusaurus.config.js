@@ -58,34 +58,36 @@ const config = {
         logo: {
           alt: 'Form Builder logo',
           src: 'img/form-builder-logo.svg',
+          href: 'https://www.vazco.eu/form-builder',
         },
         items: [
           {
-            href: 'https://www.vazco.eu/form-builder',
-            position: 'left',
+            href: 'https://www.vazco.eu/form-builder#pricing',
             html: 'Pricing',
+            position: 'right',
           },
           {
-            label: 'Demo',
-            position: 'left',
             to: 'demo',
+            label: 'Demo',
+            position: 'right',
           },
           {
             type: 'doc',
             docId: 'intro',
-            position: 'left',
-            label: 'Documentation',
+            label: 'Docs',
+            position: 'right',
           },
           {
             href: 'https://www.vazco.eu/',
             html: 'Custom solutions',
-            position: 'left',
+            position: 'right',
+
           },
           {
-            href: 'https://www.vazco.eu/form-builder',
+            href: 'https://www.vazco.eu/form-builder#contact-form',
             html: 'Buy now',
-            position: 'left',
-            className: 'buy-now-nav-item'
+            className: 'buy-now-nav-item',
+            position: 'right',
           },
         ],
       },
