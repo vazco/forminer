@@ -1,7 +1,7 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import Layout from '@theme/Layout';
 
-const Demo = (): ReactElement => {
+export default function Demo() {
   return (
     <Layout title="Form Builder demo" wrapperClassName="demo-container">
       <iframe
@@ -10,6 +10,4 @@ const Demo = (): ReactElement => {
       />
     </Layout>
   );
-};
-
-export default Demo;
+}
