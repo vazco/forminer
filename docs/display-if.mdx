@@ -28,7 +28,7 @@ Let's start simple. Imagine we have a form where we ask for feedback and we want
   <source src={simpleDisplayIfVideo} />
 </video>
 
-In this example, the text field is displayed only when the value of the boolean field is false. Let's take a look at the code representation of the form:
+In this example, the text field is displayed only when the value of the boolean field is false. Let's take a look at the code representation of the form. Focus on the highlighted `displayIf`'s content defined for the text field:
 
 ```json
 {
@@ -44,6 +44,7 @@ In this example, the text field is displayed only when the value of the boolean 
       "fieldId": "2",
       "label": "How can we improve it?",
       "viewId": "2",
+      // highlight-start
       "displayIf": {
         "operator": "AND",
         "args": [
@@ -64,6 +65,7 @@ In this example, the text field is displayed only when the value of the boolean 
           }
         ]
       }
+      // highlight-end
     }
   ],
   "layouts": [
@@ -111,31 +113,6 @@ In this example, the text field is displayed only when the value of the boolean 
 }
 ```
 
-Let's focus on the `displayIf`'s content defined for the text field:
-
-```tsx
-{
-  "operator": "AND",
-  "args": [
-    {
-      "operator": "EQ",
-      "args": [
-        {
-          "operator": "VALUE_OF",
-          "args": [],
-          "primitiveArg": "enjoyedFormBuilder"
-        },
-        {
-          "operator": "BOOLEAN_LITERAL",
-          "args": [],
-          "primitiveArg": false
-        }
-      ]
-    }
-  ]
-}
-```
-
 Let's show this in a form of a diagram to see it clearer:
 
 ![](../assets/11337744.png)
@@ -150,7 +127,7 @@ Let's expand on the previous form. Now we want to ask about potential improvemen
   <source src={moreComplexDisplayIfVideo} />
 </video>
 
-Here's the code of the form:
+Here's the code of the form. The highlighted blocks are the newly added ones:
 
 ```tsx
 {
@@ -184,6 +161,7 @@ Here's the code of the form:
               }
             ]
           },
+          // highlight-start
           {
             "operator": "EQ",
             "args": [
@@ -228,6 +206,7 @@ Here's the code of the form:
         ]
       }
     }
+    // highlight-end
   ],
   "layouts": [
     {
@@ -240,11 +219,13 @@ Here's the code of the form:
             "viewId": "1",
             "layoutId": "2"
           },
+          // highlight-start
           {
             "kind": "Field",
             "viewId": "3",
             "layoutId": "4"
           },
+          // highlight-end
           {
             "kind": "Field",
             "viewId": "2",
@@ -275,12 +256,14 @@ Here's the code of the form:
       "defaultValue": "",
       "minLength": 1
     },
+    // highlight-start
     {
       "fieldId": "3",
       "name": "willingToShareImprovements",
       "type": "boolean",
       "required": false
     }
+    // highlight-end
   ]
 }
 ```
