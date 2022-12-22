@@ -2,12 +2,11 @@
 // Note: type annotations allow type checking and IDEs autocompletion
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Form Builder',
-  tagline: 'Vazco Form Builder Documentation',
+  tagline: 'Vazco Form Builder Docs',
   url: 'https://vazco.github.io',
   baseUrl: '/form-builder-documentation/',
   trailingSlash: false,
@@ -50,32 +49,45 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      colorMode: {
+        defaultMode: 'light',
+        disableSwitch: true,
+        respectPrefersColorScheme: false,
+      },
       navbar: {
-        title: 'Form Builder',
         logo: {
           alt: 'Form Builder logo',
-          src: 'img/vazco-icon.png',
+          src: 'img/form-builder-logo.svg',
+          href: 'https://www.vazco.eu/form-builder',
         },
         items: [
           {
+            href: 'https://www.vazco.eu/form-builder#pricing',
+            html: 'Pricing',
+            position: 'right',
+          },
+          {
+            to: 'demo',
+            label: 'Demo',
+            position: 'right',
+          },
+          {
             type: 'doc',
             docId: 'intro',
-            position: 'left',
-            label: 'Documentation',
+            label: 'Docs',
+            className: 'docs-nav-item',
+            position: 'right',
           },
           {
-            href: 'https://vazco.github.io/uniforms-form-builder/',
-            label: 'Demo',
-            position: 'left',
+            href: 'https://www.vazco.eu/',
+            html: 'Custom solutions',
+            position: 'right',
+
           },
           {
-            href: 'https://www.vazco.eu/form-builder',
-            label: 'Learn more',
-            position: 'left',
-          },
-          {
-            href: 'https://uniforms.tools',
-            label: 'uniforms docs',
+            href: 'https://www.vazco.eu/form-builder#contact-form',
+            html: 'Buy now',
+            className: 'buy-now-nav-item',
             position: 'right',
           },
         ],
@@ -127,7 +139,6 @@ const config = {
       },
       prism: {
         theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
       },
       hotjar: {
         applicationId: '3212446',
