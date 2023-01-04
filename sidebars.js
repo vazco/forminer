@@ -26,7 +26,7 @@ const sidebars = {
       items: [
         'supported-stack',
         'technical-requirements',
-        'installation',
+        'integration',
         'form-definition',
         'display-if',
         'custom-components',
