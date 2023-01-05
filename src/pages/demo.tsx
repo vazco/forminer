@@ -6,7 +6,7 @@ export default function Demo() {
     <Layout title="Form Builder demo" wrapperClassName="demo-container">
       <iframe
         title="Form Builder demo"
-        src="https://vazco.github.io/uniforms-form-builder/"
+        src="https://vazco.github.io/form-builder-project/"
       />
     </Layout>
   );
