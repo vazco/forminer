@@ -3,6 +3,16 @@
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 
+const copyright = `
+<div style="display: flex; justify-content: center; align-items: center; gap: 10px">
+  Copyright © ${new Date().getFullYear()}
+  <a href="https://www.vazco.eu/" target="_blank" rel="noreferrer noopener">
+    <img src="img/vazco-logo.png" alt="Vazco.eu" width="114" height="51" />
+  </a>
+</div>
+All Rights Reserved
+`
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Form Builder',
@@ -135,7 +145,7 @@ const config = {
           //   ],
           // },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Vazco.eu`,
+        copyright,
       },
       prism: {
         theme: lightCodeTheme,
