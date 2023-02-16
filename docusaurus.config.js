@@ -45,7 +45,7 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          routeBasePath: '/',
+          routeBasePath: '/docs',
           sidebarPath: require.resolve('./sidebars.js'),
         },
         blog: false,
@@ -68,7 +68,7 @@ const config = {
         logo: {
           alt: 'Form Builder logo',
           src: 'img/form-builder-logo.svg',
-          href: 'https://www.vazco.eu/form-builder',
+
         },
         items: [
           {
@@ -82,6 +82,7 @@ const config = {
             position: 'right',
           },
           {
+            to: 'docs',
             type: 'doc',
             docId: 'intro',
             label: 'Docs',
