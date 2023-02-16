@@ -36,7 +36,7 @@ export default function IndexPage() {
         <TestProductSection />
         <ClutchSection />
         <CTASection
-          heading="Interested in using Form Builder?"
+          heading="Interested in using Forminer?"
           buttonText="Book free consultation"
         />
         <TrustedByOpenSourceSection />

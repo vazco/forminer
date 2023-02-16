@@ -31,7 +31,7 @@ export const KeyFunctionalitiesSection = () => {
             </List>
           </ListItem>
           <ListItem>
-            Choose Form Builder that supports all common field types from
+            Choose Forminer that supports all common field types from
             <Link to="https://uniforms.tools/"> uniforms</Link>
           </ListItem>
           <ListItem>

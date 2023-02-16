@@ -21,7 +21,7 @@ export const TrustedByOpenSourceSection = () => {
         <List>
           <ListItem>
             Reliance on<Link to="https://uniforms.tools/"> uniforms </Link>
-            guarantees a good level of support for Form Builder - both from the
+            guarantees a good level of support for Forminer - both from the
             community and Vazco
           </ListItem>
           <ListItem>
@@ -36,8 +36,8 @@ export const TrustedByOpenSourceSection = () => {
             speeding up the development
           </ListItem>
           <ListItem>
-            <strong>We believe in Open Source. </strong>Your purchase of Form
-            Builder helps us support
+            <strong>We believe in Open Source. </strong>Your purchase of
+            Forminer helps us support
             <Link to="https://uniforms.tools/"> uniforms </Link>and our other
             Open Source packages
           </ListItem>

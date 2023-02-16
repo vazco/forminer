@@ -18,8 +18,8 @@ export const TestProductSection = () => {
         mediaData={animationDataJson}
       >
         <p>
-          You deserve a solution that fully meets your needs. To make sure Form
-          Builder is your match, try the free product demo linked below.
+          You deserve a solution that fully meets your needs. To make sure
+          Forminer is your match, try the free product demo linked below.
         </p>
         <Link to="/demo" internal>
           <Button>Check how it works</Button>
