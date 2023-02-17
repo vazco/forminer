@@ -12,6 +12,8 @@ import {
   TestProductSection,
   ClutchSection,
   TrustedByOpenSourceSection,
+  PricingSection,
+  FAQSection,
 } from '../sections';
 
 export default function IndexPage() {
@@ -40,6 +42,8 @@ export default function IndexPage() {
           buttonText="Book free consultation"
         />
         <TrustedByOpenSourceSection />
+        <PricingSection />
+        <FAQSection />
       </LayoutBase>
     </Layout>
   );
