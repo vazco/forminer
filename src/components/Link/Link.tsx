@@ -1,7 +1,7 @@
 import { default as DocusaurusLink } from '@docusaurus/Link';
 import React, { ReactNode } from 'react';
 
-type LinkProps = {
+export type LinkProps = {
   to: string;
   children: ReactNode;
   internal?: boolean;

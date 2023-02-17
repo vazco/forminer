@@ -10,6 +10,8 @@ import {
 const StyledHeading = styled.h2`
   font-weight: ${({ isStrong }) => (isStrong ? 500 : 300)};
   margin: 0;
+  ${({ marginBottom }) =>
+    marginBottom ? `margin-bottom: ${marginBottom}px` : 0};
 
   ${({ size }) => {
     switch (size) {
@@ -36,6 +38,7 @@ export type UnifiedHeadingProps = {
   level?: 1 | 2 | 3;
   size?: 'md' | 'lg' | 'xl';
   isStrong?: boolean;
+  marginBottom?: number;
 };
 
 export const UnifiedHeading = ({
@@ -43,9 +46,15 @@ export const UnifiedHeading = ({
   level = 3,
   size = 'md',
   isStrong = true,
+  marginBottom,
 }: UnifiedHeadingProps) => {
   return (
-    <StyledHeading isStrong={isStrong} as={`h${level}`} size={size}>
+    <StyledHeading
+      isStrong={isStrong}
+      as={`h${level}`}
+      size={size}
+      marginBottom={marginBottom}
+    >
       {children}
     </StyledHeading>
   );
