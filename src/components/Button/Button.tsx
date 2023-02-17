@@ -1,6 +1,7 @@
 import noop from 'lodash/noop';
 import { rem, lighten } from 'polished';
-import React, { ReactNode } from 'react';
+// eslint-disable-next-line no-unused-vars
+import React, { ReactNode, MouseEvent } from 'react';
 import styled, { css } from 'styled-components';
 
 const resetDefault = css`
@@ -99,7 +100,7 @@ type ButtonProps = {
   children: ReactNode;
   className?: string;
   disabled?: boolean;
-  onClick?: () => void;
+  onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
   reversed?: boolean;
   size?: string;
   type?: string;

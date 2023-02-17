@@ -52,6 +52,10 @@ const SubHeading = styled.p`
   text-align: center;
 `;
 
+const Subtitle = styled.p`
+  margin-top: 24px;
+`;
+
 type Button = Omit<LinkProps, 'children'> & {
   text: string;
 };
@@ -82,7 +86,11 @@ export const PriceTab = ({
               <CustomBulletListItem key={item}>{item}</CustomBulletListItem>
             ))}
           </CustomBulletList>
-          {subtitle && <p>{subtitle}</p>}
+          {subtitle && (
+            <Subtitle>
+              <strong>{subtitle}</strong>
+            </Subtitle>
+          )}
         </ContentWrapper>
       </Content>
       <ActionBox>

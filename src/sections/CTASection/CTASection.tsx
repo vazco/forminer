@@ -43,17 +43,13 @@ type CTASectionProps = {
   sectionId?: string;
 };
 
-export const CTASection = ({
-  heading,
-  buttonText,
-  sectionId = 'contact-form',
-}: CTASectionProps) => {
+export const CTASection = ({ heading, buttonText }: CTASectionProps) => {
   return (
     <HighlightPanel>
       <Container>
         <ContentWrapper>
           <StyledHeading>{heading}</StyledHeading>
-          <Link to={sectionId} scroll>
+          <Link to="mailto:hello@forminer.com" newTab={false}>
             <Button variant="outlined" reversed>
               {buttonText}
             </Button>

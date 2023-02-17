@@ -11,14 +11,17 @@ import OpportunitiesIcon from '../../../images/svg/opportunities.svg';
 import TechtalksIcon from '../../../images/svg/techtalks.svg';
 
 const StyledGridItem = styled(Grid)`
-  &:not(:last-child) {
-    margin-bottom: ${rem('40px')};
-  }
-  ${media.greaterThan('md')`
+  && {
+    &:not(:last-child) {
+      margin-bottom: ${rem('40px')};
+    }
+
+    ${media.greaterThan('md')`
     &:not(:last-child) {
       margin-bottom: 0;
     }
   `}
+  }
 `;
 
 const CardWrapper = styled.div`

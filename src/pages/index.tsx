@@ -14,6 +14,7 @@ import {
   TrustedByOpenSourceSection,
   PricingSection,
   FAQSection,
+  Footer,
 } from '../sections';
 
 export default function IndexPage() {
@@ -44,6 +45,7 @@ export default function IndexPage() {
         <TrustedByOpenSourceSection />
         <PricingSection />
         <FAQSection />
+        <Footer />
       </LayoutBase>
     </Layout>
   );

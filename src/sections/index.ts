@@ -9,3 +9,4 @@ export * from './ClutchSection';
 export * from './TrustedByOpenSourceSection';
 export * from './PricingSection';
 export * from './FAQSection';
+export * from './Footer';

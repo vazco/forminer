@@ -106,7 +106,6 @@ const tabsData = [
       'Multi-project licenses',
       'Custom extensions',
       'Training sessions',
-      'Internal deployment',
       'Integrations',
     ],
     buttons: [
@@ -117,6 +116,8 @@ const tabsData = [
       },
       { ...demoButtonData },
     ],
+    subtitle:
+      'Contact us to estimate your project based on business requirements.',
   },
 ];
 
@@ -124,7 +125,7 @@ export const PricingSection = () => {
   const [currentTabIndex, setCurrentTabIndex] = useState(0);
 
   return (
-    <SectionLayout>
+    <SectionLayout id="pricing">
       <Wrapper>
         <UnifiedHeading level={2} size="lg" marginBottom={24}>
           Pricing

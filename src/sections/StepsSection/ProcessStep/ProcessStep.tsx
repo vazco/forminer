@@ -50,10 +50,12 @@ const Text = styled.p`
 `;
 
 const StyledGridItem = styled(Grid)`
-  margin-bottom: 24px;
-  ${media.greaterThan('lg')`
+  && {
+    margin-bottom: 24px;
+    ${media.greaterThan('lg')`
   margin-bottom: 0;
 `}
+  }
 `;
 
 type ProcessStepProps = {

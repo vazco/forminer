@@ -17,7 +17,7 @@ const Section = styled.section`
     ${({ isFramed }) =>
       !isFramed &&
       css`
-        height: 100vh;
+        height: calc(100vh - 60px);
         min-height: 900px;
         padding-bottom: 0;
       `}
@@ -46,8 +46,10 @@ const StyledContainer = styled(Container)`
 `;
 
 const StyledGridItem = styled(Grid)`
-  justify-content: center;
-  align-items: center;
+  && {
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 const ContentWrapper = styled.div`
@@ -64,15 +66,17 @@ const ContentWrapper = styled.div`
 `;
 
 const StyledGridContainer = styled(Grid)`
-  width: 100%;
-  padding-bottom: 16px;
-  ${media.greaterThan('md')`
+  && {
+    width: 100%;
+    padding-bottom: 16px;
+    ${media.greaterThan('md')`
     min-width: 700px;
     padding-top: 16px;
   `}
-  ${media.greaterThan('lg')`
+    ${media.greaterThan('lg')`
     min-width: 1000px;
   `}
+  }
 `;
 
 const StyledImage = styled.img`

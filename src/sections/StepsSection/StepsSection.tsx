@@ -8,10 +8,12 @@ import { SectionLayout } from '../../components/SectionLayout';
 import media from '../../globalStyles/media';
 
 const GridContainer = styled(Grid)`
-  margin-top: 60px;
-  ${media.greaterThan('lg')`
+  && {
+    margin-top: 60px;
+    ${media.greaterThan('lg')`
   margin-top: 100px;
 `}
+  }
 `;
 
 const numOfSteps = 3;

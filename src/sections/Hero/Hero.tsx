@@ -1,5 +1,6 @@
 import { rem } from 'polished';
-import React from 'react';
+// eslint-disable-next-line no-unused-vars
+import React, { MouseEvent } from 'react';
 import styled from 'styled-components';
 
 import { FeaturedCase } from './FeaturedCase';
@@ -8,9 +9,9 @@ import {
   CustomBulletList,
   CustomBulletListItem,
 } from '../../components/CustomBulletList';
-import { LargeText } from '../../components/LargeText';
 import { Link } from '../../components/Link';
 import media from '../../globalStyles/media';
+import { HEADING_MD_STYLES } from '../../globalStyles/sharedStyles/headings';
 
 const Offset = styled.div`
   ${media.greaterThan('xl')`
@@ -39,69 +40,70 @@ const ButtonsWrapperOffset = styled.div`
   `}
 `;
 
-const buttons = [
-  // TODO: Scroll to ID
-  {
-    _key: '685f7101f363',
-    buttonText: 'Check pricing',
-    isSolid: true,
-    url: 'pricing',
-    scroll: true,
-  },
-  {
-    _key: '056c33371864',
-    buttonText: 'See technical documentation',
-    url: '/docs',
-    internal: true,
-  },
-];
+const StyledLargeText = styled.p`
+  ${HEADING_MD_STYLES};
+  font-weight: 300;
+  max-width: 660px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+  &:not(:last-child) {
+    margin-bottom: ${rem('30px')};
+    ${media.greaterThan('md')`
+      margin-bottom: ${rem('50px')};
+    `}
+  }
+`;
+
+const pricingSectionId = 'pricing';
+
+const scrollToPricing = (event: MouseEvent<HTMLButtonElement>) => {
+  event.preventDefault();
+  const pricingSection = document.getElementById(pricingSectionId);
+
+  if (pricingSection) {
+    pricingSection.scrollIntoView();
+  }
+};
 
 export const Hero = () => {
   return (
-    <div>
-      <FeaturedCase>
-        <Offset>
-          <h1>Forminer</h1>
-          <LargeText>
-            <strong>Save up to 1500 hours</strong> while building form-heavy
-            React apps with our easy to integrate package
-          </LargeText>
-          <CustomBulletList>
-            <CustomBulletListItem>
-              <span>
-                <strong>Powerful solution</strong> - custom fields, full state
-                machine, conditional fields, schema-first approach, and many
-                more...
-              </span>
-            </CustomBulletListItem>
-            <CustomBulletListItem>
-              <span>
-                <strong>Traffic-independent payment</strong> - pick a one-time
-                payment or subscription, not based on the number of users
-              </span>
-            </CustomBulletListItem>
-            <CustomBulletListItem>
-              <span>
-                <strong>Good support</strong> - basing on our popular OpenSource
-                package, uniforms, guarantees no vendor locking
-              </span>
-            </CustomBulletListItem>
-          </CustomBulletList>
-          {buttons?.length > 0 && (
-            <ButtonsWrapperOffset>
-              {buttons.map(
-                ({ _key, url, isSolid, buttonText, internal, scroll }) => (
-                  <Link key={_key} to={url} internal={internal} scroll={scroll}>
-                    <Button variant={isSolid ? 'solid' : 'outlined'}>
-                      {buttonText}
-                    </Button>
-                  </Link>
-                ),
-              )}
-            </ButtonsWrapperOffset>
-          )}
-        </Offset>
-      </FeaturedCase>
-    </div>
+    <FeaturedCase>
+      <Offset>
+        <h1>Forminer</h1>
+        <StyledLargeText>
+          <strong>Save up to 1500 hours</strong> while building form-heavy React
+          apps with our easy to integrate package
+        </StyledLargeText>
+        <CustomBulletList>
+          <CustomBulletListItem>
+            <span>
+              <strong>Powerful solution</strong> - custom fields, full state
+              machine, conditional fields, schema-first approach, and many
+              more...
+            </span>
+          </CustomBulletListItem>
+          <CustomBulletListItem>
+            <span>
+              <strong>Traffic-independent payment</strong> - pick a one-time
+              payment or subscription, not based on the number of users
+            </span>
+          </CustomBulletListItem>
+          <CustomBulletListItem>
+            <span>
+              <strong>Good support</strong> - basing on our popular OpenSource
+              package, uniforms, guarantees no vendor locking
+            </span>
+          </CustomBulletListItem>
+        </CustomBulletList>
+        <ButtonsWrapperOffset>
+          <Button onClick={scrollToPricing}>Check pricing</Button>
+          <Link to="/docs" internal>
+            <Button variant="outlined">See technical documentation</Button>
+          </Link>
+        </ButtonsWrapperOffset>
+      </Offset>
+    </FeaturedCase>
   );
 };

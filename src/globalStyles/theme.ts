@@ -41,18 +41,18 @@ export const GlobalStyle = createGlobalStyle`
 ${normalize}
 html {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 *, *:before, *:after {
   box-sizing: inherit;
 }
-body {
+main {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
   color: ${theme.color.body};
   overflow-x: hidden;
-}
-
-h1, h2, h3, h4, h5 {
+  
+  h1, h2, h3, h4, h5 {
   font-family: 'Roboto Slab', 'Roboto', serif;
   font-weight: 500;
   margin-top: 0;
@@ -125,5 +125,6 @@ small {
 
 strong {
   font-weight: 500;
+}
 }
 `;
