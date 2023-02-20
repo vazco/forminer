@@ -103,7 +103,7 @@ export const FeaturedCase = ({ children }: FeaturedCaseProps) => {
           <StyledGridItem xs={12} md={6} item>
             <StyledImage
               src={image}
-              alt="Form Builder - Build form in React without any problems"
+              alt="Forminer - Build form in React without any problems"
             />
           </StyledGridItem>
           <Grid xs={12} md={6} item>

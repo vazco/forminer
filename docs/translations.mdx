@@ -1,20 +1,20 @@
 ---
-description: How to translate the FormBuilder UI and forms itself
+description: How to translate the Forminer UI and forms itself
 ---
 
 # Translations (i18n)
 
 We can think about this topic from two sides, depending on the user's perspective:
 
-1. **The FormBuilder interface**, facing the users who create forms.
+1. **The Forminer interface**, facing the users who create forms.
 
-2. **The form view**, for the users who are filling the forms built with FormBuilder.
+2. **The form view**, for the users who are filling the forms built with Forminer.
 
 As it also impacts the way how it's handled in the code, we'll split this document into two sections.
 
-## Translating the FormBuilder interface
+## Translating the Forminer interface
 
-The FormBuilder UI (labels, titles, tooltips, etc.) is completely translatable with a centralized i18n system. At its core is the `Translations` type, defining all of the required strings (e.g., `StyleTooltip`) and formatters (e.g., `RemovePageConfirmation`). Once you have a complete `Translations` object, pass it to the `FormBuilder` component in the `translations` prop:
+The Forminer UI (labels, titles, tooltips, etc.) is completely translatable with a centralized i18n system. At its core is the `Translations` type, defining all of the required strings (e.g., `StyleTooltip`) and formatters (e.g., `RemovePageConfirmation`). Once you have a complete `Translations` object, pass it to the `FormBuilder` component in the `translations` prop:
 
 ```tsx
 import { NS } from '../FormBuilder/const/namespace';
@@ -38,7 +38,7 @@ While there's no built-in way of doing that, you can treat the translatable valu
 
 1. Translate them directly **in the components**. This requires you to provide custom field and widget components but also gives you the most flexibility.
 
-2. Translate them **in the form definition**. As the form definition is simply a JSON object (as described in [Form definition](form-definition)), you can modify it freely before passing it down to the `FormBuilder` component. That means you could translate all of the values up front and render a translated form. This requires some additional code but is seamless from the FormBuilder perspective.
+2. Translate them **in the form definition**. As the form definition is simply a JSON object (as described in [Form definition](form-definition)), you can modify it freely before passing it down to the `FormBuilder` component. That means you could translate all of the values up front and render a translated form. This requires some additional code but is seamless from the Forminer perspective.
 
 In both scenarios, as the labels are provided as-is, you can use any tool to actually translate them. To visualize this example better, here's a code sample translating the labels using an external library:
 

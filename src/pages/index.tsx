@@ -25,7 +25,7 @@ export default function IndexPage() {
   // } = context.siteConfig;
 
   return (
-    <Layout title="Form Builder | Build Forms in React the way you need | Vazco">
+    <Layout title="Forminer | Build Forms in React the way you need | Vazco">
       <LayoutBase>
         <Hero />
         <TechnologyListSection />

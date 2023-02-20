@@ -16,7 +16,7 @@ const sidebars = {
   docs: [
     {
       type: 'category',
-      label: 'Form Builder Docs',
+      label: 'Forminer Docs',
       link: {
         type: 'doc',
         id: 'intro',

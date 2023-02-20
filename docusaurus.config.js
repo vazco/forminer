@@ -5,8 +5,8 @@ const lightCodeTheme = require('prism-react-renderer/themes/github');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Form Builder',
-  tagline: 'Vazco Form Builder Docs',
+  title: 'Forminer',
+  tagline: 'Vazco Forminer Docs',
   url: 'https://vazco.github.io',
   baseUrl: '/form-builder/',
   trailingSlash: false,
@@ -54,7 +54,7 @@ const config = {
       },
       navbar: {
         logo: {
-          alt: 'Form Builder logo',
+          alt: 'Forminer logo',
           src: 'img/form-builder-logo.svg',
         },
         items: [
