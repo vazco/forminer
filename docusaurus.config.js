@@ -55,7 +55,7 @@ const config = {
       navbar: {
         logo: {
           alt: 'Forminer logo',
-          src: 'img/form-builder-logo.svg',
+          src: 'img/forminer.png',
         },
         items: [
           {
