@@ -8,7 +8,7 @@ const config = {
   title: 'Forminer',
   tagline: 'Vazco Forminer Docs',
   url: 'https://forminer.com',
-  baseUrl: '',
+  baseUrl: '/',
   trailingSlash: false,
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
