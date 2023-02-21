@@ -18,7 +18,7 @@ To start using custom fields you need to:
 
 1. Create a custom field.
 
-2. Pass the custom field definition to your `FormBuilder` and `Form`s.
+2. Pass the custom field definition to your `Forminer` and `Form`s.
 
 ## Creating a custom field
 
@@ -67,13 +67,13 @@ export function StarWarsMovieField(props: StarWarsMovieFieldProps) {
 }
 ```
 
-## Passing a custom field definition to the `FormBuilder` and `Form`s
+## Passing a custom field definition to the `Forminer` and `Form`s
 
-Once your custom fields are ready, you need to pass this information on to `FormBuilder` and your `Form`s. Both accept a `components` prop, which is a map of component definitions. A component definition is a React component itself and other options needed to render it correctly. The default configuration is described in the `createDefaultComponents` function. To be able to use a custom field, we add it to the existing component map:
+Once your custom fields are ready, you need to pass this information on to `Forminer` and your `Form`s. Both accept a `components` prop, which is a map of component definitions. A component definition is a React component itself and other options needed to render it correctly. The default configuration is described in the `createDefaultComponents` function. To be able to use a custom field, we add it to the existing component map:
 
 ```tsx
 import * as theme from 'uniforms-material';
-import { FieldType, createDefaultComponents } from '../FormBuilder';
+import { FieldType, createDefaultComponents } from '../Forminer';
 
 const components = createDefaultComponents(theme);
 
