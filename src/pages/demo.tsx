@@ -4,10 +4,7 @@ import Layout from '@theme/Layout';
 export default function Demo() {
   return (
     <Layout title="Forminer demo" wrapperClassName="demo-container">
-      <iframe
-        title="Forminer demo"
-        src="https://vazco.github.io/form-builder-project/"
-      />
+      <iframe title="Forminer demo" src="https://forminer.com" />
     </Layout>
   );
 }
