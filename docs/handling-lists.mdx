@@ -1,5 +1,5 @@
 ---
-description: How FormBuilder can works with lists
+description: How Forminer can works with lists
 ---
 import listOfSuggestionsVideo from '../assets/15564803.mov';
 import listOfDropdownsVideo from '../assets/15237133.mov';
@@ -7,7 +7,7 @@ import multipleSelectVideo from '../assets/15138835.mov';
 
 # Handling lists
 
-FormBuilder does not handle lists (array data type) out-of-the-box, but it's possible to work around it. In this guide we'll look into a couple of common form patterns.
+Forminer does not handle lists (array data type) out-of-the-box, but it's possible to work around it. In this guide we'll look into a couple of common form patterns.
 
 ## List of inputs
 
@@ -17,7 +17,7 @@ The most basic list would be a list of inputs. It looks as follows:
   <source src={listOfSuggestionsVideo} />
 </video>
 
-To make it usable, we have to patch the `makeBridge` function that builds the final form's JSON schema definition out of the FormBuilder's form definition. The change is fairly small:
+To make it usable, we have to patch the `makeBridge` function that builds the final form's JSON schema definition out of the Forminer's form definition. The change is fairly small:
 
 ```diff
  // Actually register the field.
@@ -35,7 +35,7 @@ Now all we have to do is to set the `isMulti` custom property on any of the inpu
 
 ## Dropdown with multiple values
 
-Another popular list input is a dropdown with multiple values. Normally, a dropdown allows us to select only a single value. If we'd add a standard FormBuilder's dropdown and apply the "List of inputs" workaround, we'd get the following result:
+Another popular list input is a dropdown with multiple values. Normally, a dropdown allows us to select only a single value. If we'd add a standard Forminer's dropdown and apply the "List of inputs" workaround, we'd get the following result:
 
 <video controls>
   <source src={listOfDropdownsVideo} />
