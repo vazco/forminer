@@ -57,7 +57,7 @@ table {
 
 /* Make demo iframe full height. */
 .demo-container {
-  display: flex;
+  flex-direction: row !important;
 }
 
 .demo-container > iframe {
