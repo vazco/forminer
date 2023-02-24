@@ -40,6 +40,9 @@ const config = {
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
+        googleTagManager: {
+          containerId: 'GTM-N48XTZS',
+        },
       }),
     ],
   ],
@@ -97,6 +100,7 @@ const config = {
         applicationId: '3212446',
       },
     }),
+  noIndex: true,
 };
 
 module.exports = config;

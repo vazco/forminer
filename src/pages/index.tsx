@@ -1,7 +1,7 @@
 import Layout from '@theme/Layout';
 import React from 'react';
 
-import { LayoutBase } from '..//components/LayoutBase';
+import { LayoutBase } from '../components/LayoutBase';
 import { SEO } from '../components/SEO';
 import {
   Hero,
