@@ -6,7 +6,7 @@ import { BOX_COMMON_STYLES } from '../../../globalStyles/sharedStyles/box';
 import { Container } from '../../../components/Container';
 import media from '../../../globalStyles/media';
 // @ts-expect-error Image import
-import image from '../../../images/use-case.png';
+import image from '../../../images/Forminer.png';
 
 const Section = styled.section`
   padding: ${({ isFramed }) => (isFramed ? '16px' : '16px 16px 80px 16px')};
