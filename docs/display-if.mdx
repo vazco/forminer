@@ -36,7 +36,7 @@ In this example, the text field is displayed only when the value of the boolean 
     {
       "component": "AutoField",
       "fieldId": "1",
-      "label": "Do you enjoy Form Builder?",
+      "label": "Do you enjoy Forminer?",
       "viewId": "1"
     },
     {
@@ -54,7 +54,7 @@ In this example, the text field is displayed only when the value of the boolean 
               {
                 "operator": "VALUE_OF",
                 "args": [],
-                "primitiveArg": "enjoyedFormBuilder"
+                "primitiveArg": "enjoyedForminer"
               },
               {
                 "operator": "BOOLEAN_LITERAL",
@@ -96,7 +96,7 @@ In this example, the text field is displayed only when the value of the boolean 
   "schema": [
     {
       "fieldId": "1",
-      "name": "enjoyedFormBuilder",
+      "name": "enjoyedForminer",
       "type": "boolean",
       "required": true,
       "defaultValue": true
@@ -135,7 +135,7 @@ Here's the code of the form. The highlighted blocks are the newly added ones:
     {
       "component": "AutoField",
       "fieldId": "1",
-      "label": "Do you enjoy Form Builder?",
+      "label": "Do you enjoy Forminer?",
       "viewId": "1"
     },
     {
@@ -152,7 +152,7 @@ Here's the code of the form. The highlighted blocks are the newly added ones:
               {
                 "operator": "VALUE_OF",
                 "args": [],
-                "primitiveArg": "enjoyedFormBuilder"
+                "primitiveArg": "enjoyedForminer"
               },
               {
                 "operator": "BOOLEAN_LITERAL",
@@ -194,7 +194,7 @@ Here's the code of the form. The highlighted blocks are the newly added ones:
               {
                 "operator": "VALUE_OF",
                 "args": [],
-                "primitiveArg": "enjoyedFormBuilder"
+                "primitiveArg": "enjoyedForminer"
               },
               {
                 "operator": "BOOLEAN_LITERAL",
@@ -243,7 +243,7 @@ Here's the code of the form. The highlighted blocks are the newly added ones:
   "schema": [
     {
       "fieldId": "1",
-      "name": "enjoyedFormBuilder",
+      "name": "enjoyedForminer",
       "type": "boolean",
       "required": true,
       "defaultValue": true
@@ -274,7 +274,7 @@ Notice two things. One is that now the "_Are you willing to share the improvemen
 
 ## Required only if visible
 
-In terms of validation, forms created with FormBuilder follow the rule _the field is required only if it's visible_. It is best to see how it works with an example.
+In terms of validation, forms created with Forminer follow the rule _the field is required only if it's visible_. It is best to see how it works with an example.
 
 To demonstrate the thing, we will use the same form as in the "Simple example" from the "Expressions, operators & conditions" section. Please note that both fields are marked as required in the form schema. View the video below to see how the form behaves when we submit it:
 
@@ -282,19 +282,19 @@ To demonstrate the thing, we will use the same form as in the "Simple example" f
   <source src={displayIfValidationVideo} />
 </video>
 
-As you can see, the `enjoyedFormBuilder` field is always present in the submitted model, as it has a default value and it's not displayed conditionally.
+As you can see, the `enjoyedForminer` field is always present in the submitted model, as it has a default value and it's not displayed conditionally.
 
 The `improvementsField` though is present in the submitted model only when the field is visible. Once visible, it also affects the form validation, preventing it from submitting without a value set. You can also see, that when the displayIf condition is false and the field disappears, its value is preserved in the model (when we untick the checkbox, the value is already there, so there is no need to type it again).
 
-That's because the form model can be different from the submitted one. Before the model is submitted, it is transformed. In this case, the transformation is about evaluating the displayIf condition for every field. If the field is not visible, it is erased from the model. If you're interested, see the `modelTransform` function in the `FormBuilder/components/Form.tsx`.
+That's because the form model can be different from the submitted one. Before the model is submitted, it is transformed. In this case, the transformation is about evaluating the displayIf condition for every field. If the field is not visible, it is erased from the model. If you're interested, see the `modelTransform` function in the `Forminer/components/Form.tsx`.
 
 ## Serverside validation
 
-FormBuilder does not have its own backend as such, however, if want to, you can place the validation process on the server.
+Forminer does not have its own backend as such, however, if want to, you can place the validation process on the server.
 
 To validate a model, you need to create a validator. A validator is a function that receives a model and validates it against the schema, returning the list of errors. For example, [ajv](https://ajv.js.org/) is a popular JSON schema validator.
 
-However, if your form uses displayIf, ajv won't work for you, as it simply doesn't understand what the displayIf is. So in order to validate the JSON schema with displayIf you have to use FormBuilder's `toValidator` function. `toValidator` takes two arguments, the first being the JSON schema and the second being the schema from the FormBuilder definition. This may sound confusing so let's see how it works with an example.
+However, if your form uses displayIf, ajv won't work for you, as it simply doesn't understand what the displayIf is. So in order to validate the JSON schema with displayIf you have to use Forminer's `toValidator` function. `toValidator` takes two arguments, the first being the JSON schema and the second being the schema from the Forminer definition. This may sound confusing so let's see how it works with an example.
 
 We will once again use the same form as in the "Simple example" from the "Expressions, operators & conditions" section.
 
@@ -314,9 +314,9 @@ The resulting schema looks as follows:
       "type": "object",
       "properties": {}
     },
-    "enjoyedFormBuilder": {
+    "enjoyedForminer": {
       "type": "boolean",
-      "title": "enjoyedFormBuilder",
+      "title": "enjoyedForminer",
       "default": true
     },
     "improvements": {
@@ -331,7 +331,7 @@ The resulting schema looks as follows:
               {
                 "operator": "VALUE_OF",
                 "args": [],
-                "primitiveArg": "enjoyedFormBuilder"
+                "primitiveArg": "enjoyedForminer"
               },
               {
                 "operator": "BOOLEAN_LITERAL",
@@ -344,7 +344,7 @@ The resulting schema looks as follows:
       }
     }
   },
-  "required": ["enjoyedFormBuilder", "improvements"]
+  "required": ["enjoyedForminer", "improvements"]
 }
 ```
 
@@ -358,24 +358,24 @@ And that's it! Now you can programmatically validate your model:
 
 ```tsx
 // passes validation
-validator({ enjoyedFormBuilder: true });
+validator({ enjoyedForminer: true });
 
 // passes validation
-validator({ enjoyedFormBuilder: true, improvements: 'whatever' });
+validator({ enjoyedForminer: true, improvements: 'whatever' });
 
 // does not pass validation
-validator({ enjoyedFormBuilder: false });
+validator({ enjoyedForminer: false });
 
 // does not pass validation
-validator({ enjoyedFormBuilder: false, improvements: false });
+validator({ enjoyedForminer: false, improvements: false });
 
 // passes validation
-validator({ enjoyedFormBuilder: false, improvements: 'whatever' });
+validator({ enjoyedForminer: false, improvements: 'whatever' });
 ```
 
 As you can see, the model is properly validated in each case. Please have in mind that this works because we used our own custom validator, designed to handle the displayIf. Nevertheless, the schema is a perfectly valid JSON schema so if you are not using the displayIf feature, you are safe to use any other validator.
 
-However, if you're happy to use the FormBuilder's validator, then actually there is a shorthand for it. Take a look:
+However, if you're happy to use the Forminer's validator, then actually there is a shorthand for it. Take a look:
 
 ```tsx
 const { validator } = makeBridge(form.schema, form.views);

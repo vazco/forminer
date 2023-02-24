@@ -1,16 +1,16 @@
 ---
-description: Learn how Form Builder's schema work
+description: Learn how Forminer's schema work
 ---
 
 import demoVideo from '../assets/13139977.mov';
 
 # Form Definition
 
-As you may have noticed, the FormBuilder form definition consists of three parts: **layouts**, **schema**, and **views**. On the contrary, a uniforms schema is only a single object, called **bridge**. It may be surprising because FormBuilder is based on uniforms. Let's look into them one by one:
+As you may have noticed, the Forminer form definition consists of three parts: **layouts**, **schema**, and **views**. On the contrary, a uniforms schema is only a single object, called **bridge**. It may be surprising because Forminer is based on uniforms. Let's look into them one by one:
 
 - **Schema.** This part contains the data definition, which is a list of fields. Each field has a name, data type, default value, error messages, and validation rules (e.g., minimum string length, numeric range). It's a custom format, heavily inspired by the JSON Schema.
 
-  - To make it understandable for uniforms, it's being transformed into one, actually. Additionally, it's possible to subset it, creating a JSON Schema of a single page. Of course, all of this logic is aware of a FormBuilder-only feature: conditional rendering.
+  - To make it understandable for uniforms, it's being transformed into one, actually. Additionally, it's possible to subset it, creating a JSON Schema of a single page. Of course, all of this logic is aware of a Forminer-only feature: conditional rendering.
 
 - **Views.** This part defines the way a field is displayed. Most importantly, it defines which of the registered uniforms-compatible components will be used. Besides that, there are also field properties, like the label or placeholder. Lastly, there's the conditional rendering rule (if any).
 
@@ -20,20 +20,20 @@ As you may have noticed, the FormBuilder form definition consists of three parts
 
 - **A widget**, rendering a read-only component, e.g., some text or an image.
 
-- **A container**, rendering some wrapper (carousel, list, table, etc.) and its inner layout item(s). That's the power of FormBuilder – you can freely nest containers without extra logic. However, it makes the form definition recursive, making it not necessarily easy to store in a non-recursive fashion. We got you covered – there's a pair of helper functions that (de)linearize the form definition into a non-recursive structure.
+- **A container**, rendering some wrapper (carousel, list, table, etc.) and its inner layout item(s). That's the power of Forminer – you can freely nest containers without extra logic. However, it makes the form definition recursive, making it not necessarily easy to store in a non-recursive fashion. We got you covered – there's a pair of helper functions that (de)linearize the form definition into a non-recursive structure.
 
 ## Example form definition
 
 ```json
 {
   "schema": [
-    // Every field has an unique `fieldId` provided by the FormBuilder.
+    // Every field has an unique `fieldId` provided by the Forminer.
     { "fieldId": "1", "name": "name", "type": "string", "required": true },
     { "fieldId": "2", "name": "variantA", "type": "number", "required": true },
     { "fieldId": "3", "name": "variantB", "type": "number", "required": true }
   ],
   "views": [
-    // Every view has an unique `viewId` provided by the FormBuilder.
+    // Every view has an unique `viewId` provided by the Forminer.
     {
       "component": "TextField",
       "fieldId": "1",
@@ -61,7 +61,7 @@ As you may have noticed, the FormBuilder form definition consists of three parts
         "kind": "Container",
         "type": "List",
         "config": { "variant": "vertical" },
-        // Every layout node has an unique `layoutId` provided by the FormBuilder.
+        // Every layout node has an unique `layoutId` provided by the Forminer.
         "layoutId": "1",
         "children": [
           { "kind": "Field", "viewId": "1", "layoutId": "2" },
@@ -97,7 +97,7 @@ As you may have noticed, the FormBuilder form definition consists of three parts
 
 ## Advanced usage
 
-Now, there's a twist! The FormBuilder UI allows you to build any form you'd like, but the form definition allows you to do two more things:
+Now, there's a twist! The Forminer UI allows you to build any form you'd like, but the form definition allows you to do two more things:
 
 - **Every field can have multiple views.** The field's value is shared between the views, but you can use different components for each of them. A good example is an address input and a map – instead of building it within one component, you could have two independent ones.
 

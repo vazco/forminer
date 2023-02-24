@@ -3,22 +3,12 @@
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 
-const copyright = `
-<div style="display: flex; justify-content: center; align-items: center; gap: 10px">
-  Copyright © ${new Date().getFullYear()}
-  <a href="https://www.vazco.eu/" target="_blank" rel="noreferrer noopener">
-    <img src="img/vazco-logo.png" alt="Vazco.eu" width="114" height="51" />
-  </a>
-</div>
-All Rights Reserved
-`
-
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Form Builder',
-  tagline: 'Vazco Form Builder Docs',
-  url: 'https://vazco.github.io',
-  baseUrl: '/form-builder/',
+  title: 'Forminer',
+  tagline: 'Vazco Forminer Docs',
+  url: 'https://forminer.com',
+  baseUrl: '/',
   trailingSlash: false,
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -36,21 +26,22 @@ const config = {
     defaultLocale: 'en',
     locales: ['en'],
   },
-  plugins: [
-    'docusaurus-plugin-hotjar',
-  ],
+  plugins: ['docusaurus-plugin-hotjar'],
   presets: [
     [
       'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          routeBasePath: '/',
+          routeBasePath: '/docs',
           sidebarPath: require.resolve('./sidebars.js'),
         },
         blog: false,
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
+        },
+        googleTagManager: {
+          containerId: 'GTM-N48XTZS',
         },
       }),
     ],
@@ -66,15 +57,15 @@ const config = {
       },
       navbar: {
         logo: {
-          alt: 'Form Builder logo',
-          src: 'img/form-builder-logo.svg',
-          href: 'https://www.vazco.eu/form-builder',
+          alt: 'Forminer logo',
+          src: 'img/forminer.svg',
         },
         items: [
           {
-            href: 'https://www.vazco.eu/form-builder#pricing',
+            to: '/#pricing',
             html: 'Pricing',
             position: 'right',
+            className: 'pricing-nav-item',
           },
           {
             to: 'demo',
@@ -82,6 +73,7 @@ const config = {
             position: 'right',
           },
           {
+            to: 'docs',
             type: 'doc',
             docId: 'intro',
             label: 'Docs',
@@ -92,60 +84,14 @@ const config = {
             href: 'https://www.vazco.eu/',
             html: 'Custom solutions',
             position: 'right',
-
           },
           {
-            href: 'https://www.vazco.eu/form-builder#contact-form',
+            to: '/#pricing',
             html: 'Buy now',
             className: 'buy-now-nav-item',
             position: 'right',
           },
         ],
-      },
-      footer: {
-        style: 'dark',
-        links: [
-          // {
-          //   title: 'Docs',
-          //   items: [
-          //     {
-          //       label: 'Documentation',
-          //       to: '/docs/intro',
-          //     },
-          //   ],
-          // },
-          // {
-          //   title: 'Community',
-          //   items: [
-          //     {
-          //       label: 'Stack Overflow',
-          //       href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-          //     },
-          //     {
-          //       label: 'Discord',
-          //       href: 'https://discordapp.com/invite/docusaurus',
-          //     },
-          //     {
-          //       label: 'Twitter',
-          //       href: 'https://twitter.com/docusaurus',
-          //     },
-          //   ],
-          // },
-          // {
-          //   title: 'More',
-          //   items: [
-          //     {
-          //       label: 'Blog',
-          //       to: '/blog',
-          //     },
-          //     {
-          //       label: 'GitHub',
-          //       href: 'https://github.com/facebook/docusaurus',
-          //     },
-          //   ],
-          // },
-        ],
-        copyright,
       },
       prism: {
         theme: lightCodeTheme,
@@ -154,6 +100,7 @@ const config = {
         applicationId: '3212446',
       },
     }),
+  noIndex: true,
 };
 
 module.exports = config;

@@ -1,0 +1,31 @@
+{
+  "extends": "vazco",
+  "rules": {
+    "react/jsx-pascal-case": [2, { "allowAllCaps": true }],
+    "react/jsx-sort-props": [
+      2,
+      {
+        "noSortAlphabetically": true,
+        "reservedFirst": true,
+        "shorthandLast": true
+      }
+    ],
+    "react/sort-prop-types": [
+      2,
+      { "noSortAlphabetically": true, "requiredFirst": true }
+    ],
+    "react/no-unescaped-entities": [2],
+    "react/function-component-definition": [
+      1,
+      { "namedComponents": "arrow-function" }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "rules": {
+        "no-undef": "off"
+      }
+    }
+  ]
+}

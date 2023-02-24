@@ -143,15 +143,15 @@ If you're using `npm` at a version higher than `16.14.17` (not recommended) apar
 npm i --save-exact --legacy-peer-deps ajv@7.1.1 ajv-errors@2.0.0 ...
 ```
 
-## Add FormBuilder directory
+## Add Forminer directory
 
-Copy `FormBuilder` directory and paste it to the `[project-name]/src`
+Copy `Forminer` directory and paste it to the `[project-name]/src`
 
 ![](../assets/14942211.png)
 
-## Create FormBuilder's helpers
+## Create Forminer's helpers
 
-As your `FormBuilder` folder is already present in the `src` directory, now it's time to add `Containers` and `translations`.
+As your `Forminer` folder is already present in the `src` directory, now it's time to add `Containers` and `translations`.
 
 ### Add containers
 
@@ -167,19 +167,19 @@ Example code for `Containers.tsx` can be copied and pasted as below.
 import React, { CSSProperties, Fragment } from 'react';
 import classNames from 'classnames';
 
-import { Field as FieldType } from '../../FormBuilder//const/schemas/field';
-import { DragSeparator } from '../../FormBuilder/components/DragSeparator';
-import { render as renderLive } from '../../FormBuilder/components/Form';
-import { render as renderEdit } from '../../FormBuilder/components/FormEdit';
-import { LayoutPlaceholder } from '../../FormBuilder/components/LayoutPlaceholder';
-import { NS } from '../../FormBuilder/const/namespace';
-import { LayoutNode } from '../../FormBuilder/const/schemas/layout';
-import { View } from '../../FormBuilder/const/schemas/view';
-import { Translations } from '../../FormBuilder/const/types';
-import { ComponentDefinitions } from '../../FormBuilder';
-import { ContainerDefinitions } from '../../FormBuilder/lib/containerDefinitions';
-import isLayoutNodeField from '../../FormBuilder/lib/isLayoutNodeField';
-import { WidgetDefinitions } from '../../FormBuilder/lib/widgetDefinitions';
+import { Field as FieldType } from '../../Forminer//const/schemas/field';
+import { DragSeparator } from '../../Forminer/components/DragSeparator';
+import { render as renderLive } from '../../Forminer/components/Form';
+import { render as renderEdit } from '../../Forminer/components/FormEdit';
+import { LayoutPlaceholder } from '../../Forminer/components/LayoutPlaceholder';
+import { NS } from '../../Forminer/const/namespace';
+import { LayoutNode } from '../../Forminer/const/schemas/layout';
+import { View } from '../../Forminer/const/schemas/view';
+import { Translations } from '../../Forminer/const/types';
+import { ComponentDefinitions } from '../../Forminer';
+import { ContainerDefinitions } from '../../Forminer/lib/containerDefinitions';
+import isLayoutNodeField from '../../Forminer/lib/isLayoutNodeField';
+import { WidgetDefinitions } from '../../Forminer/lib/widgetDefinitions';
 
 type ListProps = {
   children: LayoutNode[];
@@ -495,8 +495,8 @@ Example code for `translations.tsx` can be copied and pasted as below.
 ```tsx
 import React from 'react';
 
-import { NS } from '../FormBuilder/const/namespace';
-import { Translations } from '../FormBuilder/const/types';
+import { NS } from '../Forminer/const/namespace';
+import { Translations } from '../Forminer/const/types';
 
 const translations: Translations = {
   AddComponents: 'Add components',
@@ -668,7 +668,7 @@ export default translations;
 
 </details>
 
-## Integrate FormBuilder with the application
+## Integrate Forminer with the application
 
 ### Add [uniforms](https://uniforms.tools/) theme
 
@@ -689,11 +689,11 @@ npm i --save-exact @material-ui/core@4.11.3
 
 ### Create example component
 
-Create `FormBuilderExample.tsx` file in `src/components/FormBuilderExample`.
+Create `ForminerExample.tsx` file in `src/components/ForminerExample`.
 
 ![](../assets/14549017.png)
 
-Example code for `FormBuilderExample.tsx` can be copied and pasted as below.
+Example code for `ForminerExample.tsx` can be copied and pasted as below.
 
 <details><summary>See the code</summary>
 
@@ -705,13 +705,13 @@ import Paper from '@material-ui/core/Paper';
 import * as theme from 'uniforms-material';
 
 import {
-  FormBuilder,
+  Forminer,
   Provider,
   createDefaultComponents,
-  useFormBuilder,
+  useForminer,
   LayoutNodeKind,
   Form,
-} from '../../FormBuilder';
+} from '../../Forminer';
 import containers from '../Containers/Containers';
 import translations from '../../lib/translations';
 
@@ -747,8 +747,8 @@ const Wrap = ({ children }: WrapProps): ReactElement => (
 const widgets = {};
 const components = createDefaultComponents(theme);
 
-export const FormBuilderExample = (): ReactElement => {
-  const { dispatch, state } = useFormBuilder(defaultForm);
+export const ForminerExample = (): ReactElement => {
+  const { dispatch, state } = useForminer(defaultForm);
 
   useEffect(() => {
     // do whatever you want with new model
@@ -759,7 +759,7 @@ export const FormBuilderExample = (): ReactElement => {
     <>
       <Wrap>
         <Provider dispatch={dispatch} state={state}>
-          <FormBuilder
+          <Forminer
             components={components}
             containers={containers}
             translations={translations}
@@ -783,7 +783,7 @@ export const FormBuilderExample = (): ReactElement => {
   );
 };
 
-export default FormBuilderExample;
+export default ForminerExample;
 ```
 
 </details>
@@ -796,10 +796,10 @@ Go to `src/App.tsx` file and paste the code as follows.
 
 ```tsx
 import React, { ReactElement } from 'react';
-import FormBuilderExample from './components/FormBuilderExample/FormBuilderExample';
+import ForminerExample from './components/ForminerExample/ForminerExample';
 
 const App = (): ReactElement => {
-  return <FormBuilderExample />;
+  return <ForminerExample />;
 };
 
 export default App;
@@ -837,8 +837,8 @@ npm i sass
 <details><summary>See the code</summary>
 
 ```sass
-@import './FormBuilder/variables.scss';
-@import './FormBuilder/index.scss';
+@import './Forminer/variables.scss';
+@import './Forminer/index.scss';
 ```
 
 </details>
@@ -869,7 +869,7 @@ import './index.scss';
 
 ![](../assets/14778407.png)
 
-From now on you can generate the FormBuilder's code! Have fun!
+From now on you can generate the Forminer's code! Have fun!
 
 ## Troubleshooting
 
@@ -901,7 +901,7 @@ LOG from ./node_modules/sass-loader/dist/cjs.js sass-loader ./node_modules/css-l
 
 ```
 
-Go to `src/FormBuilder/components/ExpressionBuilder/Expression.tsx` file and change `Expression` function name to any other, for example, `Expression2`.
+Go to `src/Forminer/components/ExpressionBuilder/Expression.tsx` file and change `Expression` function name to any other, for example, `Expression2`.
 
 <details><summary>See the code</summary>
 
@@ -931,17 +931,17 @@ export const ExpressionField = connectField<ExpressionProps>(Expression2, {
 #### Export was not found errors
 
 ```shell
-ERROR in ./src/FormBuilder/components/uniforms/index.ts 3:0-67
+ERROR in ./src/Forminer/components/uniforms/index.ts 3:0-67
 export 'AutoFieldProps' (reexported as 'AutoFieldProps') was not found in './AutoField' (possible exports: default)
 
-ERROR in ./src/FormBuilder/components/uniforms/index.ts 4:0-70
+ERROR in ./src/Forminer/components/uniforms/index.ts 4:0-70
 export 'AutoFieldsProps' (reexported as 'AutoFieldsProps') was not found in './AutoFields' (possible exports: default)
 
-ERROR in ./src/FormBuilder/components/uniforms/index.ts 7:0-67
+ERROR in ./src/Forminer/components/uniforms/index.ts 7:0-67
 export 'BoolFieldProps' (reexported as 'BoolFieldProps') was not found in './BoolField' (possible exports: default)
 ```
 
-Go to `src/FormBuilder/components/uniforms/index.ts` file and change the file as follows:
+Go to `src/Forminer/components/uniforms/index.ts` file and change the file as follows:
 
 <details><summary>See the code</summary>
 

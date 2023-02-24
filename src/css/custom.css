@@ -4,6 +4,8 @@
  * work well for content-centric websites.
  */
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;500&family=Roboto:wght@300;500&display=swap');
+
 /* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: #1074ef;
@@ -55,7 +57,7 @@ table {
 
 /* Make demo iframe full height. */
 .demo-container {
-  display: flex;
+  flex-direction: row !important;
 }
 
 .demo-container > iframe {
@@ -66,9 +68,10 @@ table {
 /* Make "Buy Now" link styled as button */
 .buy-now-nav-item {
   outline: none;
-  background: rgb(16, 116, 239);
+  background: rgb(16, 116, 239) !important;
   cursor: pointer;
   font-weight: 600;
+  height: 100%;
   min-width: 110px;
   padding: 6px;
   border: 2px solid rgb(16, 116, 239);
@@ -76,7 +79,8 @@ table {
   display: flex;
   justify-content: center;
   font-size: 1.05rem;
-  color: rgb(255, 255, 255);
+  color: rgb(255, 255, 255) !important;
+  align-items: center;
 }
 
 .buy-now-nav-item:hover {
@@ -87,6 +91,27 @@ table {
 .navbar-sidebar__items .buy-now-nav-item {
   width: 110px;
   margin-left: 12px;
+}
+
+/* Do not highlight pricing nav item */
+.pricing-nav-item {
+  color: #1c1e21;
+}
+
+.pricing-nav-item:hover {
+   color: #1074ef;
+}
+
+.navbar-sidebar__items .pricing-nav-item{
+  color: #606770
+}
+
+.pricing-nav-item.menu__link--active:hover, .navbar-sidebar__items .pricing-nav-item:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.pricing-nav-item.menu__link--active {
+  background-color: transparent;
 }
 
 /* Make "Docs" link icon not visible on desktop. */
