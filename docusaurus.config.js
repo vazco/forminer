@@ -100,6 +100,7 @@ const config = {
         applicationId: '3212446',
       },
     }),
+  noIndex: true,
 };
 
 module.exports = config;
