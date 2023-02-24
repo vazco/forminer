@@ -7,8 +7,8 @@ const lightCodeTheme = require('prism-react-renderer/themes/github');
 const config = {
   title: 'Forminer',
   tagline: 'Vazco Forminer Docs',
-  url: 'https://vazco.github.io',
-  baseUrl: '/form-builder/',
+  url: 'https://forminer.com',
+  baseUrl: '/',
   trailingSlash: false,
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
