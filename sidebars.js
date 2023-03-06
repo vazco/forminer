@@ -26,12 +26,14 @@ const sidebars = {
       items: [
         'supported-stack',
         'technical-requirements',
-        'integration',
+        'installation',
         'form-definition',
         'display-if',
         'custom-components',
         'handling-lists',
         'translations',
+        'integration',
+        'troubleshooting',
       ],
     },
     {
