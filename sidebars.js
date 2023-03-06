@@ -32,6 +32,7 @@ const sidebars = {
         'custom-components',
         'handling-lists',
         'translations',
+        'troubleshooting',
       ],
     },
     {
