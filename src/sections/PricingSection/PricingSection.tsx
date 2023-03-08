@@ -77,6 +77,7 @@ const tabsData = [
       {
         text: 'Buy now',
         to: 'https://sowl.co/7jLwM',
+        newTab: false,
       },
       { ...demoButtonData },
     ],
@@ -95,6 +96,7 @@ const tabsData = [
       {
         text: 'Buy now',
         to: 'https://sowl.co/eEjpk',
+        newTab: false,
       },
       { ...demoButtonData },
     ],
