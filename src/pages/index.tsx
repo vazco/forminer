@@ -39,10 +39,6 @@ export default function IndexPage() {
           />
           <WhatYouGetSection />
           <TestProductSection />
-          <CTASection
-            heading="Interested in using Forminer?"
-            buttonText="Book free consultation"
-          />
           <TrustedByOpenSourceSection />
           <PricingSection />
           <FAQSection />
