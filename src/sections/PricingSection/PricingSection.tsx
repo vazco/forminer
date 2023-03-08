@@ -131,7 +131,7 @@ export const PricingSection = () => {
           Pricing
         </UnifiedHeading>
         <Text>
-          Interested in using Forminer? Find the Textlan that suits you best.
+          Interested in using Forminer? Find the plan that suits you best.
         </Text>
         <TabPanelsContainer>
           {tabs.map((tab, index) => (
