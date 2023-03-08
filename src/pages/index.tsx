@@ -11,7 +11,6 @@ import {
   CTASection,
   WhatYouGetSection,
   TestProductSection,
-  ClutchSection,
   TrustedByOpenSourceSection,
   PricingSection,
   FAQSection,
@@ -40,7 +39,6 @@ export default function IndexPage() {
           />
           <WhatYouGetSection />
           <TestProductSection />
-          <ClutchSection />
           <CTASection
             heading="Interested in using Forminer?"
             buttonText="Book free consultation"
