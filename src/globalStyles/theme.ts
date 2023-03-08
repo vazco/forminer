@@ -30,7 +30,7 @@ export const MuiTheme = createMuiTheme({
 export const theme = {
   color: {
     primary: '#1074ef',
-    body: '#293d48',
+    body: '#000000',
     grey: '#fafafb',
     darkGrey: '#f4f5f6',
     white: '#fff',
