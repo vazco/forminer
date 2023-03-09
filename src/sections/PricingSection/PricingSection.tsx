@@ -77,6 +77,7 @@ const tabsData = [
       {
         text: 'Buy now',
         to: 'https://sowl.co/7jLwM',
+        newTab: false,
       },
       { ...demoButtonData },
     ],
@@ -95,6 +96,7 @@ const tabsData = [
       {
         text: 'Buy now',
         to: 'https://sowl.co/eEjpk',
+        newTab: false,
       },
       { ...demoButtonData },
     ],
@@ -131,7 +133,7 @@ export const PricingSection = () => {
           Pricing
         </UnifiedHeading>
         <Text>
-          Interested in using Forminer? Find the Textlan that suits you best.
+          Interested in using Forminer? Find the plan that suits you best.
         </Text>
         <TabPanelsContainer>
           {tabs.map((tab, index) => (
