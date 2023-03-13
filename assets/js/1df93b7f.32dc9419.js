@@ -119,7 +119,7 @@ strong {
   font-weight: 500;
 }
 }
-`,f=e=>{let{children:t}=e;return r.createElement(n.Z,{theme:h},r.createElement(u,null),r.createElement(l.ThemeProvider,{theme:k},r.createElement("main",null,t)))};var g=a(5742);const E=JSON.parse('{"TN":"Forminer | Build Forms in React the way you need | Vazco","WL":"Check how Forminer can solve your issues with forms in React. Enjoy your saved time by using conditional field validation, WYSIWYG form editor and more straight from the start and take your business to another level.","vu":"noindex"}'),y=()=>r.createElement(g.Z,null,r.createElement("title",null,E.TN),r.createElement("meta",{name:"description",content:E.WL}),r.createElement("meta",{property:"robots",content:E.vu}));var b=a(1749),w=a(6906);const v=l.default.div`
+`,f=e=>{let{children:t}=e;return r.createElement(n.Z,{theme:h},r.createElement(u,null),r.createElement(l.ThemeProvider,{theme:k},r.createElement("main",null,t)))};var g=a(5742);const E=JSON.parse('{"TN":"Forminer | Build Forms in React the way you need | Vazco","WL":"Check how Forminer can solve your issues with forms in React. Enjoy your saved time by using conditional field validation, WYSIWYG form editor and more straight from the start and take your business to another level.","vu":"index, follow"}'),y=()=>r.createElement(g.Z,null,r.createElement("title",null,E.TN),r.createElement("meta",{name:"description",content:E.WL}),r.createElement("meta",{property:"robots",content:E.vu}));var b=a(1749),w=a(6906);const v=l.default.div`
   max-width: 1360px;
   margin: 0 auto;
 
