@@ -61,44 +61,57 @@ const demoButtonData = {
   internal: true,
 };
 
-const tabs = ['One-time payment', 'Annual subscription', 'Custom solution'];
+const tabs = ['Monthly', 'Yearly', 'Lifelong', 'Enterprise'];
 const tabsData = [
   {
-    heading: '$4850',
-    subHeading: 'Within this price, you receive:',
-    listItems: [
-      'A multi-tenant lifetime license for a single project',
-      'Unlimited traffic',
-      'Unlimited users',
-      'Internal deployment',
-      'Debugging support and free updates',
-    ],
-    buttons: [
-      {
-        text: 'Buy now',
-        to: 'https://sowl.co/7jLwM',
-        newTab: false,
-      },
-      { ...demoButtonData },
-    ],
-  },
-  {
-    heading: '$1350 / year',
+    heading: '$149 / month',
     subHeading: 'Within this price, you receive:',
     listItems: [
       'A multi-tenant license for a single project',
-      'Unlimited traffic',
-      'Unlimited users',
+      'Unlimited traffic & users',
       'Internal deployment',
-      'Debugging support and free updates',
+      'Debugging support & free updates',
     ],
     buttons: [
       {
         text: 'Buy now',
-        to: 'https://sowl.co/eEjpk',
+        to: 'https://sowl.co/s/SPRv4',
         newTab: false,
       },
-      { ...demoButtonData },
+    ],
+  },
+  {
+    heading: '$1490 / year',
+    subHeading: 'Within this price, you receive:',
+    listItems: [
+      'A multi-tenant license for a single project',
+      'Unlimited traffic & users',
+      'Internal deployment',
+      'Debugging support & free updates',
+    ],
+    buttons: [
+      {
+        text: 'Buy now',
+        to: 'https://sowl.co/s/eEjpk',
+        newTab: false,
+      },
+    ],
+  },
+  {
+    heading: '$4900 / year',
+    subHeading: 'Within this price, you receive:',
+    listItems: [
+      'A multi-tenant lifetime license for a single project',
+      'Unlimited traffic & users',
+      'Internal deployment',
+      'Debugging support & free updates',
+    ],
+    buttons: [
+      {
+        text: 'Buy now',
+        to: 'https://sowl.co/s/7jLwM',
+        newTab: false,
+      },
     ],
   },
   {
@@ -112,11 +125,10 @@ const tabsData = [
     ],
     buttons: [
       {
-        text: 'Describe your need',
-        to: 'mailto:hello@forminer.com',
+        text: 'Contact us',
+        to: 'https://www.vazco.eu/contact-us',
         newTab: false,
       },
-      { ...demoButtonData },
     ],
     subtitle:
       'Contact us to estimate your project based on business requirements.',
