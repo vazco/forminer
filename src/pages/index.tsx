@@ -39,8 +39,8 @@ export default function IndexPage() {
           />
           <WhatYouGetSection />
           <TestProductSection />
-          <TrustedByOpenSourceSection />
           <PricingSection />
+          <TrustedByOpenSourceSection />
           <FAQSection />
           <Footer />
         </LayoutBase>
