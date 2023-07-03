@@ -5,7 +5,7 @@
 `,l=i.css`
   ${n}
   ${r}
-`},1210:(e,t,a)=>{a.r(t),a.d(t,{default:()=>Aa});var i=a(7676),n=a(7294),r=a(3457),l=a(7379),o=a(4968),s=a(8770),m=a(7704);const c=(0,a(605).Jq)({xs:"0",sm:"576px",md:"768px",lg:"1024px",xl:"1360px",xxl:"1920px"}),d=l.css`
+`},1210:(e,t,a)=>{a.r(t),a.d(t,{default:()=>va});var i=a(7676),n=a(7294),r=a(3457),l=a(7379),o=a(4968),s=a(8770),m=a(7704);const c=(0,a(605).Jq)({xs:"0",sm:"576px",md:"768px",lg:"1024px",xl:"1360px",xxl:"1920px"}),d=l.css`
   font-size: ${(0,s.hO)("40px")};
   line-height: ${(0,s.hO)("50px")};
 
@@ -255,14 +255,14 @@ strong {
 `,z=l.default.button`
   ${P}
   ${H}
-`,N=e=>{let{children:t,className:a,disabled:i=!1,onClick:r=C(),reversed:l=!1,size:o="md",type:s="button",variant:m="solid"}=e;return n.createElement(z,{className:a,disabled:i,onClick:r,reversed:l,size:o,type:s,variant:m},t)};var M;function J(){return J=Object.assign?Object.assign.bind():function(e){for(var t=1;t<arguments.length;t++){var a=arguments[t];for(var i in a)Object.prototype.hasOwnProperty.call(a,i)&&(e[i]=a[i])}return e},J.apply(this,arguments)}const Y=e=>{let{title:t,titleId:a,...i}=e;return n.createElement("svg",J({xmlns:"http://www.w3.org/2000/svg",width:39,height:39,viewBox:"0 0 39 39",role:"img","aria-labelledby":a},i),t?n.createElement("title",{id:a},t):null,M||(M=n.createElement("g",{fill:"none",transform:"translate(2 2)"},n.createElement("ellipse",{cx:17.723,cy:17.723,stroke:"#1074EF",strokeWidth:3,rx:17.723,ry:17.711}),n.createElement("path",{fill:"#1074EF",d:"m16.302 27.144-8.38-6.528 2.383-3.058 5.146 4.009 8.492-12.255 3.187 2.207z"}))))},Z=l.default.ul`
+`,N=e=>{let{children:t,className:a,disabled:i=!1,onClick:r=C(),reversed:l=!1,size:o="md",type:s="button",variant:m="solid"}=e;return n.createElement(z,{className:a,disabled:i,onClick:r,reversed:l,size:o,type:s,variant:m},t)};var M;function Y(){return Y=Object.assign?Object.assign.bind():function(e){for(var t=1;t<arguments.length;t++){var a=arguments[t];for(var i in a)Object.prototype.hasOwnProperty.call(a,i)&&(e[i]=a[i])}return e},Y.apply(this,arguments)}const J=e=>{let{title:t,titleId:a,...i}=e;return n.createElement("svg",Y({xmlns:"http://www.w3.org/2000/svg",width:39,height:39,viewBox:"0 0 39 39",role:"img","aria-labelledby":a},i),t?n.createElement("title",{id:a},t):null,M||(M=n.createElement("g",{fill:"none",transform:"translate(2 2)"},n.createElement("ellipse",{cx:17.723,cy:17.723,stroke:"#1074EF",strokeWidth:3,rx:17.723,ry:17.711}),n.createElement("path",{fill:"#1074EF",d:"m16.302 27.144-8.38-6.528 2.383-3.058 5.146 4.009 8.492-12.255 3.187 2.207z"}))))},Z=l.default.ul`
   list-style-type: none;
   padding: 0;
   margin-top: ${(0,s.hO)("24px")};
   &:last-child {
     margin: 0;
   }
-`,U=(0,l.default)(Y)`
+`,U=(0,l.default)(J)`
   content: '';
   position: absolute;
   left: 0;
@@ -456,12 +456,12 @@ strong {
   ${c.greaterThan("md")`
     min-height: 600px;
   `}
-`,Je=l.default.img`
+`,Ye=l.default.img`
   width: 100%;
   max-width: 709px;
   max-height: 600px;
   object-fit: scale-down;
-`,Ye=l.default.div`
+`,Je=l.default.div`
   display: flex;
   align-items: center;
   flex-direction: column-reverse;
@@ -495,7 +495,7 @@ strong {
   p:last-child {
     margin-bottom: ${e=>{let{isButton:t}=e;return t?"1.5rem":0}};
   }
-`,Ue={animation:e=>{let{data:t}=e;return n.createElement(je,null,n.createElement(Ve,null,n.createElement(Te.ZP,{offset:1200,once:!0},n.createElement(Re,{data:t}))))},video:e=>{let{data:t}=e;return n.createElement(ze,null,n.createElement(Ne,null,n.createElement(Te.ZP,{offset:1200,once:!0},n.createElement(n.Suspense,{fallback:n.createElement(Fe,null)},n.createElement(He,{videoURL:t})))))},image:e=>{let{data:t,alt:a}=e;return n.createElement(Me,null,n.createElement(Je,{src:t,alt:a}))}},Le=e=>{let{index:t,children:a,heading:i,mediaType:r,mediaData:l,alt:o="",indent:s=!1,isStrong:m=!0,reversedItems:c=!1}=e;const d=c?!!((t+1)%2):!!(t%2),p=Ue[r];return n.createElement(Ye,{isReversed:d},n.createElement(Ze,{indent:s,isReversed:d},n.createElement(xe,{isStrong:m},i),a),n.createElement(p,{data:l,alt:o}))},Qe=()=>n.createElement(he,{heading:"Key Functionalities",id:"key-functionalities",alternativeBackground:!0},n.createElement(Le,{index:0,heading:"Intuitive Drag & Drop",mediaType:"video",mediaData:"https://youtu.be/8UN8S5WyI8Y",isStrong:!1,indent:!0,reversedItems:!0},n.createElement(Se,null,n.createElement(Be,null,"Build your forms in React by using",n.createElement(Se,null,n.createElement(Be,null,n.createElement("strong",null,"drag & drop interface")),n.createElement(Be,null,"nested fields"),n.createElement(Be,null,"vertical and horizontal lists"))),n.createElement(Be,null,"Choose Forminer that supports all common field types from",n.createElement(K,{to:"https://uniforms.tools/"}," uniforms")),n.createElement(Be,null,"Use ",n.createElement("strong",null,"WYSIWYG")," code editor, if you prefer it over the no-code interface"),n.createElement(Be,null,"Set field properties",n.createElement(Se,null,n.createElement(Be,null,"like required/predefined values (dropdown list)"),n.createElement(Be,null,"min/max length"),n.createElement(Be,null,"placeholder"),n.createElement(Be,null,"default value"),n.createElement(Be,null,"others"))))),n.createElement(Le,{index:1,heading:"Conditional fields",mediaType:"video",mediaData:"https://youtu.be/Q5_JNpGoxCo",isStrong:!1,indent:!0,reversedItems:!0},n.createElement(Se,null,n.createElement(Be,null,"Use",n.createElement("strong",null," conditional field validation"),", and spend your saved time on other areas of your project."),n.createElement(Be,null,"Save your time by a conditional rendering of fields, a",n.createElement("strong",null," display-if "),"solution"),n.createElement(Be,null,"You'll have the support of any logic for any field"),n.createElement(Be,null,"Define logic by",n.createElement("strong",null," no-code interface")))),n.createElement(Le,{index:2,heading:"Custom fields",mediaType:"video",mediaData:"https://youtu.be/wSkpwRrBN_s",isStrong:!1,indent:!0,reversedItems:!0},n.createElement(Se,null,n.createElement(Be,null,"Add simply any new field you'd like"),n.createElement(Be,null,"Use fields already present in your application"),n.createElement(Be,null,"Use any fields from",n.createElement(K,{to:"https://uniforms.tools/"}," uniforms")))),n.createElement(Le,{index:3,heading:"Schema-based headless approach",mediaType:"video",mediaData:"https://youtu.be/xswDB9qbJKU",isStrong:!1,indent:!0,reversedItems:!0},n.createElement(Se,null,n.createElement(Be,null,"Prepare React form once and",n.createElement("strong",null," use it with various themes")),n.createElement(Be,null,"Take advantage of a",n.createElement("strong",null," clear schema definition "),"that operates on data and correct, copy and paste the form",n.createElement("strong",null," directly into your project")),n.createElement(Be,null,"You can",n.createElement("strong",null," create no-code and low-code solutions "),"quickly and well, thanks to schema management with easily display form resources"),n.createElement(Be,null,"Use",n.createElement(K,{to:"https://uniforms.tools/"}," uniforms "),"with full state engine, able to handle logic between fields and custom error messages"))),n.createElement(Le,{index:4,heading:"Quality of the generated code",mediaType:"video",mediaData:"https://youtu.be/3Av4N_qlN2U",isStrong:!1,indent:!0,reversedItems:!0},n.createElement(Se,null,n.createElement(Be,null,"Build React forms through a code, as well as through a",n.createElement("strong",null," WYSIWYG "),"interface, with a",n.createElement("strong",null," stable synchronization "),"between two methods"),n.createElement(Be,null,"Ensure",n.createElement("strong",null," good Developer Experience "),"by choosing a package based on",n.createElement(K,{to:"https://uniforms.tools/"}," uniforms"),", trusted by GitHub community"),n.createElement(Be,null,"Use",n.createElement("strong",null," clean-looking components "),"while keeping extensibility and separation of concerns")))),$e="0 0 38 38",We="19",Ke="19",Xe=16,qe=l.default.div`
+`,Ue={animation:e=>{let{data:t}=e;return n.createElement(je,null,n.createElement(Ve,null,n.createElement(Te.ZP,{offset:1200,once:!0},n.createElement(Re,{data:t}))))},video:e=>{let{data:t}=e;return n.createElement(ze,null,n.createElement(Ne,null,n.createElement(Te.ZP,{offset:1200,once:!0},n.createElement(n.Suspense,{fallback:n.createElement(Fe,null)},n.createElement(He,{videoURL:t})))))},image:e=>{let{data:t,alt:a}=e;return n.createElement(Me,null,n.createElement(Ye,{src:t,alt:a}))}},Le=e=>{let{index:t,children:a,heading:i,mediaType:r,mediaData:l,alt:o="",indent:s=!1,isStrong:m=!0,reversedItems:c=!1}=e;const d=c?!!((t+1)%2):!!(t%2),p=Ue[r];return n.createElement(Je,{isReversed:d},n.createElement(Ze,{indent:s,isReversed:d},n.createElement(xe,{isStrong:m},i),a),n.createElement(p,{data:l,alt:o}))},Qe=()=>n.createElement(he,{heading:"Key Functionalities",id:"key-functionalities",alternativeBackground:!0},n.createElement(Le,{index:0,heading:"Intuitive Drag & Drop",mediaType:"video",mediaData:"https://youtu.be/8UN8S5WyI8Y",isStrong:!1,indent:!0,reversedItems:!0},n.createElement(Se,null,n.createElement(Be,null,"Build your forms in React by using",n.createElement(Se,null,n.createElement(Be,null,n.createElement("strong",null,"drag & drop interface")),n.createElement(Be,null,"nested fields"),n.createElement(Be,null,"vertical and horizontal lists"))),n.createElement(Be,null,"Choose Forminer that supports all common field types from",n.createElement(K,{to:"https://uniforms.tools/"}," uniforms")),n.createElement(Be,null,"Use ",n.createElement("strong",null,"WYSIWYG")," code editor, if you prefer it over the no-code interface"),n.createElement(Be,null,"Set field properties",n.createElement(Se,null,n.createElement(Be,null,"like required/predefined values (dropdown list)"),n.createElement(Be,null,"min/max length"),n.createElement(Be,null,"placeholder"),n.createElement(Be,null,"default value"),n.createElement(Be,null,"others"))))),n.createElement(Le,{index:1,heading:"Conditional fields",mediaType:"video",mediaData:"https://youtu.be/Q5_JNpGoxCo",isStrong:!1,indent:!0,reversedItems:!0},n.createElement(Se,null,n.createElement(Be,null,"Use",n.createElement("strong",null," conditional field validation"),", and spend your saved time on other areas of your project."),n.createElement(Be,null,"Save your time by a conditional rendering of fields, a",n.createElement("strong",null," display-if "),"solution"),n.createElement(Be,null,"You'll have the support of any logic for any field"),n.createElement(Be,null,"Define logic by",n.createElement("strong",null," no-code interface")))),n.createElement(Le,{index:2,heading:"Custom fields",mediaType:"video",mediaData:"https://youtu.be/wSkpwRrBN_s",isStrong:!1,indent:!0,reversedItems:!0},n.createElement(Se,null,n.createElement(Be,null,"Add simply any new field you'd like"),n.createElement(Be,null,"Use fields already present in your application"),n.createElement(Be,null,"Use any fields from",n.createElement(K,{to:"https://uniforms.tools/"}," uniforms")))),n.createElement(Le,{index:3,heading:"Schema-based headless approach",mediaType:"video",mediaData:"https://youtu.be/xswDB9qbJKU",isStrong:!1,indent:!0,reversedItems:!0},n.createElement(Se,null,n.createElement(Be,null,"Prepare React form once and",n.createElement("strong",null," use it with various themes")),n.createElement(Be,null,"Take advantage of a",n.createElement("strong",null," clear schema definition "),"that operates on data and correct, copy and paste the form",n.createElement("strong",null," directly into your project")),n.createElement(Be,null,"You can",n.createElement("strong",null," create no-code and low-code solutions "),"quickly and well, thanks to schema management with easily display form resources"),n.createElement(Be,null,"Use",n.createElement(K,{to:"https://uniforms.tools/"}," uniforms "),"with full state engine, able to handle logic between fields and custom error messages"))),n.createElement(Le,{index:4,heading:"Quality of the generated code",mediaType:"video",mediaData:"https://youtu.be/3Av4N_qlN2U",isStrong:!1,indent:!0,reversedItems:!0},n.createElement(Se,null,n.createElement(Be,null,"Build React forms through a code, as well as through a",n.createElement("strong",null," WYSIWYG "),"interface, with a",n.createElement("strong",null," stable synchronization "),"between two methods"),n.createElement(Be,null,"Ensure",n.createElement("strong",null," good Developer Experience "),"by choosing a package based on",n.createElement(K,{to:"https://uniforms.tools/"}," uniforms"),", trusted by GitHub community"),n.createElement(Be,null,"Use",n.createElement("strong",null," clean-looking components "),"while keeping extensibility and separation of concerns")))),$e="0 0 38 38",We="19",Ke="19",Xe=16,qe=l.default.div`
   position: relative;
   min-width: 92px;
   height: auto;
@@ -711,7 +711,7 @@ strong {
   text-align: center;
 `,Mt=l.default.p`
   margin-top: 24px;
-`,Jt=e=>{let{heading:t,subHeading:a,listItems:i,buttons:r,subtitle:l}=e;return n.createElement(Ct,null,n.createElement(Pt,null,n.createElement(Ht,null,t),n.createElement(zt,null,n.createElement(Nt,null,a),n.createElement($,null,i.map((e=>n.createElement(Q,{key:e},e)))),l&&n.createElement(Mt,null,n.createElement("strong",null,l)))),n.createElement(Ft,null,r.map(((e,t)=>{let{text:a,...i}=e;return n.createElement(K,(0,ht.Z)({key:i.to},i),n.createElement(N,{variant:0===t?"solid":"outlined"},a))}))))},Yt=l.default.div`
+`,Yt=e=>{let{heading:t,subHeading:a,listItems:i,buttons:r,subtitle:l}=e;return n.createElement(Ct,null,n.createElement(Pt,null,n.createElement(Ht,null,t),n.createElement(zt,null,n.createElement(Nt,null,a),n.createElement($,null,i.map((e=>n.createElement(Q,{key:e},e)))),l&&n.createElement(Mt,null,n.createElement("strong",null,l)))),n.createElement(Ft,null,r.map(((e,t)=>{let{text:a,...i}=e;return n.createElement(K,(0,ht.Z)({key:i.to},i),n.createElement(N,{variant:0===t?"solid":"outlined"},a))}))))},Jt=l.default.div`
   max-width: 700px;
   display: flex;
   flex-direction: column;
@@ -750,12 +750,12 @@ strong {
     `}}
 `,Lt=l.default.p`
   margin: 0;
-`,Qt={text:"Get the free demo",to:"/demo",internal:!0},$t=["One-time payment","Annual subscription","Custom solution"],Wt=[{heading:"$4850",subHeading:"Within this price, you receive:",listItems:["A multi-tenant lifetime license for a single project","Unlimited traffic","Unlimited users","Internal deployment","Debugging support and free updates"],buttons:[{text:"Buy now",to:"https://sowl.co/7jLwM",newTab:!1},{...Qt}]},{heading:"$1350 / year",subHeading:"Within this price, you receive:",listItems:["A multi-tenant license for a single project","Unlimited traffic","Unlimited users","Internal deployment","Debugging support and free updates"],buttons:[{text:"Buy now",to:"https://sowl.co/eEjpk",newTab:!1},{...Qt}]},{heading:"Price estimation based on your needs",subHeading:"We also provide:",listItems:["Multi-project licenses","Custom extensions","Training sessions","Integrations"],buttons:[{text:"Describe your need",to:"mailto:hello@forminer.com",newTab:!1},{...Qt}],subtitle:"Contact us to estimate your project based on business requirements."}],Kt=()=>{const[e,t]=(0,n.useState)(0);return n.createElement(he,{id:"pricing"},n.createElement(Yt,null,n.createElement(le,{level:2,size:"lg",marginBottom:24},"Pricing"),n.createElement(Lt,null,"Interested in using Forminer? Find the plan that suits you best."),n.createElement(Zt,null,$t.map(((a,i)=>n.createElement(Ut,{key:i,current:i===e,onClick:()=>t(i)},a)))),n.createElement(Jt,Wt[e])))};var Xt,qt,_t=a(7078),ea=a(4965),ta=a(2425);function aa(){return aa=Object.assign?Object.assign.bind():function(e){for(var t=1;t<arguments.length;t++){var a=arguments[t];for(var i in a)Object.prototype.hasOwnProperty.call(a,i)&&(e[i]=a[i])}return e},aa.apply(this,arguments)}const ia=e=>{let{title:t,titleId:a,...i}=e;return n.createElement("svg",aa({xmlns:"http://www.w3.org/2000/svg",viewBox:"0 0 24 24",width:18,height:18,role:"img","aria-labelledby":a},i),t?n.createElement("title",{id:a},t):null,Xt||(Xt=n.createElement("path",{d:"M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"})),qt||(qt=n.createElement("path",{d:"M0 0h24v24H0z",fill:"none"})))},na=l.default.div`
+`,Qt=["Monthly","Yearly","Lifelong","Enterprise"],$t=[{heading:"$149 / month",subHeading:"Within this price, you receive:",listItems:["A multi-tenant license for a single project","Unlimited traffic & users","Internal deployment","Debugging support & free updates"],buttons:[{text:"Buy now",to:"https://sowl.co/s/SPRv4",newTab:!1}]},{heading:"$1490 / year",subHeading:"Within this price, you receive:",listItems:["A multi-tenant license for a single project","Unlimited traffic & users","Internal deployment","Debugging support & free updates"],buttons:[{text:"Buy now",to:"https://sowl.co/s/eEjpk",newTab:!1}]},{heading:"$4900",subHeading:"Within this price, you receive:",listItems:["A multi-tenant lifetime license for a single project","Unlimited traffic & users","Internal deployment","Debugging support & free updates"],buttons:[{text:"Buy now",to:"https://sowl.co/s/7jLwM",newTab:!1}]},{heading:"Price estimation based on your needs",subHeading:"We also provide:",listItems:["Multi-project licenses","Custom extensions","Training sessions","Integrations"],buttons:[{text:"Contact us",to:"https://www.vazco.eu/contact-us",newTab:!1}],subtitle:"Contact us to estimate your project based on business requirements."}],Wt=()=>{const[e,t]=(0,n.useState)(0);return n.createElement(he,{id:"pricing"},n.createElement(Jt,null,n.createElement(le,{level:2,size:"lg",marginBottom:24},"Pricing"),n.createElement(Lt,null,"Interested in using Forminer? Find the plan that suits you best."),n.createElement(Zt,null,Qt.map(((a,i)=>n.createElement(Ut,{key:i,current:i===e,onClick:()=>t(i)},a)))),n.createElement(Yt,$t[e])))};var Kt,Xt,qt=a(7078),_t=a(4965),ea=a(2425);function ta(){return ta=Object.assign?Object.assign.bind():function(e){for(var t=1;t<arguments.length;t++){var a=arguments[t];for(var i in a)Object.prototype.hasOwnProperty.call(a,i)&&(e[i]=a[i])}return e},ta.apply(this,arguments)}const aa=e=>{let{title:t,titleId:a,...i}=e;return n.createElement("svg",ta({xmlns:"http://www.w3.org/2000/svg",viewBox:"0 0 24 24",width:18,height:18,role:"img","aria-labelledby":a},i),t?n.createElement("title",{id:a},t):null,Kt||(Kt=n.createElement("path",{d:"M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"})),Xt||(Xt=n.createElement("path",{d:"M0 0h24v24H0z",fill:"none"})))},ia=l.default.div`
   max-width: 500px;
-`,ra=l.default.p`
+`,na=l.default.p`
   margin: 0;
   font-weight: 500;
-`,la=(0,l.default)((e=>{let{lastChild:t,...a}=e;return n.createElement(_t.Z,a)}))`
+`,ra=(0,l.default)((e=>{let{lastChild:t,...a}=e;return n.createElement(qt.Z,a)}))`
   && {
     box-shadow: none;
     background-color: transparent;
@@ -771,7 +771,7 @@ strong {
       display: none;
     }
   }
-`,oa=(0,l.default)(ta.Z)`
+`,la=(0,l.default)(ea.Z)`
   && {
     padding: 60px 0;
 
@@ -783,17 +783,17 @@ strong {
       justify-content: space-between;
     }
   }
-`,sa=(0,l.default)(ia)`
+`,oa=(0,l.default)(aa)`
   width: 24px;
   height: 24px;
   margin-top: 2px;
   transition: transform 0.2s ease-out;
   ${e=>{let{isExpanded:t}=e;return t&&"transform: rotate(-225deg);"}}
-`,ma=[{question:"What is Forminer?",answer:"It\u2019s a WYSIWYG React form builder. It allows you to build single- and multi-page forms, add custom validation, and configure conditional rendering. To put it in another way, It\u2019s a ready-to-use set of React components for your project to have a fully functional Forminer in minutes."},{question:"How is Forminer different from Formium, TypeForm, or JotForm?",answer:[{content:"Forminer is a set of React components, and TypeForm/JotForm are SaaS products. The primary difference between these is that the Forminer becomes a part of your project and you integrate it directly in the code, while the others are external applications.",list:["That implies you decide what you do with the data gathered with Forminer, while the others store it on their systems and give you options to access it."]},{content:"Formium is also a set of React components for rendering the built forms, but to build them, you have to interact with their SaaS backend. That\u2019s where you create the forms and store the gathered data (by default). Forminer is distributed in its entirety as source code, including both the rendering of built forms and the Forminer itself.",list:["The difference is that the Forminer definition (how the form looks like) is part of your app, can be adjusted, extended, and even generated by your app.","Also, because there\u2019s no backend Forminer contacts, it can also work offline (if your app supports that)."]}]},{question:"Is Forminer Open Source?",answer:"No, Forminer is not open source. However, its core \u2013 uniforms \u2013 is a set of 100% open source (MIT licensed) packages, hosted on GitHub."},{question:"Is Forminer compatible with technologies other than React?",answer:"Forminer requires React to work, but you can embed it in your application even if it\u2019s not there yet (e.g., it\u2019s an Angular- or Vue-based app)."}],ca=(0,l.default)(ea.Z)`
+`,sa=[{question:"What is Forminer?",answer:"It\u2019s a WYSIWYG React form builder. It allows you to build single- and multi-page forms, add custom validation, and configure conditional rendering. To put it in another way, It\u2019s a ready-to-use set of React components for your project to have a fully functional Forminer in minutes."},{question:"How is Forminer different from Formium, TypeForm, or JotForm?",answer:[{content:"Forminer is a set of React components, and TypeForm/JotForm are SaaS products. The primary difference between these is that the Forminer becomes a part of your project and you integrate it directly in the code, while the others are external applications.",list:["That implies you decide what you do with the data gathered with Forminer, while the others store it on their systems and give you options to access it."]},{content:"Formium is also a set of React components for rendering the built forms, but to build them, you have to interact with their SaaS backend. That\u2019s where you create the forms and store the gathered data (by default). Forminer is distributed in its entirety as source code, including both the rendering of built forms and the Forminer itself.",list:["The difference is that the Forminer definition (how the form looks like) is part of your app, can be adjusted, extended, and even generated by your app.","Also, because there\u2019s no backend Forminer contacts, it can also work offline (if your app supports that)."]}]},{question:"Is Forminer Open Source?",answer:"No, Forminer is not open source. However, its core \u2013 uniforms \u2013 is a set of 100% open source (MIT licensed) packages, hosted on GitHub."},{question:"Is Forminer compatible with technologies other than React?",answer:"Forminer requires React to work, but you can embed it in your application even if it\u2019s not there yet (e.g., it\u2019s an Angular- or Vue-based app)."}],ma=(0,l.default)(_t.Z)`
   && {
     padding: 0;
   }
-`,da=()=>{const[e,t]=(0,n.useState)("");return n.createElement(he,{alternativeBackground:!0},n.createElement(A,null,n.createElement(b.Z,{spacing:3,container:!0},n.createElement(b.Z,{xs:12,lg:6,item:!0},n.createElement(na,null,n.createElement(le,{level:2,size:"lg",isStrong:!0},"Frequently asked questions"))),n.createElement(b.Z,{xs:12,lg:6,item:!0},ma.map(((a,i)=>{let{question:r,answer:l}=a;const o=e===`panel${i}`;return n.createElement(la,{key:`panel${i}`,expanded:o,onChange:(s=`panel${i}`,(e,a)=>{t(a?s:"")}),lastChild:ma.length===i+1,square:!0},n.createElement(oa,{"aria-controls":`panel${i}d-content`},n.createElement(ra,null,r),n.createElement(sa,{isExpanded:o})),n.createElement(ca,null,Array.isArray(l)?n.createElement(Se,null,l.map((e=>{let{content:t,list:a}=e;return n.createElement(Be,{key:t},t,Array.isArray(a)&&n.createElement(Se,null,a.map((e=>n.createElement(Be,{key:e},e)))))}))):n.createElement("p",null,l)));var s}))))))};var pa=a(86);const xa=l.default.footer`
+`,ca=()=>{const[e,t]=(0,n.useState)("");return n.createElement(he,{alternativeBackground:!0},n.createElement(A,null,n.createElement(b.Z,{spacing:3,container:!0},n.createElement(b.Z,{xs:12,lg:6,item:!0},n.createElement(ia,null,n.createElement(le,{level:2,size:"lg",isStrong:!0},"Frequently asked questions"))),n.createElement(b.Z,{xs:12,lg:6,item:!0},sa.map(((a,i)=>{let{question:r,answer:l}=a;const o=e===`panel${i}`;return n.createElement(ra,{key:`panel${i}`,expanded:o,onChange:(s=`panel${i}`,(e,a)=>{t(a?s:"")}),lastChild:sa.length===i+1,square:!0},n.createElement(la,{"aria-controls":`panel${i}d-content`},n.createElement(na,null,r),n.createElement(oa,{isExpanded:o})),n.createElement(ma,null,Array.isArray(l)?n.createElement(Se,null,l.map((e=>{let{content:t,list:a}=e;return n.createElement(Be,{key:t},t,Array.isArray(a)&&n.createElement(Se,null,a.map((e=>n.createElement(Be,{key:e},e)))))}))):n.createElement("p",null,l)));var s}))))))};var da=a(86);const pa=l.default.footer`
   background-color: #303846;
   overflow: hidden;
   padding: 20px 0;
@@ -801,10 +801,10 @@ strong {
     padding: 30px 0;
   `}
   color: ${e=>{let{theme:t}=e;return t.color.white}};
-`,ha=l.default.div`
+`,xa=l.default.div`
   margin-top: 42px;
   padding-bottom: 56px;
-`,ua=l.default.div`
+`,ha=l.default.div`
   a {
     font-size: inherit;
   }
@@ -812,20 +812,20 @@ strong {
     color: inherit;
     font-weight: inherit;
   }
-`,ka=l.default.div`
+`,ua=l.default.div`
   padding: 12px;
-`,fa=l.default.div`
+`,ka=l.default.div`
   ${c.greaterThan("sm")`
   margin-left: 60px;
       
       `}
-`,ga=l.default.p`
+`,fa=l.default.p`
   font-weight: 500;
   font-size: ${(0,s.hO)("16px")};
   line-height: ${(0,s.hO)("26px")};
   text-transform: uppercase;
   margin-bottom: 16px;
-`,Ea=l.default.div`
+`,ga=l.default.div`
   margin-bottom: 6px;
   margin-left: 16px;
   
@@ -840,13 +840,13 @@ strong {
       color: ${e=>e.theme.color.primary};
       text-decoration: none;
     }
-`,ya=l.default.div`
+`,Ea=l.default.div`
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
-`,ba=l.default.div`
+`,ya=l.default.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-`,wa=[{title:"Docs",items:[{name:"Introduction",link:"/docs"},{name:"Supported technologies",link:"/docs/supported-stack"},{name:"Integration",link:"/docs/integration"}]}],va=()=>n.createElement(xa,null,n.createElement(A,null,n.createElement(ha,null,n.createElement(pa.Z,{display:"flex",flexWrap:"wrap"},n.createElement(ka,null,n.createElement(ua,null,n.createElement("p",null,"Vazco P.S.A.",n.createElement("br",null),"Wroc\u0142aw, 50-043",n.createElement("br",null),"ul. Podwale 7/1 Poland"),n.createElement("p",null,"e."," ",n.createElement(K,{to:"mailto:hello@forminer.com",newTab:!1},"hello@forminer.com"),n.createElement("br",null),"m. +48 609 257 363"))),n.createElement(fa,null,wa.map((e=>{let{title:t,items:a}=e;return n.createElement(ka,{key:t},n.createElement(ga,null,t),a.map((e=>{let{name:t,link:a}=e;return n.createElement(Ea,{key:t},n.createElement(K,{to:a,internal:!0},t))})))})))),n.createElement(ba,null,n.createElement(ya,null,`Copyright \xa9 ${(new Date).getFullYear()}`,n.createElement("a",{href:"https://www.vazco.eu/",target:"_blank",rel:"noreferrer noopener"},n.createElement("img",{src:"img/vazco-logo-2023.svg",alt:"Vazco.eu",width:"114",height:"51"}))),"All Rights Reserved"))));function Aa(){return n.createElement(n.Fragment,null,n.createElement(y,null),n.createElement(i.Z,{title:"Forminer | Build Forms in React the way you need | Vazco"},n.createElement(f,null,n.createElement(te,null),n.createElement(ve,null),n.createElement(Qe,null),n.createElement(st,null),n.createElement(pt,{heading:"How can these solutions help your project?",buttonText:"Ask our CTO"}),n.createElement(Tt,null),n.createElement(Rt,null),n.createElement(Kt,null),n.createElement(Vt,null),n.createElement(da,null),n.createElement(va,null))))}}}]);
+`,ba=[{title:"Docs",items:[{name:"Introduction",link:"/docs"},{name:"Supported technologies",link:"/docs/supported-stack"},{name:"Integration",link:"/docs/integration"}]}],wa=()=>n.createElement(pa,null,n.createElement(A,null,n.createElement(xa,null,n.createElement(da.Z,{display:"flex",flexWrap:"wrap"},n.createElement(ua,null,n.createElement(ha,null,n.createElement("p",null,"Vazco P.S.A.",n.createElement("br",null),"Wroc\u0142aw, 50-043",n.createElement("br",null),"ul. Podwale 7/1 Poland"),n.createElement("p",null,"e."," ",n.createElement(K,{to:"mailto:hello@forminer.com",newTab:!1},"hello@forminer.com"),n.createElement("br",null),"m. +48 609 257 363"))),n.createElement(ka,null,ba.map((e=>{let{title:t,items:a}=e;return n.createElement(ua,{key:t},n.createElement(fa,null,t),a.map((e=>{let{name:t,link:a}=e;return n.createElement(ga,{key:t},n.createElement(K,{to:a,internal:!0},t))})))})))),n.createElement(ya,null,n.createElement(Ea,null,`Copyright \xa9 ${(new Date).getFullYear()}`,n.createElement("a",{href:"https://www.vazco.eu/",target:"_blank",rel:"noreferrer noopener"},n.createElement("img",{src:"img/vazco-logo-2023.svg",alt:"Vazco.eu",width:"114",height:"51"}))),"All Rights Reserved"))));function va(){return n.createElement(n.Fragment,null,n.createElement(y,null),n.createElement(i.Z,{title:"Forminer | Build Forms in React the way you need | Vazco"},n.createElement(f,null,n.createElement(te,null),n.createElement(ve,null),n.createElement(Qe,null),n.createElement(st,null),n.createElement(pt,{heading:"How can these solutions help your project?",buttonText:"Ask our CTO"}),n.createElement(Tt,null),n.createElement(Rt,null),n.createElement(Wt,null),n.createElement(Vt,null),n.createElement(ca,null),n.createElement(wa,null))))}}}]);
