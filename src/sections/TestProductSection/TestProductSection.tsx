@@ -33,10 +33,7 @@ export const TestProductSection = () => {
           * If you want to use Forminer for a non-production environment (no
           users on the platform), you can use it to your heart's content.
         </p>
-        <Link
-          to="https://transactions.sendowl.com/products/78972481/998CD884/view"
-          newTab={false}
-        >
+        <Link to="https://sowl.co/s/bjKCyA" newTab={false}>
           <Button>Get started</Button>
         </Link>
       </TextAndMediaItem>
