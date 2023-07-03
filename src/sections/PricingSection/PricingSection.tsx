@@ -55,12 +55,6 @@ const Text = styled.p`
   margin: 0;
 `;
 
-const demoButtonData = {
-  text: 'Get the free demo',
-  to: '/demo',
-  internal: true,
-};
-
 const tabs = ['Monthly', 'Yearly', 'Lifelong', 'Enterprise'];
 const tabsData = [
   {
@@ -98,7 +92,7 @@ const tabsData = [
     ],
   },
   {
-    heading: '$4900 / year',
+    heading: '$4900',
     subHeading: 'Within this price, you receive:',
     listItems: [
       'A multi-tenant lifetime license for a single project',
