@@ -3,9 +3,9 @@ import React from 'react';
 import animationData from './animation.json';
 import { Button } from '../../components/Button';
 import { Link } from '../../components/Link';
+import { List, ListItem } from '../../components/List';
 import { SectionLayout } from '../../components/SectionLayout';
 import { TextAndMediaItem } from '../../components/TextAndMediaItem';
-import { List, ListItem } from '../../components/List';
 
 export const TestProductSection = () => {
   const animationDataJson = JSON.stringify(animationData);
@@ -30,8 +30,8 @@ export const TestProductSection = () => {
           <ListItem>the quality of our code.</ListItem>
         </List>
         <p>
-          * If you want to use Forminer for a non-production environment (no
-          users on the platform), you can use it to your heart's content.
+          *If you want to use Forminer for a non-production environment (no
+          users on the platform), you can use it to your heart&apos;s content.
         </p>
         <Link to="https://sowl.co/s/bjKCyA" newTab={false}>
           <Button>Get started</Button>
