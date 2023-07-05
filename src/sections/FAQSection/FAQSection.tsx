@@ -20,7 +20,7 @@ const Topic = styled.p`
   font-weight: 500;
 `;
 
-// eslint-disable-next-line no-unused-vars
+// eslint-disable-next-line no-unused-vars -- false positive error
 const StyledPanel = styled(({ lastChild, ...other }) => (
   <ExpansionPanel {...other} />
 ))`
@@ -70,8 +70,7 @@ const items = [
       'It’s a WYSIWYG React form builder. It allows you to build single- and multi-page forms, add custom validation, and configure conditional rendering. To put it in another way, It’s a ready-to-use set of React components for your project to have a fully functional Forminer in minutes.',
   },
   {
-    question:
-      'How is Forminer different from Formium, TypeForm, or JotForm?',
+    question: 'How is Forminer different from Formium, TypeForm, or JotForm?',
     answer: [
       {
         content:

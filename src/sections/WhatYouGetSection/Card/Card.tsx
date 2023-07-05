@@ -1,6 +1,6 @@
 import Grid from '@material-ui/core/Grid';
 import { rem } from 'polished';
-// eslint-disable-next-line no-unused-vars
+// eslint-disable-next-line no-unused-vars -- false positive error
 import React, { ReactNode, ComponentType, SVGProps } from 'react';
 import styled, { css } from 'styled-components';
 

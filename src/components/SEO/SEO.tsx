@@ -1,5 +1,5 @@
-import React from 'react';
 import Head from '@docusaurus/Head';
+import React from 'react';
 
 import seoData from './seo-data.json';
 
