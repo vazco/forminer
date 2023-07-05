@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkforminer=self.webpackChunkforminer||[]).push([[660],{9516:(e,r,t)=>{t.r(r),t.d(r,{default:()=>o});var m=t(7676),n=t(7294);const o=()=>n.createElement(m.Z,{title:"Forminer demo",wrapperClassName:"demo-container"},n.createElement("iframe",{title:"Forminer demo",src:"https://demo.forminer.com"}))}}]);
