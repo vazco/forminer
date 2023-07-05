@@ -1,5 +1,5 @@
 import { rem } from 'polished';
-// eslint-disable-next-line no-unused-vars
+// eslint-disable-next-line no-unused-vars -- false positive error
 import React, { MouseEvent } from 'react';
 import styled from 'styled-components';
 

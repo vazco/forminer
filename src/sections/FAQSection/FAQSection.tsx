@@ -20,7 +20,7 @@ const Topic = styled.p`
   font-weight: 500;
 `;
 
-// eslint-disable-next-line no-unused-vars
+// eslint-disable-next-line no-unused-vars -- false positive error
 const StyledPanel = styled(({ lastChild, ...other }) => (
   <ExpansionPanel {...other} />
 ))`
