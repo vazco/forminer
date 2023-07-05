@@ -80,18 +80,22 @@ const items = [
   {
     url: 'https://semantic-ui.com/',
     src: semanticIcon,
+    alt: 'semanticUI icon',
   },
   {
     url: 'https://ant.design/',
     src: antDesignIcon,
+    alt: 'antDesign icon',
   },
   {
     url: 'https://mui.com/core/',
     src: materialIcon,
+    alt: 'MUI icon',
   },
   {
     url: 'https://getbootstrap.com/',
     src: bootstrapIcon,
+    alt: 'bootstrap icon',
   },
 ];
 
@@ -115,10 +119,10 @@ export const TechnologyListSection = () => {
   return (
     <SectionLayout heading={heading} id={id}>
       <ListContainer numberOfItems={numberOfItems}>
-        {items.map(({ url, src }) => {
+        {items.map(({ url, src, alt }) => {
           return (
             <Item key={url} target="_blank" rel="noopener noreferrer">
-              <StyledImage src={src} />
+              <StyledImage loading="lazy" src={src} alt={alt} />
             </Item>
           );
         })}
