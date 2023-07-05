@@ -19,12 +19,6 @@ import {
 } from '../sections';
 
 const IndexPage = () => {
-  // const context = useDocusaurusContext();
-  // const {
-  //     customFields: { keywords },
-  //     tagline,
-  // } = context.siteConfig;
-
   return (
     <>
       <SEO />
