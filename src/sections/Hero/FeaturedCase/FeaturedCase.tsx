@@ -2,11 +2,11 @@ import Grid from '@material-ui/core/Grid';
 import React, { ReactNode } from 'react';
 import styled, { css } from 'styled-components';
 
-import { BOX_COMMON_STYLES } from '../../../globalStyles/sharedStyles/box';
 import { Container } from '../../../components/Container';
 import media from '../../../globalStyles/media';
+import { BOX_COMMON_STYLES } from '../../../globalStyles/sharedStyles/box';
 // @ts-expect-error Image import
-import image from '../../../images/Forminer.png';
+import image from '../../../images/Forminer.webp';
 
 const Section = styled.section`
   padding: ${({ isFramed }) => (isFramed ? '16px' : '16px 16px 80px 16px')};
@@ -80,8 +80,8 @@ const StyledGridContainer = styled(Grid)`
 `;
 
 const StyledImage = styled.img`
-  width: 100%;
-  max-width: 709px;
+  max-width: 100%;
+  height: auto;
 `;
 
 type FeaturedCaseProps = {

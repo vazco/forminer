@@ -59,6 +59,8 @@ const config = {
         logo: {
           alt: 'Forminer logo',
           src: 'img/forminer.svg',
+          width: '130',
+          height: '32',
         },
         items: [
           {

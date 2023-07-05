@@ -1,3 +1,4 @@
+import Head from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import React from 'react';
 
@@ -17,7 +18,7 @@ import {
   Footer,
 } from '../sections';
 
-export default function IndexPage() {
+const IndexPage = () => {
   // const context = useDocusaurusContext();
   // const {
   //     customFields: { keywords },
@@ -27,6 +28,14 @@ export default function IndexPage() {
   return (
     <>
       <SEO />
+      <Head>
+        <link
+          rel="preload"
+          href={require('../images/Forminer.webp')}
+          as="image"
+          type="image/webp"
+        />
+      </Head>
       <Layout title="Forminer | Build Forms in React the way you need | Vazco">
         <LayoutBase>
           <Hero />
@@ -47,4 +56,6 @@ export default function IndexPage() {
       </Layout>
     </>
   );
-}
+};
+
+export default IndexPage;
