@@ -115,11 +115,7 @@ export const TechnologyListSection = () => {
       <ListContainer numberOfItems={numberOfItems}>
         {items.map(({ url, src }) => {
           return (
-            <Item
-              key={url}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <Item key={url} target="_blank" rel="noopener noreferrer">
               <StyledImage src={src} />
             </Item>
           );

@@ -2,9 +2,9 @@ import Grid from '@material-ui/core/Grid';
 import React, { ReactNode } from 'react';
 import styled, { css } from 'styled-components';
 
-import { BOX_COMMON_STYLES } from '../../../globalStyles/sharedStyles/box';
 import { Container } from '../../../components/Container';
 import media from '../../../globalStyles/media';
+import { BOX_COMMON_STYLES } from '../../../globalStyles/sharedStyles/box';
 // @ts-expect-error Image import
 import image from '../../../images/Forminer.png';
 

@@ -1,6 +1,6 @@
 import noop from 'lodash/noop';
 import { rem, lighten } from 'polished';
-// eslint-disable-next-line no-unused-vars
+// eslint-disable-next-line no-unused-vars -- false positive error
 import React, { ReactNode, MouseEvent } from 'react';
 import styled, { css } from 'styled-components';
 

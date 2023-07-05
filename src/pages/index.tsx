@@ -17,7 +17,7 @@ import {
   Footer,
 } from '../sections';
 
-export default function IndexPage() {
+const IndexPage = () => {
   // const context = useDocusaurusContext();
   // const {
   //     customFields: { keywords },
@@ -47,4 +47,6 @@ export default function IndexPage() {
       </Layout>
     </>
   );
-}
+};
+
+export default IndexPage;

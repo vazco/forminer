@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-// eslint-disable-next-line no-unused-vars
+// eslint-disable-next-line no-unused-vars -- false positive error
 import { UnifiedHeading, UnifiedHeadingProps } from './UnifiedHeading';
 import media from '../../globalStyles/media';
 import LogoTriangle from '../../images/svg/vazco-logo-triangle.inline.svg';
