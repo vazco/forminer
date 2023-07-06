@@ -25,7 +25,7 @@ type MediaImageProps = {
 export const MediaImage = ({ data, alt }: MediaImageProps) => {
   return (
     <StyledMediaContainer>
-      <StyledImage src={data} alt={alt} />
+      <StyledImage loading="lazy" src={data} alt={alt} />
     </StyledMediaContainer>
   );
 };

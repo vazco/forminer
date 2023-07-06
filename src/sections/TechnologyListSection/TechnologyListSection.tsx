@@ -4,13 +4,13 @@ import styled, { css } from 'styled-components';
 import { SectionLayout } from '../../components/SectionLayout';
 import media from '../../globalStyles/media';
 // @ts-expect-error png import
-import antDesignIcon from '../../images/technologies/ant-design.png';
+import antDesignIcon from '../../images/technologies/ant-design.webp';
 // @ts-expect-error png import
-import bootstrapIcon from '../../images/technologies/bt.png';
+import bootstrapIcon from '../../images/technologies/bt.webp';
 // @ts-expect-error png import
-import materialIcon from '../../images/technologies/material-ui.png';
+import materialIcon from '../../images/technologies/material-ui.webp';
 // @ts-expect-error png import
-import semanticIcon from '../../images/technologies/semanticUI.png';
+import semanticIcon from '../../images/technologies/semanticUI.webp';
 
 const ListContainer = styled.div`
   display: grid;
@@ -68,6 +68,8 @@ const Item = styled.a`
 `;
 
 const StyledImage = styled.img`
+  width: 200;
+  height: 50;
   max-width: 100%;
   max-height: 100%;
   object-fit: scale-down;
@@ -78,18 +80,22 @@ const items = [
   {
     url: 'https://semantic-ui.com/',
     src: semanticIcon,
+    alt: 'semanticUI icon',
   },
   {
     url: 'https://ant.design/',
     src: antDesignIcon,
+    alt: 'antDesign icon',
   },
   {
     url: 'https://mui.com/core/',
     src: materialIcon,
+    alt: 'MUI icon',
   },
   {
     url: 'https://getbootstrap.com/',
     src: bootstrapIcon,
+    alt: 'bootstrap icon',
   },
 ];
 
@@ -113,10 +119,10 @@ export const TechnologyListSection = () => {
   return (
     <SectionLayout heading={heading} id={id}>
       <ListContainer numberOfItems={numberOfItems}>
-        {items.map(({ url, src }) => {
+        {items.map(({ url, src, alt }) => {
           return (
             <Item key={url} target="_blank" rel="noopener noreferrer">
-              <StyledImage src={src} />
+              <StyledImage loading="lazy" src={src} alt={alt} />
             </Item>
           );
         })}

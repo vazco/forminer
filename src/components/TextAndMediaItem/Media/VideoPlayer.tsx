@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactPlayer from 'react-player';
+import ReactPlayer from 'react-player/youtube';
 import styled from 'styled-components';
 
 import { BOX_COMMON_STYLES } from '../../../globalStyles/sharedStyles/box';

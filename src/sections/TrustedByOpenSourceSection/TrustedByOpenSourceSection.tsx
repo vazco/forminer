@@ -6,7 +6,7 @@ import { List, ListItem } from '../../components/List';
 import { SectionLayout } from '../../components/SectionLayout';
 import { TextAndMediaItem } from '../../components/TextAndMediaItem';
 // @ts-expect-error Image import
-import uniformsImage from '../../images/uniforms.png';
+import uniformsImage from '../../images/uniforms.webp';
 
 export const TrustedByOpenSourceSection = () => {
   return (

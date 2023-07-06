@@ -1,3 +1,4 @@
+import Head from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import React from 'react';
 
@@ -18,15 +19,17 @@ import {
 } from '../sections';
 
 const IndexPage = () => {
-  // const context = useDocusaurusContext();
-  // const {
-  //     customFields: { keywords },
-  //     tagline,
-  // } = context.siteConfig;
-
   return (
     <>
       <SEO />
+      <Head>
+        <link
+          rel="preload"
+          href={require('../images/Forminer.webp')}
+          as="image"
+          type="image/webp"
+        />
+      </Head>
       <Layout title="Forminer | Build Forms in React the way you need | Vazco">
         <LayoutBase>
           <Hero />
