@@ -4,7 +4,10 @@ import React from 'react';
 const Demo = () => {
   return (
     <Layout title="Forminer demo" wrapperClassName="demo-container">
-      <iframe title="Forminer demo" src="https://demo.forminer.com" />
+      <iframe
+        title="Forminer demo"
+        src="https://vazco.github.io/forminer-project-demo/"
+      />
     </Layout>
   );
 };
