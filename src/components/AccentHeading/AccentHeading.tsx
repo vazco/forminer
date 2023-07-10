@@ -4,7 +4,6 @@ import styled from 'styled-components';
 // eslint-disable-next-line no-unused-vars -- false positive error
 import { UnifiedHeading, UnifiedHeadingProps } from './UnifiedHeading';
 import media from '../../globalStyles/media';
-import LogoTriangle from '../../images/svg/vazco-logo-triangle.inline.svg';
 
 const Container = styled.div`
   display: flex;
@@ -13,12 +12,6 @@ const Container = styled.div`
   ${media.greaterThan('md')`
     margin-bottom: 35px;
   `}
-`;
-
-const StyledTringle = styled(LogoTriangle)`
-  display: inline-block;
-  margin-top: 4px;
-  margin-right: 5px;
 `;
 
 const StyledUnifiedHeading = styled(UnifiedHeading)`
@@ -34,7 +27,6 @@ export const AccentHeading = ({
 }: UnifiedHeadingProps) => {
   return (
     <Container>
-      <StyledTringle />
       <StyledUnifiedHeading level={level} size={size} isStrong={isStrong}>
         {children}
       </StyledUnifiedHeading>
