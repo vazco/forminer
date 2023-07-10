@@ -8,8 +8,6 @@ import { Link } from '../../components/Link';
 import media from '../../globalStyles/media';
 
 const HighlightPanel = styled.div`
-  background-color: ${({ theme }) => theme.color.primary};
-
   h3 {
     color: ${({ theme }) => theme.color.white};
     margin: 0;
@@ -31,6 +29,7 @@ const ContentWrapper = styled.div`
   ${media.greaterThan('xl')`
     padding: 75px 0;
   `}
+  background-color: ${({ theme }) => theme.color.primary};
 `;
 
 const StyledHeading = styled.h3`
