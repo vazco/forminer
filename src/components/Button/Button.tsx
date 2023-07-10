@@ -30,7 +30,7 @@ const commonStyles = css`
   min-width: 180px;
   padding: 16px;
   border: 2px solid ${({ theme }) => theme.color.primary};
-  border-radius: 4px;
+  border-radius: 32px;
   transition: all 0.2s ease-out;
   &:hover {
     text-decoration: none;
