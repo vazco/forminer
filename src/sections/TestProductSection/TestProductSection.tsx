@@ -3,7 +3,6 @@ import React from 'react';
 import animationData from './animation.json';
 import { Button } from '../../components/Button';
 import { Link } from '../../components/Link';
-import { List, ListItem } from '../../components/List';
 import { SectionLayout } from '../../components/SectionLayout';
 import { TextAndMediaItem } from '../../components/TextAndMediaItem';
 
@@ -14,27 +13,23 @@ export const TestProductSection = () => {
     <SectionLayout alternativeBackground>
       <TextAndMediaItem
         index={0}
-        heading="Get the trial version"
+        heading="Trial Version"
         mediaType="animation"
         mediaData={animationDataJson}
       >
         <p>
-          You deserve a form solution that meets all your needs. To ensure that
-          you are satisfied with Forminer, you can try the trial version without
-          making any commitments.
+          You deserve to try out a form solution before making an investment.
           <br />
-          During the trial, you can assess the following:
-        </p>
-        <List>
-          <ListItem>how easy is it to integrate Forminer</ListItem>
-          <ListItem>the quality of our code.</ListItem>
-        </List>
-        <p>
-          *If you want to use Forminer for a non-production environment (no
-          users on the platform), you can use it to your heart&apos;s content.
+          To ensure that you are satisfied with Forminer, you can
+          <strong> try the trial version for free </strong> and use it in PoC
+          (Proof of Concept) to see how it fits your requirements with
+          <strong> no strings attached</strong>.
+          <br />
+          Once ready to use it in your operations, you can purchase Forminer and
+          <strong> enjoy it on production</strong>.
         </p>
         <Link to="https://sowl.co/s/bjKCyA" newTab={false}>
-          <Button>Get started</Button>
+          <Button>Get the trial</Button>
         </Link>
       </TextAndMediaItem>
     </SectionLayout>
