@@ -132,3 +132,11 @@ table {
     margin-left: 4px;
   }
 }
+
+.navbar {
+  justify-content: center;
+}
+
+.navbar__inner {
+  max-width: var(--ifm-container-width-xl);
+}

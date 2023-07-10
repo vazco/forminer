@@ -13,12 +13,6 @@ import { Link } from '../../components/Link';
 import media from '../../globalStyles/media';
 import { HEADING_MD_STYLES } from '../../globalStyles/sharedStyles/headings';
 
-const Offset = styled.div`
-  ${media.greaterThan('xl')`
-    margin-left: ${rem('66px')};
-  `}
-`;
-
 const ButtonsWrapperOffset = styled.div`
   display: inline-flex;
   flex-wrap: wrap;
@@ -70,40 +64,37 @@ const scrollToPricing = (event: MouseEvent<HTMLButtonElement>) => {
 export const Hero = () => {
   return (
     <FeaturedCase>
-      <Offset>
-        <h1>Forminer</h1>
-        <StyledLargeText>
-          <strong>Save up to 1500 hours</strong> while building form-heavy React
-          apps with our easy to integrate package
-        </StyledLargeText>
-        <CustomBulletList>
-          <CustomBulletListItem>
-            <span>
-              <strong>Powerful solution</strong> - custom fields, full state
-              machine, conditional fields, schema-first approach, and many
-              more...
-            </span>
-          </CustomBulletListItem>
-          <CustomBulletListItem>
-            <span>
-              <strong>Traffic-independent payment</strong> - pick a one-time
-              payment or subscription, not based on the number of users
-            </span>
-          </CustomBulletListItem>
-          <CustomBulletListItem>
-            <span>
-              <strong>Good support</strong> - basing on our popular OpenSource
-              package, uniforms, guarantees no vendor locking
-            </span>
-          </CustomBulletListItem>
-        </CustomBulletList>
-        <ButtonsWrapperOffset>
-          <Button onClick={scrollToPricing}>Check pricing</Button>
-          <Link to="/docs" internal>
-            <Button variant="outlined">See technical documentation</Button>
-          </Link>
-        </ButtonsWrapperOffset>
-      </Offset>
+      <h1>Forminer</h1>
+      <StyledLargeText>
+        <strong>Save up to 1500 hours</strong> while building form-heavy React
+        apps with our easy to integrate package
+      </StyledLargeText>
+      <CustomBulletList>
+        <CustomBulletListItem>
+          <span>
+            <strong>Powerful solution</strong> - custom fields, full state
+            machine, conditional fields, schema-first approach, and many more...
+          </span>
+        </CustomBulletListItem>
+        <CustomBulletListItem>
+          <span>
+            <strong>Traffic-independent payment</strong> - pick a one-time
+            payment or subscription, not based on the number of users
+          </span>
+        </CustomBulletListItem>
+        <CustomBulletListItem>
+          <span>
+            <strong>Good support</strong> - basing on our popular OpenSource
+            package, uniforms, guarantees no vendor locking
+          </span>
+        </CustomBulletListItem>
+      </CustomBulletList>
+      <ButtonsWrapperOffset>
+        <Button onClick={scrollToPricing}>Check pricing</Button>
+        <Link to="/docs" internal>
+          <Button variant="outlined">See technical documentation</Button>
+        </Link>
+      </ButtonsWrapperOffset>
     </FeaturedCase>
   );
 };
