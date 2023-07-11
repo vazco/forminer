@@ -84,7 +84,7 @@ type FeaturedCaseProps = {
   children: ReactNode;
 };
 
-const bgColor = '#303846';
+const bgColor = '#0d5dbf';
 const direction = 'row-reverse';
 
 export const FeaturedCase = ({ children }: FeaturedCaseProps) => {

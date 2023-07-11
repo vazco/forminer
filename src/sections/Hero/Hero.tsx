@@ -16,8 +16,9 @@ import { SupportedDesignLibraries } from '../SupportedDesignLibraries';
 
 const ButtonsWrapperOffset = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
   margin-top: ${rem('45px')};
   gap: ${rem('10px')} ${rem('15px')};
@@ -32,6 +33,7 @@ const ButtonsWrapperOffset = styled.div`
 
   ${media.lessThan('md')`
     margin-top: ${rem('30px')};
+    flex-direction: column;
   `}
 `;
 

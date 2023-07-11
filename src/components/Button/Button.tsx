@@ -15,11 +15,12 @@ const resetDefault = css`
 
 const variantSolid = css`
   ${({ theme }) => css`
-    background-color: ${theme.color.primary};
-    color: ${theme.color.white};
+    background-color: ${theme.color.white};
+    color: ${theme.color.primary};
     &:hover:not(:disabled) {
-      background-color: ${lighten(0.1, `${theme.color.primary}`)};
-      border-color: ${lighten(0.1, `${theme.color.primary}`)};
+      background-color: inherit;
+      border-color: ${theme.color.white};
+      color: ${theme.color.white};
     }
   `}
 `;
