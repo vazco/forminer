@@ -1,3 +1,4 @@
+import { useMediaQuery, useTheme } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
 import React, { ReactNode } from 'react';
 import styled, { css } from 'styled-components';
@@ -12,22 +13,21 @@ const Section = styled.section`
   padding: ${({ isFramed }) => (isFramed ? '16px' : '16px 16px 80px 16px')};
   display: flex;
   align-items: center;
-
+  ${media.lessThan('sm')`
+    padding-top: 0;
+  `};
   ${media.greaterThan('md')`
     ${({ isFramed }) =>
       !isFramed &&
       css`
-        padding-top: 32px;
         padding-bottom: 32px;
       `}
-  `}
-
-  ${({ bgColor, isFramed }) =>
+  `} ${({ bgColor, isFramed }) =>
     bgColor &&
     !isFramed &&
     css`
       background-color: ${bgColor};
-    `}
+    `};
 `;
 
 const StyledContainer = styled(Container)`
@@ -53,11 +53,9 @@ const StyledGridItem = styled(Grid)`
 
 const ContentWrapper = styled.div`
   padding-top: 20px;
+
   ${media.greaterThan('md')`
     padding: ${({ reversed }) => (reversed ? '0 24px 0 0' : '0 0 0 24px')};
-  `}
-  ${media.lessThan('md')`
-    max-width: 400px;
   `}
 `;
 
@@ -88,6 +86,9 @@ const bgColor = '#303846';
 const direction = 'row-reverse';
 
 export const FeaturedCase = ({ children }: FeaturedCaseProps) => {
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.down('md'));
+
   return (
     <Section bgColor={bgColor} isFramed={false}>
       <StyledContainer bgColor={bgColor} isFramed={false}>
@@ -96,15 +97,22 @@ export const FeaturedCase = ({ children }: FeaturedCaseProps) => {
           alignItems="center"
           container
         >
-          <StyledGridItem xs={12} md={6} item>
+          {matches && (
+            <Grid xs={12} sm={12} md={12} lg={6} item>
+              <ContentWrapper reversed>{children}</ContentWrapper>
+            </Grid>
+          )}
+          <StyledGridItem xs={12} sm={12} md={12} lg={6} item>
             <StyledImage
               src={image}
               alt="Forminer - Build form in React without any problems"
             />
           </StyledGridItem>
-          <Grid xs={12} md={6} item>
-            <ContentWrapper reversed>{children}</ContentWrapper>
-          </Grid>
+          {!matches && (
+            <Grid xs={12} sm={12} md={6} item>
+              <ContentWrapper reversed>{children}</ContentWrapper>
+            </Grid>
+          )}
         </StyledGridContainer>
       </StyledContainer>
     </Section>

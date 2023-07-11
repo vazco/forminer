@@ -2,6 +2,7 @@ import { rem } from 'polished';
 import React, { ReactNode } from 'react';
 import styled from 'styled-components';
 
+import media from '../../globalStyles/media';
 import TickBlue from '../../images/svg/tick-blue.svg';
 import TickWhite from '../../images/svg/tick-white.svg';
 
@@ -38,9 +39,14 @@ const ListItem = styled.li`
   align-items: center;
   color: ${(props: CustomBulletListItemProps) =>
     props.theme === 'white' ? 'white' : 'inherit'};
-  &:not(:last-child) {
-    margin-bottom: ${rem('24px')};
-  }
+
+  ${media.lessThan('sm')`
+    margin-bottom: ${rem('12px')};
+  `}
+  ${media.lessThan('xl')`
+    margin-bottom: ${rem('18px')};
+  `}
+  margin-bottom: ${rem('24px')};
 
   span {
     display: inline-block;
