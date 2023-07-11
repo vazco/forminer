@@ -24,7 +24,7 @@ const IndexPage = () => {
       <Head>
         <link
           rel="preload"
-          href={require('../images/Forminer.webp')}
+          href={require('../images/forminer.webp')}
           as="image"
           type="image/webp"
         />

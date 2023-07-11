@@ -86,6 +86,11 @@ const commonStyles = css`
         font-size: ${rem('14px')};
         line-height: ${rem('24px')};
       `;
+    } else if (size === 'lg') {
+      return css`
+        font-size: ${rem('18px')};
+        line-height: ${rem('28px')};
+      `;
     }
     return css``;
   }}

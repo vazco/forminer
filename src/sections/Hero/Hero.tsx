@@ -1,3 +1,4 @@
+import { useMediaQuery, useTheme } from '@material-ui/core';
 import { rem } from 'polished';
 // eslint-disable-next-line no-unused-vars -- false positive error
 import React, { MouseEvent } from 'react';
@@ -57,7 +58,10 @@ const StyledLargeText = styled.p`
 
 const SupportedLibrariesTitle = styled.h4`
   color: white;
-  ${media.between('xs', 'md')`
+  ${media.between('xs', 'sm')`
+  margin-top: ${rem('40px')};
+`}
+  ${media.between('sm', 'md')`
     margin-top: ${rem('30px')};
   `}
   ${media.greaterThan('md')`
@@ -80,6 +84,9 @@ const scrollToPricing = (event: MouseEvent<HTMLButtonElement>) => {
 };
 
 export const Hero = () => {
+  const theme = useTheme();
+  const changeOrder = useMediaQuery(theme.breakpoints.down('xs'));
+
   return (
     <FeaturedCase>
       <h1 style={{ color: 'white' }}>Forminer</h1>
@@ -107,18 +114,32 @@ export const Hero = () => {
           </span>
         </CustomBulletListItem>
       </CustomBulletList>
-      <SupportedLibrariesTitle>
-        Supported design libraries
-      </SupportedLibrariesTitle>
-      <SupportedDesignLibraries />
+      {!changeOrder && (
+        <>
+          <SupportedLibrariesTitle>
+            Supported design libraries
+          </SupportedLibrariesTitle>
+          <SupportedDesignLibraries />
+        </>
+      )}
       <ButtonsWrapperOffset>
-        <Button onClick={scrollToPricing}>Check pricing</Button>
+        <Button onClick={scrollToPricing} size="lg">
+          Check pricing
+        </Button>
         <Link to="/docs" internal>
-          <Button variant="outlined" reversed>
+          <Button variant="outlined" size="lg" reversed>
             See technical documentation
           </Button>
         </Link>
       </ButtonsWrapperOffset>
+      {changeOrder && (
+        <>
+          <SupportedLibrariesTitle>
+            Supported design libraries
+          </SupportedLibrariesTitle>
+          <SupportedDesignLibraries />
+        </>
+      )}
     </FeaturedCase>
   );
 };

@@ -7,7 +7,7 @@ import { Container } from '../../../components/Container';
 import media from '../../../globalStyles/media';
 import { BOX_COMMON_STYLES } from '../../../globalStyles/sharedStyles/box';
 // @ts-expect-error Image import
-import image from '../../../images/Forminer.webp';
+import image from '../../../images/new.webp';
 
 const Section = styled.section`
   padding: ${({ isFramed }) => (isFramed ? '16px' : '16px 16px 80px 16px')};
@@ -48,6 +48,7 @@ const StyledGridItem = styled(Grid)`
   && {
     justify-content: center;
     align-items: center;
+    margin-top: 80px;
   }
 `;
 
@@ -66,6 +67,7 @@ const StyledGridContainer = styled(Grid)`
     ${media.greaterThan('md')`
     min-width: 700px;
     padding-top: 16px;
+    
   `}
     ${media.greaterThan('lg')`
     min-width: 1000px;
@@ -87,29 +89,29 @@ const direction = 'row-reverse';
 
 export const FeaturedCase = ({ children }: FeaturedCaseProps) => {
   const theme = useTheme();
-  const matches = useMediaQuery(theme.breakpoints.down('md'));
+  const showImage = useMediaQuery(theme.breakpoints.up('md'));
+  const changeOrder = useMediaQuery(theme.breakpoints.up('lg'));
 
   return (
     <Section bgColor={bgColor} isFramed={false}>
       <StyledContainer bgColor={bgColor} isFramed={false}>
-        <StyledGridContainer
-          direction={direction}
-          alignItems="center"
-          container
-        >
-          {matches && (
+        <StyledGridContainer direction={direction} alignItems="start" container>
+          {!changeOrder && (
             <Grid xs={12} sm={12} md={12} lg={6} item>
               <ContentWrapper reversed>{children}</ContentWrapper>
             </Grid>
           )}
-          <StyledGridItem xs={12} sm={12} md={12} lg={6} item>
-            <StyledImage
-              src={image}
-              alt="Forminer - Build form in React without any problems"
-            />
-          </StyledGridItem>
-          {!matches && (
-            <Grid xs={12} sm={12} md={6} item>
+          {showImage && (
+            <StyledGridItem xs={12} sm={12} md={12} lg={6} item>
+              <StyledImage
+                src={image}
+                alt="Forminer - Build form in React without any problems"
+              />
+            </StyledGridItem>
+          )}
+
+          {changeOrder && (
+            <Grid xs={12} sm={12} md={12} lg={6} item>
               <ContentWrapper reversed>{children}</ContentWrapper>
             </Grid>
           )}
