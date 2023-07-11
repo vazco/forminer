@@ -1,5 +1,5 @@
 export * from './Hero';
-export * from './TechnologyListSection';
+export * from './SupportedDesignLibraries';
 export * from './KeyFunctionalitiesSection';
 export * from './StepsSection';
 export * from './CTASection';

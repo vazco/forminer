@@ -83,7 +83,9 @@ export const PriceTab = ({
           <SubHeading>{subHeading}</SubHeading>
           <CustomBulletList>
             {listItems.map(item => (
-              <CustomBulletListItem key={item}>{item}</CustomBulletListItem>
+              <CustomBulletListItem key={item} theme="blue">
+                {item}
+              </CustomBulletListItem>
             ))}
           </CustomBulletList>
           {subtitle && (

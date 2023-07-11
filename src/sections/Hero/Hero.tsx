@@ -12,6 +12,7 @@ import {
 import { Link } from '../../components/Link';
 import media from '../../globalStyles/media';
 import { HEADING_MD_STYLES } from '../../globalStyles/sharedStyles/headings';
+import { SupportedDesignLibraries } from '../SupportedDesignLibraries';
 
 const ButtonsWrapperOffset = styled.div`
   display: inline-flex;
@@ -38,6 +39,7 @@ const StyledLargeText = styled.p`
   ${HEADING_MD_STYLES};
   font-weight: 300;
   max-width: 660px;
+  color: white;
 
   &:last-child {
     margin-bottom: 0;
@@ -64,35 +66,41 @@ const scrollToPricing = (event: MouseEvent<HTMLButtonElement>) => {
 export const Hero = () => {
   return (
     <FeaturedCase>
-      <h1>Forminer</h1>
+      <h1 style={{ color: 'white' }}>Forminer</h1>
       <StyledLargeText>
         <strong>Save up to 1500 hours</strong> while building form-heavy React
         apps with our easy to integrate package
       </StyledLargeText>
       <CustomBulletList>
-        <CustomBulletListItem>
+        <CustomBulletListItem theme="white">
           <span>
             <strong>Powerful solution</strong> - custom fields, full state
             machine, conditional fields, schema-first approach, and many more...
           </span>
         </CustomBulletListItem>
-        <CustomBulletListItem>
+        <CustomBulletListItem theme="white">
           <span>
             <strong>Traffic-independent payment</strong> - pick a one-time
             payment or subscription, not based on the number of users
           </span>
         </CustomBulletListItem>
-        <CustomBulletListItem>
+        <CustomBulletListItem theme="white">
           <span>
             <strong>Good support</strong> - basing on our popular OpenSource
             package, uniforms, guarantees no vendor locking
           </span>
         </CustomBulletListItem>
       </CustomBulletList>
+      <h4 style={{ color: 'white', marginTop: 40 }}>
+        Supported design libraries
+      </h4>
+      <SupportedDesignLibraries />
       <ButtonsWrapperOffset>
         <Button onClick={scrollToPricing}>Check pricing</Button>
         <Link to="/docs" internal>
-          <Button variant="outlined">See technical documentation</Button>
+          <Button variant="outlined" reversed>
+            See technical documentation
+          </Button>
         </Link>
       </ButtonsWrapperOffset>
     </FeaturedCase>

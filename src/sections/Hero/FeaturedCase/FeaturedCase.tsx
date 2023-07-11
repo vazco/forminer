@@ -17,9 +17,8 @@ const Section = styled.section`
     ${({ isFramed }) =>
       !isFramed &&
       css`
-        height: calc(100vh - 60px);
-        min-height: 900px;
-        padding-bottom: 0;
+        padding-top: 32px;
+        padding-bottom: 32px;
       `}
   `}
 
@@ -57,9 +56,6 @@ const ContentWrapper = styled.div`
   ${media.greaterThan('md')`
     padding: ${({ reversed }) => (reversed ? '0 24px 0 0' : '0 0 0 24px')};
   `}
-  ${media.greaterThan('lg')`
-    padding: 0 58px;
-  `}
   ${media.lessThan('md')`
     max-width: 400px;
   `}
@@ -88,7 +84,7 @@ type FeaturedCaseProps = {
   children: ReactNode;
 };
 
-const bgColor = '#dafaff';
+const bgColor = '#303846';
 const direction = 'row-reverse';
 
 export const FeaturedCase = ({ children }: FeaturedCaseProps) => {

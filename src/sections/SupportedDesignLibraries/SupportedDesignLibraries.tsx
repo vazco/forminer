@@ -1,7 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-import { SectionLayout } from '../../components/SectionLayout';
 import media from '../../globalStyles/media';
 // @ts-expect-error png import
 import antDesignIcon from '../../images/technologies/ant-design.webp';
@@ -47,8 +46,9 @@ const ListContainer = styled.div`
 
 const Item = styled.a`
   display: flex;
-  justify-content: center;
-  padding: 5px;
+  justify-content: start;
+  padding-top: 10px;
+  padding-bottom: 10px;
 
   max-width: 200px;
   max-height: 50px;
@@ -70,7 +70,10 @@ const Item = styled.a`
 const StyledImage = styled.img`
   width: 200;
   height: 50;
-  max-width: 100%;
+  ${media.lessThan('xl')`
+  max-width: 65%;
+  `}
+  max-width: 40%;
   max-height: 100%;
   object-fit: scale-down;
   margin: 0 !important;
@@ -99,9 +102,6 @@ const items = [
   },
 ];
 
-const heading = 'Supported design libraries';
-const id = 'tech-list';
-
 const calculateNumberOfColumns = (numberOfItems, mediaBreakpoint = 'xs') => {
   if (
     (mediaBreakpoint === 'xs' && numberOfItems > 4) ||
@@ -115,18 +115,16 @@ const calculateNumberOfColumns = (numberOfItems, mediaBreakpoint = 'xs') => {
 
 const numberOfItems = items.length;
 
-export const TechnologyListSection = () => {
+export const SupportedDesignLibraries = () => {
   return (
-    <SectionLayout heading={heading} id={id}>
-      <ListContainer numberOfItems={numberOfItems}>
-        {items.map(({ url, src, alt }) => {
-          return (
-            <Item key={url} target="_blank" rel="noopener noreferrer">
-              <StyledImage loading="lazy" src={src} alt={alt} />
-            </Item>
-          );
-        })}
-      </ListContainer>
-    </SectionLayout>
+    <ListContainer numberOfItems={numberOfItems}>
+      {items.map(({ url, src, alt }) => {
+        return (
+          <Item key={url} href={url} target="_blank" rel="noopener noreferrer">
+            <StyledImage loading="lazy" src={src} alt={alt} />
+          </Item>
+        );
+      })}
+    </ListContainer>
   );
 };
