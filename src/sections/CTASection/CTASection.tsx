@@ -29,7 +29,7 @@ const ContentWrapper = styled.div`
   ${media.greaterThan('xl')`
     padding: 75px 0;
   `}
-  background-color: ${({ theme }) => theme.color.primary};
+  background-color: #0d5dbf;
 `;
 
 const StyledHeading = styled.h3`

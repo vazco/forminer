@@ -1,16 +1,14 @@
+import { useMediaQuery, useTheme } from '@material-ui/core';
 import Box from '@material-ui/core/Box';
-import { rem } from 'polished';
-import React from 'react';
+// eslint-disable-next-line no-unused-vars -- false positive error
+import React, { MouseEvent } from 'react';
 import styled from 'styled-components';
 
 import { Container } from '../../components/Container';
-import { Link } from '../../components/Link';
 import media from '../../globalStyles/media';
 
-// import Logo from '~components/atoms/navMenu/Logo';
-
 const StyledFooter = styled.footer`
-  background-color: #303846;
+  background-color: #0d5dbf;
   overflow: hidden;
   padding: 20px 0;
   ${media.greaterThan('md')`
@@ -24,143 +22,203 @@ const TopSection = styled.div`
   padding-bottom: 56px;
 `;
 
-const Address = styled.div`
-  a {
-    font-size: inherit;
-  }
-  .phone-number {
-    color: inherit;
-    font-weight: inherit;
-  }
-`;
-
 const StyledContainer = styled.div`
   padding: 12px;
-`;
-
-const LinkContainer = styled.div`
-  ${media.greaterThan('sm')`
-  margin-left: 60px;
-      
-      `}
-`;
-
-const FooterNavMenuTitle = styled.p`
-  font-weight: 500;
-  font-size: ${rem('16px')};
-  line-height: ${rem('26px')};
-  text-transform: uppercase;
-  margin-bottom: 16px;
-`;
-
-const FooterNavMenuItem = styled.div`
-  margin-bottom: 6px;
-  margin-left: 16px;
-  
-  & > a {
-    color: ${props => props.theme.color.white};
-    font-size: ${rem('16px')};
-    font-weight: 300;
-    line-height: ${rem('26px')};
-    transition: all 0.3s ease-out;
-
-    &:hover {
-      color: ${props => props.theme.color.primary};
-      text-decoration: none;
-    }
-`;
-
-const Copyright = styled.div`
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+`;
+
+const StyledContainerCentered = styled.div`
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 10px;
+  justify-content: center;
 `;
 
 const CopyrightContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: start;
+  justify-content: start;
+  margin-top: 40px;
 `;
 
-const menuData = [
+const ShowcaseCardContainer = styled.div`
+  padding: 1.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1em;
+  border: 2px dashed white;
+  max-width: 20%;
+`;
+
+const ShowcaseCardText = styled.p`
+  text-align: center;
+  padding-top: 1.5em;
+  font-size: 18px;
+`;
+
+const SectionListItem = styled.li`
+  margin-bottom: 10;
+`;
+
+const SectionListButton = styled.button`
+  background-color: inherit;
+  border: none;
+  font-size: 18px;
+  color: white;
+  padding: 0;
+`;
+
+const SectionListLink = styled.a`
+  background-color: inherit;
+  border: none;
+  font-size: 18px;
+  color: white;
+  text-decoration: none;
+`;
+
+const Mail = styled.a`
+  font-size: 18px;
+  color: white;
+  text-decoration: none;
+`;
+
+const siteMapData = [
   {
-    title: 'Docs',
-    items: [
-      {
-        name: 'Introduction',
-        link: '/docs',
-      },
-      {
-        name: 'Supported technologies',
-        link: '/docs/supported-stack',
-      },
-      {
-        name: 'Integration',
-        link: '/docs/integration',
-      },
-    ],
+    name: 'Demo',
+    link: 'demo',
+  },
+  {
+    name: 'Docs',
+    link: 'docs',
+  },
+  {
+    name: 'Custom solutions',
+    link: 'https://www.vazco.eu/',
+  },
+];
+
+const firstStepsData = [
+  {
+    name: 'Installation',
+    link: 'https://forminer.com/docs/installation',
+  },
+  {
+    name: 'Handling custom components',
+    link: 'https://forminer.com/docs/custom-components',
+  },
+  {
+    name: 'Integration',
+    link: 'https://forminer.com/docs/integration',
   },
 ];
 
 export const Footer = () => {
+  const theme = useTheme();
+  const columnView = useMediaQuery(theme.breakpoints.down('md'));
+
+  const scrollToSection = (
+    event: MouseEvent<HTMLButtonElement>,
+    sectionId: string,
+  ) => {
+    event.preventDefault();
+    const pricingSection = document.getElementById(sectionId);
+
+    if (pricingSection) {
+      pricingSection.scrollIntoView();
+    }
+  };
+
   return (
     <StyledFooter>
       <Container>
         <TopSection>
-          <Box display="flex" flexWrap="wrap">
+          <Box
+            gridColumnGap={50}
+            display="flex"
+            flexDirection={columnView ? 'column' : 'row'}
+            alignContent="space-around"
+            justifyContent="center"
+            flexWrap="wrap"
+          >
+            <ShowcaseCardContainer>
+              <img
+                width={75}
+                height={75}
+                alt="forminer logo"
+                src="img/forminer-logo.svg"
+              />
+              <ShowcaseCardText>
+                Powerful tool for building forms in React
+              </ShowcaseCardText>
+            </ShowcaseCardContainer>
             <StyledContainer>
-              <Address>
-                <p>
-                  Vazco P.S.A.
-                  <br />
-                  Wrocław, 50-043
-                  <br />
-                  ul. Podwale 7/1 Poland
-                </p>
-                <p>
-                  e.{' '}
-                  <Link to="mailto:hello@forminer.com" newTab={false}>
-                    hello@forminer.com
-                  </Link>
-                  <br />
-                  m. +48 609 257 363
-                </p>
-              </Address>
+              <h4>Site map</h4>
+              <ul>
+                <SectionListItem>
+                  <SectionListButton
+                    onClick={event => scrollToSection(event, 'pricing')}
+                  >
+                    Pricing
+                  </SectionListButton>
+                </SectionListItem>
+                {siteMapData.map(item => (
+                  <SectionListItem key={item.link}>
+                    <SectionListLink href={item.link}>
+                      {item.name}
+                    </SectionListLink>
+                  </SectionListItem>
+                ))}
+              </ul>
             </StyledContainer>
-            <LinkContainer>
-              {menuData.map(({ title, items }) => (
-                <StyledContainer key={title}>
-                  <FooterNavMenuTitle>{title}</FooterNavMenuTitle>
-                  {items.map(({ name, link }) => (
-                    <FooterNavMenuItem key={name}>
-                      <Link to={link} internal>
-                        {name}
-                      </Link>
-                    </FooterNavMenuItem>
-                  ))}
-                </StyledContainer>
-              ))}
-            </LinkContainer>
+            <StyledContainer>
+              <h4>First steps</h4>
+              <ul>
+                {firstStepsData.map(item => (
+                  <SectionListItem key={item.link}>
+                    <a
+                      style={{
+                        backgroundColor: 'inherit',
+                        border: 'none',
+                        fontSize: '18px',
+                        color: 'white',
+                        textDecoration: 'none',
+                      }}
+                      href={item.link}
+                    >
+                      {item.name}
+                    </a>
+                  </SectionListItem>
+                ))}
+              </ul>
+            </StyledContainer>
+            <StyledContainerCentered>
+              <h4>Start a conversation!</h4>
+              <Mail href="mailto:hello@forminer.com">hello@forminer.com</Mail>
+              <CopyrightContainer>
+                <a
+                  href="https://www.vazco.eu/"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  <img
+                    src="img/vazco-logo-2023.svg"
+                    alt="Vazco.eu"
+                    width="150"
+                    height="auto"
+                  />
+                </a>
+                <p
+                  style={{ marginBottom: 0 }}
+                >{`Copyright © ${new Date().getFullYear()}`}</p>
+                <p>All Rights Reserved</p>
+              </CopyrightContainer>
+            </StyledContainerCentered>
           </Box>
-          <CopyrightContainer>
-            <Copyright>
-              {`Copyright © ${new Date().getFullYear()}`}
-              <a
-                href="https://www.vazco.eu/"
-                target="_blank"
-                rel="noreferrer noopener"
-              >
-                <img
-                  src="img/vazco-logo-2023.svg"
-                  alt="Vazco.eu"
-                  width="114"
-                  height="51"
-                />
-              </a>
-            </Copyright>
-            All Rights Reserved
-          </CopyrightContainer>
         </TopSection>
       </Container>
     </StyledFooter>

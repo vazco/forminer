@@ -140,3 +140,27 @@ table {
 .navbar__inner {
   max-width: var(--ifm-container-width-xl);
 }
+
+.showcase-card {
+  padding: 1.5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+@media (min-width: 997px) {
+  .showcase-card {
+    flex-direction: column;
+  }
+}
+
+.showcase-card img {
+  height: 4em;
+  margin: 1em;
+}
+
+.showcase-card p {
+  display: block;
+  margin-left: 1em;
+}
