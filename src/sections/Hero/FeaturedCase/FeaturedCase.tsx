@@ -7,7 +7,7 @@ import { Container } from '../../../components/Container';
 import media from '../../../globalStyles/media';
 import { BOX_COMMON_STYLES } from '../../../globalStyles/sharedStyles/box';
 // @ts-expect-error Image import
-import image from '../../../images/new.webp';
+import image from '../../../images/forminer.webp';
 
 const Section = styled.section`
   padding: ${({ isFramed }) => (isFramed ? '16px' : '16px 16px 80px 16px')};
