@@ -2,7 +2,7 @@ import { useMediaQuery, useTheme } from '@material-ui/core';
 import Box from '@material-ui/core/Box';
 // eslint-disable-next-line no-unused-vars -- false positive error
 import React, { MouseEvent } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { Container } from '../../components/Container';
 import media from '../../globalStyles/media';
@@ -26,6 +26,9 @@ const StyledContainer = styled.div`
   padding: 12px;
   display: flex;
   flex-direction: column;
+  ${media.greaterThan('md')`
+    width: 20%
+  `}
 `;
 
 const StyledContainerCentered = styled.div`
@@ -39,8 +42,8 @@ const StyledContainerCentered = styled.div`
 const CopyrightContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: start;
-  justify-content: start;
+  align-items: center;
+  justify-content: center;
   margin-top: 40px;
 `;
 
@@ -52,38 +55,41 @@ const ShowcaseCardContainer = styled.div`
   align-items: center;
   margin-bottom: 1em;
   border: 2px dashed white;
-  max-width: 20%;
+  ${media.greaterThan('md')`
+    max-width: 20%
+  `}
 `;
 
 const ShowcaseCardText = styled.p`
   text-align: center;
   padding-top: 1.5em;
-  font-size: 18px;
+  font-size: 16px;
 `;
 
 const SectionListItem = styled.li`
   margin-bottom: 10;
 `;
 
-const SectionListButton = styled.button`
+const commonText = css`
   background-color: inherit;
   border: none;
-  font-size: 18px;
+  font-size: 16px;
+  font-weight: 300;
   color: white;
+`;
+
+const SectionListButton = styled.button`
+  ${commonText}
   padding: 0;
 `;
 
 const SectionListLink = styled.a`
-  background-color: inherit;
-  border: none;
-  font-size: 18px;
-  color: white;
+  ${commonText}
   text-decoration: none;
 `;
 
 const Mail = styled.a`
-  font-size: 18px;
-  color: white;
+  ${commonText}
   text-decoration: none;
 `;
 
@@ -119,7 +125,7 @@ const firstStepsData = [
 
 export const Footer = () => {
   const theme = useTheme();
-  const columnView = useMediaQuery(theme.breakpoints.down('md'));
+  const columnView = useMediaQuery(theme.breakpoints.down('sm'));
 
   const scrollToSection = (
     event: MouseEvent<HTMLButtonElement>,
@@ -138,7 +144,7 @@ export const Footer = () => {
       <Container>
         <TopSection>
           <Box
-            gridColumnGap={50}
+            gridColumnGap={20}
             display="flex"
             flexDirection={columnView ? 'column' : 'row'}
             alignContent="space-around"
@@ -157,7 +163,7 @@ export const Footer = () => {
               </ShowcaseCardText>
             </ShowcaseCardContainer>
             <StyledContainer>
-              <h4>Site map</h4>
+              <h5>Site map</h5>
               <ul>
                 <SectionListItem>
                   <SectionListButton
@@ -176,28 +182,19 @@ export const Footer = () => {
               </ul>
             </StyledContainer>
             <StyledContainer>
-              <h4>First steps</h4>
+              <h5>First steps</h5>
               <ul>
                 {firstStepsData.map(item => (
                   <SectionListItem key={item.link}>
-                    <a
-                      style={{
-                        backgroundColor: 'inherit',
-                        border: 'none',
-                        fontSize: '18px',
-                        color: 'white',
-                        textDecoration: 'none',
-                      }}
-                      href={item.link}
-                    >
+                    <SectionListLink href={item.link}>
                       {item.name}
-                    </a>
+                    </SectionListLink>
                   </SectionListItem>
                 ))}
               </ul>
             </StyledContainer>
             <StyledContainerCentered>
-              <h4>Start a conversation!</h4>
+              <h5>Start a conversation!</h5>
               <Mail href="mailto:hello@forminer.com">hello@forminer.com</Mail>
               <CopyrightContainer>
                 <a
@@ -213,9 +210,9 @@ export const Footer = () => {
                   />
                 </a>
                 <p
-                  style={{ marginBottom: 0 }}
+                  style={{ marginBottom: 0, fontSize: 16 }}
                 >{`Copyright © ${new Date().getFullYear()}`}</p>
-                <p>All Rights Reserved</p>
+                <p style={{ fontSize: 16 }}>All Rights Reserved</p>
               </CopyrightContainer>
             </StyledContainerCentered>
           </Box>
