@@ -81,16 +81,19 @@ const commonText = css`
 const SectionListButton = styled.button`
   ${commonText}
   padding: 0;
+  &:hover {
+    color: #1074ef;
+  }
 `;
 
 const SectionListLink = styled.a`
   ${commonText}
-  text-decoration: none;
+  text-decoration: none !important;
 `;
 
 const Mail = styled.a`
   ${commonText}
-  text-decoration: none;
+  text-decoration: none !important;
 `;
 
 const siteMapData = [
