@@ -83,6 +83,7 @@ const SectionListButton = styled.button`
   padding: 0;
   &:hover {
     color: #1074ef;
+    cursor: pointer;
   }
 `;
 

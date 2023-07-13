@@ -119,7 +119,7 @@ export const Hero = () => {
       {!changeOrder && (
         <>
           <SupportedLibrariesTitle>
-            Supported design libraries
+            Supported design libraries:
           </SupportedLibrariesTitle>
           <SupportedDesignLibraries />
         </>
@@ -137,7 +137,7 @@ export const Hero = () => {
       {changeOrder && (
         <>
           <SupportedLibrariesTitle>
-            Supported design libraries
+            Supported design libraries:
           </SupportedLibrariesTitle>
           <SupportedDesignLibraries />
         </>
