@@ -123,6 +123,10 @@ table {
   content: none;
 }
 
+.searchBox_node_modules-\@docusaurus-theme-classic-lib-theme-Navbar-Search-styles-module {
+  padding: 0 !important;
+}
+
 /* Styling for mobile navigation. */
 @media (max-width: 996px) {
   .navbar__items .buy-now-nav-item {

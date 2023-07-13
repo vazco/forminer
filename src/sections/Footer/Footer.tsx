@@ -169,7 +169,7 @@ export const Footer = () => {
               </ShowcaseCardText>
             </ShowcaseCardContainer>
             <StyledContainer>
-              <h5>Site map</h5>
+              <h5>Product</h5>
               <ul>
                 <SectionListItem>
                   <SectionListButton

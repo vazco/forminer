@@ -13,7 +13,7 @@ import semanticIcon from '../../images/technologies/semanticUI.webp';
 
 const ListContainer = styled.div`
   display: grid;
-  justify-items: center;
+  justify-items: start;
   align-items: center;
 
   ${({ numberOfItems }) => css`
@@ -37,6 +37,10 @@ const ListContainer = styled.div`
   ${media.greaterThan('md')`
     grid-row-gap: 10px;
     grid-column-gap: 20px;
+    width: 55%;
+  `};
+  ${media.between('md', 'xl')`
+    width: 70%;
   `};
   ${media.greaterThan('lg')`
     grid-row-gap: 15px;
@@ -44,59 +48,32 @@ const ListContainer = styled.div`
   `};
 `;
 
-const Item = styled.a`
-  display: flex;
-  justify-content: start;
-  padding-top: 10px;
-  padding-bottom: 10px;
-
-  max-width: 200px;
-  max-height: 50px;
-  ${media.greaterThan('md')`
-    max-width: 210px;
-    max-height: 60px;
-  `};
-
-  filter: grayscale(0%);
-  ${media.greaterThan('md')`
-    filter: grayscale(100%);
-
-    &:hover {
-      filter: grayscale(0%);
-    }
-  `}
-`;
-
 const StyledImage = styled.img`
   width: 200;
-  height: 50;
-  ${media.lessThan('xl')`
-  max-width: 65%;
-  `}
-  max-width: 40%;
-  max-height: 100%;
+  height: 80%;
+  max-height: 40px;
   object-fit: scale-down;
   margin: 0 !important;
+  filter: grayscale(100%);
+  &:hover {
+    filter: grayscale(0%);
+  }
 `;
 
 const items = [
   {
-    url: 'https://semantic-ui.com/',
     src: semanticIcon,
     alt: 'semanticUI icon',
   },
   {
-    url: 'https://ant.design/',
     src: antDesignIcon,
     alt: 'antDesign icon',
   },
   {
-    url: 'https://mui.com/core/',
     src: materialIcon,
     alt: 'MUI icon',
   },
   {
-    url: 'https://getbootstrap.com/',
     src: bootstrapIcon,
     alt: 'bootstrap icon',
   },
@@ -118,12 +95,8 @@ const numberOfItems = items.length;
 export const SupportedDesignLibraries = () => {
   return (
     <ListContainer numberOfItems={numberOfItems}>
-      {items.map(({ url, src, alt }) => {
-        return (
-          <Item key={url} href={url} target="_blank" rel="noopener noreferrer">
-            <StyledImage loading="lazy" src={src} alt={alt} />
-          </Item>
-        );
+      {items.map(({ src, alt }) => {
+        return <StyledImage key={src} loading="lazy" src={src} alt={alt} />;
       })}
     </ListContainer>
   );

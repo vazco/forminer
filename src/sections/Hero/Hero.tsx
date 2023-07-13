@@ -18,7 +18,7 @@ const ButtonsWrapperOffset = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
   flex-wrap: wrap;
   margin-top: ${rem('45px')};
   gap: ${rem('10px')} ${rem('15px')};
@@ -31,7 +31,7 @@ const ButtonsWrapperOffset = styled.div`
     gap: ${rem('10px')} ${rem('12px')};
   `}
 
-  ${media.lessThan('md')`
+  ${media.lessThan('sm')`
     margin-top: ${rem('30px')};
     flex-direction: column;
   `}
@@ -68,9 +68,6 @@ const SupportedLibrariesTitle = styled.h4`
   `}
   ${media.greaterThan('md')`
     margin-top: ${rem('40px')};
-  `}
-  ${media.between('xs', 'lg')`
-    text-align: center;
   `}
 `;
 

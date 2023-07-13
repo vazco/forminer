@@ -6,6 +6,7 @@ import { Button } from '../../components/Button';
 import { Container } from '../../components/Container';
 import { Link } from '../../components/Link';
 import media from '../../globalStyles/media';
+import { BOX_BORDER_RADIUS } from '../../globalStyles/sharedStyles/box';
 
 const HighlightPanel = styled.div`
   h3 {
@@ -26,6 +27,7 @@ const ContentWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 40px 0;
+  ${BOX_BORDER_RADIUS};
   ${media.greaterThan('xl')`
     padding: 75px 0;
   `}
