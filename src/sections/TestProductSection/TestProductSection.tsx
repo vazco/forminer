@@ -29,7 +29,7 @@ export const TestProductSection = () => {
           <strong> enjoy it on production</strong>.
         </p>
         <Link to="https://sowl.co/s/bjKCyA" newTab={false}>
-          <Button>Get the trial</Button>
+          <Button reversed>Get the trial</Button>
         </Link>
       </TextAndMediaItem>
     </SectionLayout>

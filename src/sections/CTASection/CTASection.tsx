@@ -29,7 +29,7 @@ const ContentWrapper = styled.div`
   ${media.greaterThan('xl')`
     padding: 75px 0;
   `}
-  background-color: #0d5dbf;
+  background-color: ${({ theme }) => theme.color.darkBlue};
 `;
 
 const StyledHeading = styled.h3`
@@ -49,9 +49,7 @@ export const CTASection = ({ heading, buttonText }: CTASectionProps) => {
         <ContentWrapper>
           <StyledHeading>{heading}</StyledHeading>
           <Link to="mailto:hello@forminer.com" newTab={false}>
-            <Button variant="outlined" reversed>
-              {buttonText}
-            </Button>
+            <Button variant="outlined">{buttonText}</Button>
           </Link>
         </ContentWrapper>
       </Container>

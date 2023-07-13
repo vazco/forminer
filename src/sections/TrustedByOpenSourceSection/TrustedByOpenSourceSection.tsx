@@ -44,7 +44,7 @@ export const TrustedByOpenSourceSection = () => {
         </List>
 
         <Link to="https://uniforms.tools/">
-          <Button>Explore</Button>
+          <Button reversed>Explore</Button>
         </Link>
       </TextAndMediaItem>
     </SectionLayout>

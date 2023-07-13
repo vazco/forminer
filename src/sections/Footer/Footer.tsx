@@ -8,7 +8,7 @@ import { Container } from '../../components/Container';
 import media from '../../globalStyles/media';
 
 const StyledFooter = styled.footer`
-  background-color: #0d5dbf;
+  background-color: ${({ theme }) => theme.color.darkBlue};
   overflow: hidden;
   padding: 20px 0;
   ${media.greaterThan('md')`
@@ -76,24 +76,26 @@ const commonText = css`
   font-size: 16px;
   font-weight: 300;
   color: white;
+  &:hover {
+    color: black;
+    cursor: pointer;
+  }
 `;
 
 const SectionListButton = styled.button`
   ${commonText}
   padding: 0;
-  &:hover {
-    color: #1074ef;
-    cursor: pointer;
-  }
 `;
 
 const SectionListLink = styled.a`
   ${commonText}
+
   text-decoration: none !important;
 `;
 
 const Mail = styled.a`
   ${commonText}
+
   text-decoration: none !important;
 `;
 

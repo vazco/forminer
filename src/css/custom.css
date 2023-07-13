@@ -4,8 +4,8 @@
  * work well for content-centric websites.
  */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Muli:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Muli:wght@300;500;600;700&display=swap');
 
 /* You can override the default Infima variables here. */
 :root {
@@ -85,8 +85,10 @@ table {
 }
 
 .buy-now-nav-item:hover {
-  background: rgb(16, 116, 239);
-  color: rgb(255, 255, 255);
+  background: white !important;
+  color: rgb(16, 116, 239) !important;
+  border: 2px solid rgb(16, 116, 239);
+  border-radius: 32px;
 }
 
 .navbar-sidebar__items .buy-now-nav-item {

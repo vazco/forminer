@@ -91,7 +91,7 @@ export const Hero = () => {
 
   return (
     <FeaturedCase>
-      <h1 style={{ color: 'white' }}>Forminer</h1>
+      <h1 style={{ color: 'white', fontWeight: 600 }}>Forminer</h1>
       <StyledLargeText>
         <strong>Save up to 1500 hours</strong> while building form-heavy React
         apps with our easy to integrate package
@@ -129,7 +129,7 @@ export const Hero = () => {
           Check pricing
         </Button>
         <Link to="/docs" internal>
-          <Button variant="outlined" size="lg" reversed>
+          <Button variant="outlined" size="lg">
             See technical documentation
           </Button>
         </Link>

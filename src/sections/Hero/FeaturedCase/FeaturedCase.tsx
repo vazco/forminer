@@ -5,26 +5,18 @@ import styled, { css } from 'styled-components';
 
 import { Container } from '../../../components/Container';
 import media from '../../../globalStyles/media';
-import { BOX_COMMON_STYLES } from '../../../globalStyles/sharedStyles/box';
 // @ts-expect-error Image import
 import image from '../../../images/forminer.webp';
 
 const Section = styled.section`
-  padding: ${({ isFramed }) => (isFramed ? '16px' : '16px 16px 80px 16px')};
+  padding: 10px;
   display: flex;
   align-items: center;
-  ${media.lessThan('sm')`
-    padding-top: 0;
-  `};
-  ${media.greaterThan('md')`
-    ${({ isFramed }) =>
-      !isFramed &&
-      css`
-        padding-bottom: 32px;
-      `}
-  `} ${({ bgColor, isFramed }) =>
+  justify-content: center;
+  padding-top: 0;
+  min-height: calc(100vh - 60px);
+  ${({ bgColor }) =>
     bgColor &&
-    !isFramed &&
     css`
       background-color: ${bgColor};
     `};
@@ -35,13 +27,6 @@ const StyledContainer = styled(Container)`
   padding: 0 16px;
   overflow: hidden;
   position: relative;
-
-  ${({ isFramed, bgColor }) =>
-    isFramed &&
-    css`
-      ${BOX_COMMON_STYLES};
-      background-color: ${bgColor};
-    `}
 `;
 
 const StyledGridItem = styled(Grid)`
@@ -54,9 +39,8 @@ const StyledGridItem = styled(Grid)`
 
 const ContentWrapper = styled.div`
   padding-top: 20px;
-
   ${media.greaterThan('md')`
-    padding: ${({ reversed }) => (reversed ? '0 24px 0 0' : '0 0 0 24px')};
+    padding: 0 24px 0 0;
   `}
 `;
 
@@ -93,8 +77,8 @@ export const FeaturedCase = ({ children }: FeaturedCaseProps) => {
   const changeOrder = useMediaQuery(theme.breakpoints.up('lg'));
 
   return (
-    <Section bgColor={bgColor} isFramed={false}>
-      <StyledContainer bgColor={bgColor} isFramed={false}>
+    <Section bgColor={bgColor}>
+      <StyledContainer bgColor={bgColor}>
         <StyledGridContainer direction={direction} alignItems="start" container>
           {!changeOrder && (
             <Grid xs={12} sm={12} md={12} lg={6} item>
