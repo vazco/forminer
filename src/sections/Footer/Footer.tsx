@@ -153,7 +153,7 @@ export const Footer = () => {
             display="flex"
             flexDirection={columnView ? 'column' : 'row'}
             alignContent="space-around"
-            justifyContent="center"
+            justifyContent="space-between"
             flexWrap="wrap"
           >
             <ShowcaseCardContainer>
