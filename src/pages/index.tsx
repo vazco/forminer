@@ -1,4 +1,5 @@
 import Head from '@docusaurus/Link';
+import Layout from '@theme/Layout';
 import React from 'react';
 
 import { LayoutBase } from '../components/LayoutBase';
@@ -28,21 +29,23 @@ const IndexPage = () => {
           type="image/webp"
         />
       </Head>
-      <LayoutBase>
-        <Hero />
-        <KeyFunctionalitiesSection />
-        <StepsSection />
-        <CTASection
-          heading="How can these solutions help your project?"
-          buttonText="Ask our CTO"
-        />
-        <WhatYouGetSection />
-        <TestProductSection />
-        <PricingSection />
-        <TrustedByOpenSourceSection />
-        <FAQSection />
-        <Footer />
-      </LayoutBase>
+      <Layout>
+        <LayoutBase>
+          <Hero />
+          <KeyFunctionalitiesSection />
+          <StepsSection />
+          <CTASection
+            heading="How can these solutions help your project?"
+            buttonText="Ask our CTO"
+          />
+          <WhatYouGetSection />
+          <TestProductSection />
+          <PricingSection />
+          <TrustedByOpenSourceSection />
+          <FAQSection />
+          <Footer />
+        </LayoutBase>
+      </Layout>
     </>
   );
 };
