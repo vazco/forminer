@@ -1,7 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-import { SectionLayout } from '../../components/SectionLayout';
 import media from '../../globalStyles/media';
 // @ts-expect-error png import
 import antDesignIcon from '../../images/technologies/ant-design.webp';
@@ -14,7 +13,7 @@ import semanticIcon from '../../images/technologies/semanticUI.webp';
 
 const ListContainer = styled.div`
   display: grid;
-  justify-items: center;
+  justify-items: start;
   align-items: center;
 
   ${({ numberOfItems }) => css`
@@ -38,6 +37,10 @@ const ListContainer = styled.div`
   ${media.greaterThan('md')`
     grid-row-gap: 10px;
     grid-column-gap: 20px;
+    width: 55%;
+  `};
+  ${media.between('md', 'xl')`
+    width: 70%;
   `};
   ${media.greaterThan('lg')`
     grid-row-gap: 15px;
@@ -45,62 +48,36 @@ const ListContainer = styled.div`
   `};
 `;
 
-const Item = styled.a`
-  display: flex;
-  justify-content: center;
-  padding: 5px;
-
-  max-width: 200px;
-  max-height: 50px;
-  ${media.greaterThan('md')`
-    max-width: 210px;
-    max-height: 60px;
-  `};
-
-  filter: grayscale(0%);
-  ${media.greaterThan('md')`
-    filter: grayscale(100%);
-
-    &:hover {
-      filter: grayscale(0%);
-    }
-  `}
-`;
-
 const StyledImage = styled.img`
   width: 200;
-  height: 50;
-  max-width: 100%;
-  max-height: 100%;
+  height: 80%;
+  max-height: 40px;
   object-fit: scale-down;
   margin: 0 !important;
+  filter: grayscale(100%);
+  &:hover {
+    filter: grayscale(0%);
+  }
 `;
 
 const items = [
   {
-    url: 'https://semantic-ui.com/',
     src: semanticIcon,
     alt: 'semanticUI icon',
   },
   {
-    url: 'https://ant.design/',
     src: antDesignIcon,
     alt: 'antDesign icon',
   },
   {
-    url: 'https://mui.com/core/',
     src: materialIcon,
     alt: 'MUI icon',
   },
   {
-    url: 'https://getbootstrap.com/',
     src: bootstrapIcon,
     alt: 'bootstrap icon',
   },
 ];
-
-const heading = 'Supported design libraries';
-const id = 'tech-list';
 
 const calculateNumberOfColumns = (numberOfItems, mediaBreakpoint = 'xs') => {
   if (
@@ -115,18 +92,12 @@ const calculateNumberOfColumns = (numberOfItems, mediaBreakpoint = 'xs') => {
 
 const numberOfItems = items.length;
 
-export const TechnologyListSection = () => {
+export const SupportedDesignLibraries = () => {
   return (
-    <SectionLayout heading={heading} id={id}>
-      <ListContainer numberOfItems={numberOfItems}>
-        {items.map(({ url, src, alt }) => {
-          return (
-            <Item key={url} target="_blank" rel="noopener noreferrer">
-              <StyledImage loading="lazy" src={src} alt={alt} />
-            </Item>
-          );
-        })}
-      </ListContainer>
-    </SectionLayout>
+    <ListContainer numberOfItems={numberOfItems}>
+      {items.map(({ src, alt }) => {
+        return <StyledImage key={src} loading="lazy" src={src} alt={alt} />;
+      })}
+    </ListContainer>
   );
 };

@@ -6,10 +6,9 @@ import { Button } from '../../components/Button';
 import { Container } from '../../components/Container';
 import { Link } from '../../components/Link';
 import media from '../../globalStyles/media';
+import { BOX_BORDER_RADIUS } from '../../globalStyles/sharedStyles/box';
 
 const HighlightPanel = styled.div`
-  background-color: ${({ theme }) => theme.color.primary};
-
   h3 {
     color: ${({ theme }) => theme.color.white};
     margin: 0;
@@ -28,9 +27,11 @@ const ContentWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 40px 0;
+  ${BOX_BORDER_RADIUS};
   ${media.greaterThan('xl')`
     padding: 75px 0;
   `}
+  background-color: ${({ theme }) => theme.color.darkBlue};
 `;
 
 const StyledHeading = styled.h3`
@@ -50,9 +51,7 @@ export const CTASection = ({ heading, buttonText }: CTASectionProps) => {
         <ContentWrapper>
           <StyledHeading>{heading}</StyledHeading>
           <Link to="mailto:hello@forminer.com" newTab={false}>
-            <Button variant="outlined" reversed>
-              {buttonText}
-            </Button>
+            <Button variant="outlined">{buttonText}</Button>
           </Link>
         </ContentWrapper>
       </Container>

@@ -2,7 +2,9 @@ import { rem } from 'polished';
 import React, { ReactNode } from 'react';
 import styled from 'styled-components';
 
-import Tick from '../../images/svg/tick-blue.svg';
+import media from '../../globalStyles/media';
+import TickBlue from '../../images/svg/tick-blue.svg';
+import TickWhite from '../../images/svg/tick-white.svg';
 
 const List = styled.ul`
   list-style-type: none;
@@ -13,7 +15,15 @@ const List = styled.ul`
   }
 `;
 
-const StyledTick = styled(Tick)`
+const StyledTickWhite = styled(TickWhite)`
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 36px;
+  height: 36px;
+`;
+
+const StyledTickBlue = styled(TickBlue)`
   content: '';
   position: absolute;
   left: 0;
@@ -27,9 +37,16 @@ const ListItem = styled.li`
   min-height: 36px;
   display: flex;
   align-items: center;
-  &:not(:last-child) {
-    margin-bottom: ${rem('24px')};
-  }
+  color: ${(props: CustomBulletListItemProps) =>
+    props.theme === 'white' ? 'white' : 'inherit'};
+
+  ${media.lessThan('sm')`
+    margin-bottom: ${rem('12px')};
+  `}
+  ${media.lessThan('xl')`
+    margin-bottom: ${rem('18px')};
+  `}
+  margin-bottom: ${rem('24px')};
 
   span {
     display: inline-block;
@@ -42,9 +59,17 @@ type CustomBulletListProps = {
   children: ReactNode;
 };
 
-export const CustomBulletListItem = ({ children }: CustomBulletListProps) => (
-  <ListItem>
-    <StyledTick />
+type CustomBulletListItemProps = {
+  children: ReactNode;
+  theme: 'blue' | 'white';
+};
+
+export const CustomBulletListItem = ({
+  children,
+  theme,
+}: CustomBulletListItemProps) => (
+  <ListItem theme={theme}>
+    {theme === 'white' ? <StyledTickWhite /> : <StyledTickBlue />}
     {children}
   </ListItem>
 );

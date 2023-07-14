@@ -30,6 +30,7 @@ export const MuiTheme = createMuiTheme({
 export const theme = {
   color: {
     primary: '#1074ef',
+    darkBlue: '#0d5dbf',
     body: '#000000',
     grey: '#fafafb',
     darkGrey: '#f4f5f6',
@@ -47,13 +48,13 @@ html {
   box-sizing: inherit;
 }
 main {
-  font-family: 'Noto Sans', sans-serif;
+  font-family: 'Muli', sans-serif;
   font-weight: 300;
   color: ${theme.color.body};
   overflow-x: hidden;
   
   h1, h2, h3, h4, h5 {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 500;
   margin-top: 0;
 }

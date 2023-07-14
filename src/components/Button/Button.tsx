@@ -1,5 +1,5 @@
 import noop from 'lodash/noop';
-import { rem, lighten } from 'polished';
+import { rem } from 'polished';
 // eslint-disable-next-line no-unused-vars -- false positive error
 import React, { ReactNode, MouseEvent } from 'react';
 import styled, { css } from 'styled-components';
@@ -13,63 +13,47 @@ const resetDefault = css`
   background: none;
 `;
 
-const variantSolid = css`
-  ${({ theme }) => css`
-    background-color: ${theme.color.primary};
-    color: ${theme.color.white};
-    &:hover:not(:disabled) {
-      background-color: ${lighten(0.1, `${theme.color.primary}`)};
-      border-color: ${lighten(0.1, `${theme.color.primary}`)};
-    }
-  `}
-`;
-
 const commonStyles = css`
   cursor: pointer;
-  font-weight: 500;
+  font-weight: 600;
   min-width: 180px;
   padding: 16px;
-  border: 2px solid ${({ theme }) => theme.color.primary};
-  border-radius: 4px;
+  border-radius: 32px;
   transition: all 0.2s ease-out;
   &:hover {
     text-decoration: none;
   }
-  &:disabled {
-    background-color: ${({ theme }) => lighten(0.2, `${theme.color.primary}`)};
-    border-color: ${({ theme }) => lighten(0.2, `${theme.color.primary}`)};
-  }
 
   ${({ theme, variant, reversed }) => {
-    if (variant === 'solid') {
+    if (reversed && variant === 'solid') {
       return css`
-        ${variantSolid}
-      `;
-    } else if (reversed && variant === 'outlined') {
-      return css`
+        background-color: ${theme.color.primary};
         color: ${theme.color.white};
-        border-color: ${theme.color.white};
+        border: 2px solid white;
         &:hover {
           background-color: ${theme.color.white};
           color: ${theme.color.primary};
+          border: 2px solid ${({ theme }) => theme.color.primary};
+        }
+      `;
+    } else if (variant === 'solid') {
+      return css`
+        background-color: ${theme.color.white};
+        color: ${theme.color.primary};
+        border: 2px solid ${theme.color.white};
+        &:hover {
+          background-color: inherit;
+          color: ${theme.color.white};
         }
       `;
     } else if (variant === 'outlined') {
       return css`
-        color: ${theme.color.primary};
+        color: ${theme.color.white};
+        border: 2px solid ${theme.color.white};
         &:hover {
-          background-color: ${theme.color.primary};
-          color: ${theme.color.white};
+          background-color: ${theme.color.white};
+          color: ${theme.color.primary};
         }
-      `;
-    } else if (variant === 'icon') {
-      return css`
-        ${variantSolid}
-
-        display: flex;
-        align-items: center;
-        border-radius: 50%;
-        min-width: auto;
       `;
     }
     return css``;
@@ -85,6 +69,11 @@ const commonStyles = css`
       return css`
         font-size: ${rem('14px')};
         line-height: ${rem('24px')};
+      `;
+    } else if (size === 'lg') {
+      return css`
+        font-size: ${rem('18px')};
+        line-height: ${rem('28px')};
       `;
     }
     return css``;

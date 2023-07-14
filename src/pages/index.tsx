@@ -6,7 +6,6 @@ import { LayoutBase } from '../components/LayoutBase';
 import { SEO } from '../components/SEO';
 import {
   Hero,
-  TechnologyListSection,
   KeyFunctionalitiesSection,
   StepsSection,
   CTASection,
@@ -25,7 +24,7 @@ const IndexPage = () => {
       <Head>
         <link
           rel="preload"
-          href={require('../images/Forminer.webp')}
+          href={require('../images/forminer.webp')}
           as="image"
           type="image/webp"
         />
@@ -33,7 +32,6 @@ const IndexPage = () => {
       <Layout title="Forminer | Build Forms in React the way you need | Vazco">
         <LayoutBase>
           <Hero />
-          <TechnologyListSection />
           <KeyFunctionalitiesSection />
           <StepsSection />
           <CTASection

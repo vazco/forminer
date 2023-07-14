@@ -16,7 +16,6 @@ export const KeyFunctionalitiesSection = () => {
         mediaType="video"
         mediaData="https://youtu.be/8UN8S5WyI8Y"
         isStrong={false}
-        indent
         reversedItems
       >
         <List>
@@ -59,7 +58,6 @@ export const KeyFunctionalitiesSection = () => {
         mediaType="video"
         mediaData="https://youtu.be/Q5_JNpGoxCo"
         isStrong={false}
-        indent
         reversedItems
       >
         <List>
@@ -86,7 +84,6 @@ export const KeyFunctionalitiesSection = () => {
         mediaType="video"
         mediaData="https://youtu.be/wSkpwRrBN_s"
         isStrong={false}
-        indent
         reversedItems
       >
         <List>
@@ -105,7 +102,6 @@ export const KeyFunctionalitiesSection = () => {
         mediaType="video"
         mediaData="https://youtu.be/xswDB9qbJKU"
         isStrong={false}
-        indent
         reversedItems
       >
         <List>
@@ -137,7 +133,6 @@ export const KeyFunctionalitiesSection = () => {
         mediaType="video"
         mediaData="https://youtu.be/3Av4N_qlN2U"
         isStrong={false}
-        indent
         reversedItems
       >
         <List>

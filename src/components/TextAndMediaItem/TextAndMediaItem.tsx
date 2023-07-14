@@ -7,7 +7,7 @@ import { AccentHeading } from '../AccentHeading';
 
 const Wrapper = styled.div`
   display: flex;
-  align-items: center;
+  align-items: space-between;
   flex-direction: column-reverse;
 
   &:not(:last-child) {
@@ -26,20 +26,19 @@ const TextContainer = styled.div`
   width: 100%;
 
   ${media.greaterThan('md')`
-    padding-left: 58px;
-    padding-right: 58px;
     width: 50%;
     padding-top: 58px;
     padding-bottom: 58px;
-    ${({ indent, isReversed }) =>
-      !indent &&
-      (isReversed
+    ${({ isReversed }) =>
+      isReversed
         ? css`
             padding-right: 0;
+            padding-left: 116px;
           `
         : css`
             padding-left: 0;
-          `)}
+            padding-right: 116px;
+          `}
   `}
 
   p:last-child {
@@ -63,7 +62,6 @@ type TextAndMediaItemProps = {
   mediaData: string;
   alt?: string;
   isStrong?: boolean;
-  indent?: boolean;
   reversedItems?: boolean;
 };
 
@@ -74,7 +72,6 @@ export const TextAndMediaItem = ({
   mediaType,
   mediaData,
   alt = '',
-  indent = false,
   isStrong = true,
   reversedItems = false,
 }: TextAndMediaItemProps) => {
@@ -83,7 +80,7 @@ export const TextAndMediaItem = ({
   const MediaComponent = mediaMap[mediaType];
   return (
     <Wrapper isReversed={isReversed}>
-      <TextContainer indent={indent} isReversed={isReversed}>
+      <TextContainer isReversed={isReversed}>
         <AccentHeading isStrong={isStrong}>{heading}</AccentHeading>
         {children}
       </TextContainer>

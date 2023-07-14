@@ -83,7 +83,9 @@ export const PriceTab = ({
           <SubHeading>{subHeading}</SubHeading>
           <CustomBulletList>
             {listItems.map(item => (
-              <CustomBulletListItem key={item}>{item}</CustomBulletListItem>
+              <CustomBulletListItem key={item} theme="blue">
+                {item}
+              </CustomBulletListItem>
             ))}
           </CustomBulletList>
           {subtitle && (
@@ -94,9 +96,9 @@ export const PriceTab = ({
         </ContentWrapper>
       </Content>
       <ActionBox>
-        {buttons.map(({ text, ...rest }, index) => (
+        {buttons.map(({ text, ...rest }) => (
           <Link key={rest.to} {...rest}>
-            <Button variant={index === 0 ? 'solid' : 'outlined'}>{text}</Button>
+            <Button reversed>{text}</Button>
           </Link>
         ))}
       </ActionBox>

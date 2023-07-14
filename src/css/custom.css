@@ -4,8 +4,8 @@
  * work well for content-centric websites.
  */
 
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Muli:wght@300;500;600;700&display=swap');
 
 /* You can override the default Infima variables here. */
 :root {
@@ -82,11 +82,14 @@ table {
   font-size: 1.05rem;
   color: rgb(255, 255, 255) !important;
   align-items: center;
+  transition: all 0.2s ease-out;
 }
 
 .buy-now-nav-item:hover {
-  background: rgb(16, 116, 239);
-  color: rgb(255, 255, 255);
+  background: white !important;
+  color: rgb(16, 116, 239) !important;
+  border: 2px solid rgb(16, 116, 239);
+  border-radius: 32px;
 }
 
 .navbar-sidebar__items .buy-now-nav-item {
@@ -121,6 +124,10 @@ table {
   content: none;
 }
 
+.searchBox_node_modules-\@docusaurus-theme-classic-lib-theme-Navbar-Search-styles-module {
+  padding: 0 !important;
+}
+
 /* Styling for mobile navigation. */
 @media (max-width: 996px) {
   .navbar__items .buy-now-nav-item {
@@ -131,4 +138,36 @@ table {
     content: '→' !important;
     margin-left: 4px;
   }
+}
+
+.navbar {
+  justify-content: center;
+}
+
+.navbar__inner {
+  max-width: var(--ifm-container-width-xl);
+}
+
+.showcase-card {
+  padding: 1.5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+@media (min-width: 997px) {
+  .showcase-card {
+    flex-direction: column;
+  }
+}
+
+.showcase-card img {
+  height: 4em;
+  margin: 1em;
+}
+
+.showcase-card p {
+  display: block;
+  margin-left: 1em;
 }
