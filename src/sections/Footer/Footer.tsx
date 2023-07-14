@@ -76,6 +76,7 @@ const commonText = css`
   font-size: 16px;
   font-weight: 300;
   color: white;
+  transition: all 0.2s ease-out;
   &:hover {
     color: black;
     cursor: pointer;
@@ -89,13 +90,11 @@ const SectionListButton = styled.button`
 
 const SectionListLink = styled.a`
   ${commonText}
-
   text-decoration: none !important;
 `;
 
 const Mail = styled.a`
   ${commonText}
-
   text-decoration: none !important;
 `;
 
@@ -217,7 +216,7 @@ export const Footer = () => {
                 </a>
                 <p
                   style={{ marginBottom: 0, fontSize: 16 }}
-                >{`Copyright © ${new Date().getFullYear()}`}</p>
+                >{`Copyright © 2016 - ${new Date().getFullYear()}`}</p>
                 <p style={{ fontSize: 16 }}>All Rights Reserved</p>
               </CopyrightContainer>
             </StyledContainerCentered>
