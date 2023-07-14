@@ -15,7 +15,7 @@ const resetDefault = css`
 
 const commonStyles = css`
   cursor: pointer;
-  font-weight: 600;
+  font-weight: 700;
   min-width: 180px;
   padding: 16px;
   border-radius: 32px;

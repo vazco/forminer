@@ -216,7 +216,7 @@ export const Footer = () => {
                 </a>
                 <p
                   style={{ marginBottom: 0, fontSize: 16 }}
-                >{`Copyright © 2016 - ${new Date().getFullYear()}`}</p>
+                >{`Copyright © 2020 - ${new Date().getFullYear()}`}</p>
                 <p style={{ fontSize: 16 }}>All Rights Reserved</p>
               </CopyrightContainer>
             </StyledContainerCentered>
