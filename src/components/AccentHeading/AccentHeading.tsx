@@ -5,15 +5,6 @@ import styled from 'styled-components';
 import { UnifiedHeading, UnifiedHeadingProps } from './UnifiedHeading';
 import media from '../../globalStyles/media';
 
-const Container = styled.div`
-  display: flex;
-  align-items: flex-start;
-  margin-bottom: 24px;
-  ${media.greaterThan('md')`
-    margin-bottom: 35px;
-  `}
-`;
-
 const StyledUnifiedHeading = styled(UnifiedHeading)`
   max-width: 660px;
   font-weight: 300;
@@ -24,7 +15,18 @@ export const AccentHeading = ({
   level = 3,
   size = 'md',
   isStrong = true,
+  center = false,
 }: UnifiedHeadingProps) => {
+  const Container = styled.div`
+    display: flex;
+    align-items: flex-start;
+    justify-content: ${center ? 'center' : 'initial'};
+    margin-bottom: 24px;
+    ${media.greaterThan('md')`
+      margin-bottom: 35px;
+    `}
+  `;
+
   return (
     <Container>
       <StyledUnifiedHeading level={level} size={size} isStrong={isStrong}>
