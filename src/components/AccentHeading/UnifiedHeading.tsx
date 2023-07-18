@@ -8,7 +8,7 @@ import {
 } from '../../globalStyles/sharedStyles/headings';
 
 const StyledHeading = styled.h2`
-  font-weight: ${({ isStrong }) => (isStrong ? 500 : 300)};
+  font-weight: ${({ isStrong }) => (isStrong ? 700 : 300)};
   margin: 0;
   ${({ marginBottom }) =>
     marginBottom ? `margin-bottom: ${marginBottom}px` : 0};
@@ -39,6 +39,7 @@ export type UnifiedHeadingProps = {
   size?: 'md' | 'lg' | 'xl';
   isStrong?: boolean;
   marginBottom?: number;
+  center?: boolean;
 };
 
 export const UnifiedHeading = ({
