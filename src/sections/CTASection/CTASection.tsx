@@ -5,38 +5,30 @@ import styled from 'styled-components';
 import { Button } from '../../components/Button';
 import { Container } from '../../components/Container';
 import { Link } from '../../components/Link';
-import media from '../../globalStyles/media';
 import { BOX_BORDER_RADIUS } from '../../globalStyles/sharedStyles/box';
+// @ts-expect-error Image import
+import ctaBackground from '../../images/cta-background.webp';
 
 const HighlightPanel = styled.div`
   h3 {
-    color: ${({ theme }) => theme.color.white};
+    color: black;
     margin: 0;
-    text-align: center;
     width: 100%;
-    ${media.greaterThan('xl')`
-      font-size: ${rem('40px')};
-      line-height: ${rem('50px')};
-    `}
   }
 `;
 
 const ContentWrapper = styled.div`
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   align-items: center;
-  padding: 40px 0;
+  gap: ${rem('100px')};
+  padding: 40px;
   ${BOX_BORDER_RADIUS};
-  ${media.greaterThan('xl')`
-    padding: 75px 0;
-  `}
-  background-color: ${({ theme }) => theme.color.darkBlue};
+  background-image: url(${ctaBackground});
+  background-size: cover;
+  background-position: center center;
 `;
 
-const StyledHeading = styled.h3`
-  margin-bottom: 24px !important;
-`;
+const StyledHeading = styled.h3``;
 
 type CTASectionProps = {
   heading: string;
@@ -51,7 +43,7 @@ export const CTASection = ({ heading, buttonText }: CTASectionProps) => {
         <ContentWrapper>
           <StyledHeading>{heading}</StyledHeading>
           <Link to="mailto:hello@forminer.com" newTab={false}>
-            <Button variant="outlined">{buttonText}</Button>
+            <Button variant="solid">{buttonText}</Button>
           </Link>
         </ContentWrapper>
       </Container>
