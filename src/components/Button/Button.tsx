@@ -18,7 +18,7 @@ const commonStyles = css`
   font-weight: 700;
   min-width: 180px;
   padding: 16px;
-  border-radius: 32px;
+  border-radius: 24px;
   transition: all 0.2s ease-out;
   &:hover {
     text-decoration: none;
@@ -38,12 +38,12 @@ const commonStyles = css`
       `;
     } else if (variant === 'solid') {
       return css`
-        background-color: ${theme.color.white};
-        color: ${theme.color.primary};
-        border: 2px solid ${theme.color.white};
+        background-color: black;
+        color: ${theme.color.white};
+        border: 2px solid black;
         &:hover {
           background-color: inherit;
-          color: ${theme.color.white};
+          color: black;
         }
       `;
     } else if (variant === 'outlined') {
