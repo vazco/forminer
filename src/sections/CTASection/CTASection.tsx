@@ -28,8 +28,6 @@ const ContentWrapper = styled.div`
   background-position: center center;
 `;
 
-const StyledHeading = styled.h3``;
-
 type CTASectionProps = {
   heading: string;
   buttonText: string;
@@ -41,7 +39,7 @@ export const CTASection = ({ heading, buttonText }: CTASectionProps) => {
     <HighlightPanel>
       <Container>
         <ContentWrapper>
-          <StyledHeading>{heading}</StyledHeading>
+          <h3>{heading}</h3>
           <Link to="mailto:hello@forminer.com" newTab={false}>
             <Button variant="solid">{buttonText}</Button>
           </Link>
