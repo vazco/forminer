@@ -1,6 +1,7 @@
 import { rem } from 'polished';
 import React from 'react';
 import styled from 'styled-components';
+import media from '../../globalStyles/media';
 
 import { Button } from '../../components/Button';
 import { Container } from '../../components/Container';
@@ -26,6 +27,10 @@ const ContentWrapper = styled.div`
   background-image: url(${ctaBackground});
   background-size: cover;
   background-position: center center;
+  ${media.lessThan("sm")`
+    gap: ${rem('40px')};
+    flex-direction: column;
+  `}
 `;
 
 const StyledHeading = styled.h3``;
