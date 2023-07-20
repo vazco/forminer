@@ -4,8 +4,7 @@ import styled from 'styled-components';
 const StyledContainer = styled.div`
   max-width: 1360px;
   margin: 0 auto;
-  padding-left: 16px;
-  padding-right: 16px;
+  padding: 0px 16px;
 `;
 
 type ContainerProps = {
