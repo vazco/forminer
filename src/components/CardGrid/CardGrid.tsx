@@ -1,6 +1,7 @@
 import React, { ReactElement } from 'react';
 import styled from 'styled-components';
 import { Card } from '../../components/Card';
+import media from '../../globalStyles/media';
 
 const CardWrapperComponent = styled.div`
   display: grid;
@@ -8,6 +9,13 @@ const CardWrapperComponent = styled.div`
   gap: 40px;
   width: 100%;
   margin: auto;
+  ${media.lessThan('lg')`
+    gap: 20px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  `}
+  ${media.lessThan('md')`
+    grid-template-columns: 1fr;
+  `}
 `;
 
 type CardElement = {
