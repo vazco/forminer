@@ -4,7 +4,7 @@ import { Card } from '../../components/Card';
 
 const CardWrapperComponent = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, minmax(0,1fr));
   gap: 40px;
   width: 100%;
   margin: auto;
