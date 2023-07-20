@@ -18,7 +18,7 @@ const commonStyles = css`
   font-weight: 700;
   min-width: 180px;
   padding: 16px;
-  border-radius: 24px;
+  border-radius: 32px;
   transition: all 0.2s ease-out;
   &:hover {
     text-decoration: none;
