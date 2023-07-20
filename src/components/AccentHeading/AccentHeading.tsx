@@ -20,7 +20,7 @@ export const AccentHeading = ({
   const Container = styled.div`
     display: flex;
     align-items: flex-start;
-    justify-content: ${center ? 'center' : 'initial'};
+    text-align: ${center ? 'center' : 'initial'};
     margin-bottom: 24px;
     ${media.greaterThan('md')`
       margin-bottom: 35px;

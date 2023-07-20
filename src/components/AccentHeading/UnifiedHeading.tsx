@@ -10,6 +10,7 @@ import {
 const StyledHeading = styled.h2`
   font-weight: ${({ isStrong }) => (isStrong ? 700 : 300)};
   margin: 0;
+  width: 100%;
   ${({ marginBottom }) =>
     marginBottom ? `margin-bottom: ${marginBottom}px` : 0};
 
