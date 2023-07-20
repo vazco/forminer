@@ -4,7 +4,7 @@ import { Card } from '../../components/Card';
 
 const CardWrapperComponent = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, minmax(0,1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 40px;
   width: 100%;
   margin: auto;
@@ -20,10 +20,10 @@ type CardGridProps = {
   cards: CardElement[];
 };
 
-export const CardGrid = ({ cards }: CardGridProps) => {
-  return (
-    <CardWrapperComponent>
-      {cards.map(c => <Card icon={c.icon} title={c.title} description={c.description} />)}
-    </CardWrapperComponent>
-  );
-};
+export const CardGrid = ({ cards }: CardGridProps) => (
+  <CardWrapperComponent>
+    {cards.map(c => (
+      <Card icon={c.icon} title={c.title} description={c.description} />
+    ))}
+  </CardWrapperComponent>
+);
