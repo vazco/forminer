@@ -1,6 +1,7 @@
 import React from 'react';
 import { BOX_BORDER_RADIUS } from '../../globalStyles/sharedStyles/box';
 import styled from 'styled-components';
+import media from '../../globalStyles/media';
 import CheckmarkIcon from '../../images/svg/checkmark.svg';
 
 type ListCardProps = {
@@ -13,6 +14,9 @@ const CardComponent = styled.div`
   padding: 36px 48px;
   background-color: #eee;
   ${BOX_BORDER_RADIUS};
+  ${media.lessThan('md')`
+    padding: 24px;
+  `}
 `;
 
 const TitleComponent = styled.div`
