@@ -54,6 +54,65 @@ const LinkComponent = styled(Link)`
   }
 `;
 
+const CardComponent = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid ${({ color }) => color};
+  border-radius: 36px;
+  width: 100%;
+  padding: 24px;
+`;
+
+const BadgeComponent = styled.div`
+  position: absolute;
+  left: 50%;
+  top: 0px;
+  transform: translate(-50%, -50%);
+  font-size: 14px;
+  padding: 8px 32px;
+  border-radius: 32px;
+  font-weight: 500;
+  background-color: ${({ color }) => color};
+  white-space: nowrap;
+  color: white;
+`;
+
+const BenefitsComponent = styled.div`
+  text-align: ${({ isBenefitsList }) => isBenefitsList ? 'center' : 'left'};
+  display: flex;
+  flex-flow: column;
+  flex-grow: 1;
+  gap: 15px;
+  justify-content: center;
+  padding: 15px 0px;
+  margin-bottom: 15px;
+`;
+
+const BulletPointComponent = styled.div`
+  color: ${({ color }) => color};
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  & svg {
+    width: 100%;
+    height: 100%;
+  }
+`;
+
+const ButtonComponent = styled.button`
+  background-color: ${({ color }) => color};
+  display: block;
+  margin: auto;
+  color: white;
+  border-radius: 30px;
+  border: 0px;
+  padding: 15px 30px;
+  font-weight: 700;
+  font-size: 18px;
+  cursor: pointer;
+`;
+
 export const PricingCard = ({
   color,
   title,
@@ -66,68 +125,9 @@ export const PricingCard = ({
 }: PricingCardProps) => {
   const isBenefitsList = typeof benefits === 'string';
 
-  const CardComponent = styled.div`
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    border: 2px solid ${color};
-    border-radius: 36px;
-    width: 100%;
-    padding: 24px;
-  `;
-
-  const BadgeComponent = styled.div`
-    position: absolute;
-    left: 50%;
-    top: 0px;
-    transform: translate(-50%, -50%);
-    font-size: 14px;
-    padding: 8px 32px;
-    border-radius: 32px;
-    font-weight: 500;
-    background-color: ${color};
-    white-space: nowrap;
-    color: white;
-  `;
-
-  const BenefitsComponent = styled.div`
-    text-align: ${isBenefitsList ? 'center' : 'lefft'};
-    display: flex;
-    flex-flow: column;
-    flex-grow: 1;
-    gap: 15px;
-    justify-content: center;
-    padding: 15px 0px;
-    margin-bottom: 15px;
-  `;
-
-  const BulletPointComponent = styled.div`
-    color: ${color};
-    width: 20px;
-    height: 20px;
-    flex-shrink: 0;
-    & svg {
-      width: 100%;
-      height: 100%;
-    }
-  `;
-
-  const ButtonComponent = styled.button`
-    background-color: ${color};
-    display: block;
-    margin: auto;
-    color: white;
-    border-radius: 30px;
-    border: 0px;
-    padding: 15px 30px;
-    font-weight: 700;
-    font-size: 18px;
-    cursor: pointer;
-  `;
-
   return (
-    <CardComponent>
-      {isMostPopular && <BadgeComponent>Most popular</BadgeComponent>}
+    <CardComponent color={color}>
+      {isMostPopular && <BadgeComponent color={color}>Most popular</BadgeComponent>}
       <TitleComponent>{title}</TitleComponent>
       {price ? (
         <PriceComponent>
@@ -147,12 +147,12 @@ export const PricingCard = ({
           </TalkIconComponent>
         </PriceComponent>
       )}
-      <BenefitsComponent>
+      <BenefitsComponent isBenefitsList={isBenefitsList}>
         {isBenefitsList
           ? benefits
           : benefits.map(benefit => (
               <BulletpointWrapComponent>
-                <BulletPointComponent>
+                <BulletPointComponent color={color}>
                   <CheckmarkIcon />
                 </BulletPointComponent>
                 <div>{benefit}</div>
@@ -160,7 +160,7 @@ export const PricingCard = ({
             ))}
       </BenefitsComponent>
       <LinkComponent href={buttonLink}>
-        <ButtonComponent>{buttonText}</ButtonComponent>
+        <ButtonComponent color={color}>{buttonText}</ButtonComponent>
       </LinkComponent>
     </CardComponent>
   );
