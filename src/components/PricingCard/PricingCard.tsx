@@ -40,6 +40,7 @@ const DenominatorComponent = styled.span`
   font-weight: 100;
   vertical-align: super;
   letter-spacing: 0.5px;
+  margin-left: 2px;
 `;
 
 const BulletpointWrapComponent = styled.div`
