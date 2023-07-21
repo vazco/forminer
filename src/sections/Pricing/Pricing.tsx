@@ -2,9 +2,21 @@ import React from "react";
 import { PricingCard } from "../../components/PricingCard";
 import { SectionLayout } from "../../components/SectionLayout";
 import styled from 'styled-components';
+import media from '../../globalStyles/media';
 
 const PricingWrapperComponent = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  ${media.lessThan('xl')`
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  `}
+  ${media.lessThan('lg')`
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  `}
+  ${media.lessThan('md')`
+    grid-template-columns: 1fr;
+    gap: 20px;
+  `}
   gap: 10px;
 `;
 
