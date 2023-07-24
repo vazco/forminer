@@ -50,7 +50,7 @@ const StyledGridContainer = styled(Grid)`
     padding-bottom: 16px;
     ${media.greaterThan('md')`
     min-width: 700px;
-    padding-top: 16px;
+    padding-top: 64px;
     
   `}
     ${media.greaterThan('lg')`
