@@ -1,6 +1,7 @@
 import { rem } from 'polished';
 import React from 'react';
 import styled from 'styled-components';
+import media from '../../globalStyles/media';
 
 import { Button } from '../../components/Button';
 import { Container } from '../../components/Container';
@@ -26,9 +27,11 @@ const ContentWrapper = styled.div`
   background-image: url(${ctaBackground});
   background-size: cover;
   background-position: center center;
+  ${media.lessThan("sm")`
+    gap: ${rem('40px')};
+    flex-direction: column;
+  `}
 `;
-
-const StyledHeading = styled.h3``;
 
 type CTASectionProps = {
   heading: string;
@@ -41,7 +44,7 @@ export const CTASection = ({ heading, buttonText }: CTASectionProps) => {
     <HighlightPanel>
       <Container>
         <ContentWrapper>
-          <StyledHeading>{heading}</StyledHeading>
+          <h3>{heading}</h3>
           <Link to="mailto:hello@forminer.com" newTab={false}>
             <Button variant="solid">{buttonText}</Button>
           </Link>

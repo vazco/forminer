@@ -4,26 +4,6 @@
   viewBox="0 0 375 374.999991"
   height="500"
 >
-  <defs>
-    <clipPath id="198aceba12">
-      <path
-        d="M 29.035156 24.878906 L 345.835938 24.878906 L 345.835938 341.796875 L 29.035156 341.796875 Z M 29.035156 24.878906 "
-        clip-rule="nonzero"
-      />
-    </clipPath>
-    <clipPath id="6bea0ccb0b">
-      <path
-        d="M 29.035156 155 L 85 155 L 85 212 L 29.035156 212 Z M 29.035156 155 "
-        clip-rule="nonzero"
-      />
-    </clipPath>
-    <clipPath id="ca63622e55">
-      <path
-        d="M 140 24.878906 L 197 24.878906 L 197 81 L 140 81 Z M 140 24.878906 "
-        clip-rule="nonzero"
-      />
-    </clipPath>
-  </defs>
   <path
     fill="#00abff"
     d="M 81.542969 38.21875 L 42.375 77.40625 L 108.378906 143.433594 L 147.550781 104.25 Z M 81.542969 38.21875 "
