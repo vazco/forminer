@@ -12,3 +12,4 @@ export * from './Footer';
 export * from './FormRelatedIssues';
 export * from './PowerfulFeatures';
 export * from './WhatDoYouGet';
+export * from './TrustedBy';
