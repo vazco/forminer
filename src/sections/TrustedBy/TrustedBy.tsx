@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import styled from 'styled-components';
 import media from '../../globalStyles/media';
 import { rem } from 'polished';
@@ -14,7 +14,7 @@ import kodefly from '../../images/kodefly.webp';
 const Container = styled.div`
   width: 100%;
   padding: 20px 100px;
-  background-color: #EEEEEE;
+  background-color: #eeeeee;
   display: flex;
   ${media.lessThan('lg')`
     padding: 20px ${rem('30px')};
@@ -46,24 +46,22 @@ const CompanyImage = styled.img`
   height: 100%;
 `;
 
-export const TrustedBy = () => {
-  return (
-    <Container>
-      <div>Solution trusted by:</div>
-      <Companies>
-        <CompanyWrap>
-          <CompanyImage src={cbre} alt="CBRE" />
-        </CompanyWrap>
-        <CompanyWrap>
-          <CompanyImage src={campusSkills} alt="CampusSkills" />
-        </CompanyWrap>
-        <CompanyWrap>
-          <CompanyImage src={eriez} alt="Eriez" />
-        </CompanyWrap>
-        <CompanyWrap>
-          <CompanyImage src={kodefly} alt="Kodefly" />
-        </CompanyWrap>
-      </Companies>
-    </Container>
-  );
-};
+export const TrustedBy = () => (
+  <Container>
+    <div>Solution trusted by:</div>
+    <Companies>
+      <CompanyWrap>
+        <CompanyImage src={cbre} alt="CBRE" />
+      </CompanyWrap>
+      <CompanyWrap>
+        <CompanyImage src={campusSkills} alt="CampusSkills" />
+      </CompanyWrap>
+      <CompanyWrap>
+        <CompanyImage src={eriez} alt="Eriez" />
+      </CompanyWrap>
+      <CompanyWrap>
+        <CompanyImage src={kodefly} alt="Kodefly" />
+      </CompanyWrap>
+    </Companies>
+  </Container>
+);
