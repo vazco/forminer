@@ -33,26 +33,24 @@ const ListContainer = styled.div`
   `}
 
   grid-row-gap: 5px;
-  grid-column-gap: 10px;
   ${media.greaterThan('md')`
     grid-row-gap: 10px;
-    grid-column-gap: 20px;
-    width: 55%;
+    width: 40%;
   `};
   ${media.between('md', 'xl')`
-    width: 70%;
+    width: 50%;
   `};
   ${media.greaterThan('lg')`
     grid-row-gap: 15px;
-    grid-column-gap: 30px;
   `};
 `;
 
 const StyledImage = styled.img`
-  width: 200;
+  width: 75px;
   height: 80%;
   max-height: 40px;
   object-fit: scale-down;
+  object-position: left;
   margin: 0 !important;
   filter: grayscale(100%);
   &:hover {

@@ -48,11 +48,11 @@ const commonStyles = css`
       `;
     } else if (variant === 'outlined') {
       return css`
-        color: ${theme.color.white};
-        border: 2px solid ${theme.color.white};
+        color: black;
+        border: 2px solid black;
         &:hover {
-          background-color: ${theme.color.white};
-          color: ${theme.color.primary};
+          background-color: black;
+          color: ${theme.color.white};
         }
       `;
     }
