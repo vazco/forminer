@@ -105,6 +105,10 @@ table {
   color: #1074ef;
 }
 
+.navbar__link:hover {
+  color: white;
+}
+
 .navbar-sidebar__items .pricing-nav-item {
   color: #606770;
 }
