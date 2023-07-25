@@ -14,6 +14,7 @@ import {
   WhatDoYouGet,
   Pricing,
   UseCases,
+  TrustedBy,
 } from '../sections';
 
 const IndexPage = () => {
@@ -31,6 +32,7 @@ const IndexPage = () => {
       <Layout>
         <LayoutBase>
           <Hero />
+          <TrustedBy />
           <FormRelatedIssues />
           <CTASection
             heading="How does Forminer help overcome your challenges?"
