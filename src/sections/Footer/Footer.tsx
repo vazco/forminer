@@ -212,7 +212,7 @@ export const Footer = () => {
                   rel="noreferrer noopener"
                 >
                   <img
-                    src="img/vazco-logo-2023.svg"
+                    src="img/vazco-logo-dark.png"
                     alt="Vazco.eu"
                     width="150"
                     height="auto"
