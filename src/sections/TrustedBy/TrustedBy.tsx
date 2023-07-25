@@ -13,11 +13,17 @@ import kodefly from '../../images/kodefly.webp';
 
 const Container = styled.div`
   width: 100%;
-  padding: 20px 100px;
+  padding: 20px 0px;
   background-color: #eeeeee;
+`;
+
+const Content = styled.div`
   display: flex;
+  max-width: 1360px;
+  width: 100%;
+  margin: 0px auto;
+  padding: 0px 16px;
   ${media.lessThan('lg')`
-    padding: 20px ${rem('30px')};
     flex-direction: column;
     gap: 15px;
     & img {
@@ -48,20 +54,22 @@ const CompanyImage = styled.img`
 
 export const TrustedBy = () => (
   <Container>
-    <div>Solution trusted by:</div>
-    <Companies>
-      <CompanyWrap>
-        <CompanyImage src={cbre} alt="CBRE" />
-      </CompanyWrap>
-      <CompanyWrap>
-        <CompanyImage src={campusSkills} alt="CampusSkills" />
-      </CompanyWrap>
-      <CompanyWrap>
-        <CompanyImage src={eriez} alt="Eriez" />
-      </CompanyWrap>
-      <CompanyWrap>
-        <CompanyImage src={kodefly} alt="Kodefly" />
-      </CompanyWrap>
-    </Companies>
+    <Content>
+      <div>Solution trusted by:</div>
+      <Companies>
+        <CompanyWrap>
+          <CompanyImage src={cbre} alt="CBRE" />
+        </CompanyWrap>
+        <CompanyWrap>
+          <CompanyImage src={campusSkills} alt="CampusSkills" />
+        </CompanyWrap>
+        <CompanyWrap>
+          <CompanyImage src={eriez} alt="Eriez" />
+        </CompanyWrap>
+        <CompanyWrap>
+          <CompanyImage src={kodefly} alt="Kodefly" />
+        </CompanyWrap>
+      </Companies>
+    </Content>
   </Container>
 );
