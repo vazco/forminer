@@ -85,7 +85,7 @@ table {
 }
 
 .buy-now-nav-item:hover {
-  background: white !important;
+  background: transparent !important;
   color: black !important;
   border: 2px solid black;
   border-radius: 32px;
