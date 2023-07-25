@@ -38,7 +38,7 @@ const StyledGridItem = styled(Grid)`
 `;
 
 const ContentWrapper = styled.div`
-  padding-top: 20px;
+  padding-top: 60px;
   ${media.greaterThan('md')`
     padding: 0 24px 0 0;
   `}
