@@ -55,7 +55,7 @@ export const ListCard = ({ title, points }: ListCardProps) => {
       <TitleComponent>{title}</TitleComponent>
       <BulletsWrapComponent>
         {points.map(point => (
-          <BulletpointWrapComponent>
+          <BulletpointWrapComponent key={point}>
             <BulletPointComponent>
               <CheckmarkIcon />
             </BulletPointComponent>
