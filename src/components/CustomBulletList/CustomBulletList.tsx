@@ -63,7 +63,7 @@ export const CustomBulletListItem = ({
   theme,
 }: CustomBulletListItemProps) => (
   <ListItem theme={theme}>
-    <CheckmarkWrapper>
+    <CheckmarkWrapper color={theme}>
       <CheckmarkIcon />
     </CheckmarkWrapper>
     {children}
