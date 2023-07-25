@@ -38,20 +38,20 @@ const commonStyles = css`
       `;
     } else if (variant === 'solid') {
       return css`
-        background-color: black;
+        background-color: ${theme.color.black};
         color: ${theme.color.white};
-        border: 2px solid black;
+        border: 2px solid ${theme.color.black};
         &:hover {
           background-color: inherit;
-          color: black;
+          color: ${theme.color.black};
         }
       `;
     } else if (variant === 'outlined') {
       return css`
-        color: black;
-        border: 2px solid black;
+        color: ${theme.color.black};
+        border: 2px solid ${theme.color.black};
         &:hover {
-          background-color: black;
+          background-color: ${theme.color.black};
           color: ${theme.color.white};
         }
       `;

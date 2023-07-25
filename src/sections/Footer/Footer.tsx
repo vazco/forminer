@@ -15,7 +15,7 @@ const StyledFooter = styled.footer`
   ${media.greaterThan('md')`
     padding: 30px 0;
   `}
-  color: black;
+  color: ${({ theme }) => theme.color.black};
   background-image: url(${ctaBackground});
   background-size: cover;
   background-position: center center;
@@ -58,7 +58,7 @@ const ShowcaseCardContainer = styled.div`
   justify-content: center;
   align-items: center;
   margin-bottom: 1em;
-  border: 2px dashed black;
+  border: 2px dashed ${({ theme }) => theme.color.black};
   ${media.greaterThan('md')`
     max-width: 20%
   `}
@@ -79,10 +79,10 @@ const commonText = css`
   border: none;
   font-size: 16px;
   font-weight: 300;
-  color: black;
+  color: ${({ theme }) => theme.color.black};
   transition: all 0.2s ease-out;
   &:hover {
-    color: black;
+    color: ${({ theme }) => theme.color.black};
     cursor: pointer;
   }
 `;

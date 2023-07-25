@@ -15,7 +15,7 @@ const List = styled.ul`
 `;
 
 const CheckmarkWrapper = styled.div`
-  color: ${({ color = 'black' }) => color};
+  color: ${({ color = '#00141E' }) => color};
   width: 20px;
   height: 20px;
   flex-shrink: 0;
@@ -31,8 +31,7 @@ const ListItem = styled.li`
   min-height: 36px;
   display: flex;
   align-items: center;
-  color: ${(props: CustomBulletListItemProps) =>
-    props.theme === 'white' ? 'white' : 'inherit'};
+  color: inherit;
 
   ${media.lessThan('sm')`
     margin-bottom: ${rem('12px')};
@@ -55,15 +54,11 @@ type CustomBulletListProps = {
 
 type CustomBulletListItemProps = {
   children: ReactNode;
-  theme: 'blue' | 'white' | 'black';
 };
 
-export const CustomBulletListItem = ({
-  children,
-  theme,
-}: CustomBulletListItemProps) => (
-  <ListItem theme={theme}>
-    <CheckmarkWrapper color={theme}>
+export const CustomBulletListItem = ({ children }: CustomBulletListItemProps) => (
+  <ListItem>
+    <CheckmarkWrapper>
       <CheckmarkIcon />
     </CheckmarkWrapper>
     {children}

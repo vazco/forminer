@@ -97,17 +97,17 @@ export const Hero = () => {
         Empower your users with <TextUnderline>seamless form building</TextUnderline>
       </h2>
       <CustomBulletList>
-        <CustomBulletListItem theme="black">
+        <CustomBulletListItem>
           <span>
             Save up to <strong>1500 hours</strong> on development
           </span>
         </CustomBulletListItem>
-        <CustomBulletListItem theme="black">
+        <CustomBulletListItem>
           <span>
             Enjoy the <strong>traffic-independent payment</strong> model
           </span>
         </CustomBulletListItem>
-        <CustomBulletListItem theme="black">
+        <CustomBulletListItem>
           <span>
             Customize it or leverage <strong>already-prepped forms' UI</strong>
           </span>
