@@ -152,7 +152,7 @@ export const PricingCard = ({
         {isBenefitsList
           ? benefits
           : benefits.map(benefit => (
-              <BulletpointWrapComponent>
+              <BulletpointWrapComponent key={benefit}>
                 <BulletPointComponent color={color}>
                   <CheckmarkIcon />
                 </BulletPointComponent>

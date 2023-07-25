@@ -4,14 +4,6 @@
   viewBox="0 0 375 374.999991"
   height="500"
 >
-  <defs>
-    <clipPath id="1dca561b65">
-      <path
-        d="M 0 61.015625 L 375 61.015625 L 375 313.765625 L 0 313.765625 Z M 0 61.015625 "
-        clip-rule="nonzero"
-      />
-    </clipPath>
-  </defs>
   <g clip-path="url(#1dca561b65)">
     <path
       fill="#00141e"

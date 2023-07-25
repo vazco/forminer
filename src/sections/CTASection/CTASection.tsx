@@ -12,7 +12,7 @@ import ctaBackground from '../../images/cta-background.webp';
 
 const HighlightPanel = styled.div`
   h3 {
-    color: black;
+    color: ${({ theme }) => theme.color.black};
     margin: 0;
     width: 100%;
   }

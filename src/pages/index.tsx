@@ -6,15 +6,15 @@ import { LayoutBase } from '../components/LayoutBase';
 import { SEO } from '../components/SEO';
 import {
   Hero,
-  KeyFunctionalitiesSection,
-  StepsSection,
   CTASection,
-  WhatYouGetSection,
-  TestProductSection,
-  TrustedByOpenSourceSection,
-  PricingSection,
   FAQSection,
   Footer,
+  FormRelatedIssues,
+  PowerfulFeatures,
+  WhatDoYouGet,
+  Pricing,
+  UseCases,
+  TrustedBy,
 } from '../sections';
 
 const IndexPage = () => {
@@ -32,16 +32,20 @@ const IndexPage = () => {
       <Layout>
         <LayoutBase>
           <Hero />
-          <KeyFunctionalitiesSection />
-          <StepsSection />
+          <TrustedBy />
+          <FormRelatedIssues />
           <CTASection
-            heading="How can these solutions help your project?"
-            buttonText="Ask our CTO"
+            heading="How does Forminer help overcome your challenges?"
+            buttonText="Explore docs"
           />
-          <WhatYouGetSection />
-          <TestProductSection />
-          <PricingSection />
-          <TrustedByOpenSourceSection />
+          <PowerfulFeatures />
+          <CTASection
+            heading="Ready to see Forminer in action?"
+            buttonText="Explore demo"
+          />
+          <UseCases />
+          <WhatDoYouGet />
+          <Pricing />
           <FAQSection />
           <Footer />
         </LayoutBase>

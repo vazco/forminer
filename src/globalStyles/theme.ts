@@ -35,6 +35,7 @@ export const theme = {
     grey: '#fafafb',
     darkGrey: '#f4f5f6',
     white: '#fff',
+    black: '#00141E',
   },
 };
 
@@ -48,13 +49,13 @@ html {
   box-sizing: inherit;
 }
 main {
-  font-family: 'Muli', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 300;
-  color: ${theme.color.body};
+  color: ${theme.color.black};
   overflow-x: hidden;
   
   h1, h2, h3, h4, h5 {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 500;
   margin-top: 0;
 }

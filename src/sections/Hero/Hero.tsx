@@ -37,6 +37,14 @@ const ButtonsWrapperOffset = styled.div`
   `}
 `;
 
+const TextUnderline = styled.span`
+  text-decoration: underline;
+  text-decoration-color: #EEEEE0;
+  text-decoration-thickness: 6px;
+  text-underline-offset: 3px;
+  text-decoration-skip-ink: none;
+`;
+
 const StyledLargeText = styled.p`
   ${media.greaterThan('xl')`
     font-size: ${rem('30px')};
@@ -87,20 +95,20 @@ export const Hero = () => {
   return (
     <FeaturedCase>
       <h2 style={{ fontWeight: 900 }}>
-        Empower your users with seamless form building
+        Empower your users with <TextUnderline>seamless form building</TextUnderline>
       </h2>
       <CustomBulletList>
-        <CustomBulletListItem theme="black">
+        <CustomBulletListItem>
           <span>
             Save up to <strong>1500 hours</strong> on development
           </span>
         </CustomBulletListItem>
-        <CustomBulletListItem theme="black">
+        <CustomBulletListItem>
           <span>
             Enjoy the <strong>traffic-independent payment</strong> model
           </span>
         </CustomBulletListItem>
-        <CustomBulletListItem theme="black">
+        <CustomBulletListItem>
           <span>
             Customize it or leverage <strong>already-prepped forms' UI</strong>
           </span>

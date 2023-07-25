@@ -31,7 +31,7 @@ type CardGridProps = {
 export const CardGrid = ({ cards }: CardGridProps) => (
   <CardWrapperComponent>
     {cards.map(c => (
-      <Card icon={c.icon} title={c.title} description={c.description} />
+      <Card icon={c.icon} title={c.title} description={c.description} key={c.title} />
     ))}
   </CardWrapperComponent>
 );

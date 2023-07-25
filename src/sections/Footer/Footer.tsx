@@ -6,15 +6,19 @@ import styled, { css } from 'styled-components';
 
 import { Container } from '../../components/Container';
 import media from '../../globalStyles/media';
+// @ts-expect-error Image import
+import ctaBackground from '../../images/cta-background.webp';
 
 const StyledFooter = styled.footer`
-  background-color: ${({ theme }) => theme.color.darkBlue};
   overflow: hidden;
   padding: 20px 0;
   ${media.greaterThan('md')`
     padding: 30px 0;
   `}
-  color: ${({ theme }) => theme.color.white};
+  color: ${({ theme }) => theme.color.black};
+  background-image: url(${ctaBackground});
+  background-size: cover;
+  background-position: center center;
 `;
 
 const TopSection = styled.div`
@@ -54,7 +58,7 @@ const ShowcaseCardContainer = styled.div`
   justify-content: center;
   align-items: center;
   margin-bottom: 1em;
-  border: 2px dashed white;
+  border: 2px dashed ${({ theme }) => theme.color.black};
   ${media.greaterThan('md')`
     max-width: 20%
   `}
@@ -75,10 +79,10 @@ const commonText = css`
   border: none;
   font-size: 16px;
   font-weight: 300;
-  color: white;
+  color: ${({ theme }) => theme.color.black};
   transition: all 0.2s ease-out;
   &:hover {
-    color: black;
+    color: ${({ theme }) => theme.color.black};
     cursor: pointer;
   }
 `;
@@ -208,7 +212,7 @@ export const Footer = () => {
                   rel="noreferrer noopener"
                 >
                   <img
-                    src="img/vazco-logo-2023.svg"
+                    src="img/vazco-logo-dark.png"
                     alt="Vazco.eu"
                     width="150"
                     height="auto"

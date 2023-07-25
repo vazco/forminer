@@ -49,7 +49,7 @@ const cards = [
 
 const UnderlineComponent = styled.div`
   text-decoration: underline;
-  text-decoration-color: #00D5B0;
+  text-decoration-color: #00ABFF;
   text-decoration-thickness: 3px;
   font-size: 28px;
   text-align: center;

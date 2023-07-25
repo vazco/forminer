@@ -39,7 +39,7 @@ const BulletpointWrapComponent = styled.div`
 `;
 
 const BulletPointComponent = styled.div`
-  color: black;
+  color: ${({ theme }) => theme.color.black};
   width: 20px;
   height: 20px;
   flex-shrink: 0;
@@ -55,7 +55,7 @@ export const ListCard = ({ title, points }: ListCardProps) => {
       <TitleComponent>{title}</TitleComponent>
       <BulletsWrapComponent>
         {points.map(point => (
-          <BulletpointWrapComponent>
+          <BulletpointWrapComponent key={point}>
             <BulletPointComponent>
               <CheckmarkIcon />
             </BulletPointComponent>
