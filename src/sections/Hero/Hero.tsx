@@ -42,6 +42,7 @@ const TextUnderline = styled.span`
   text-decoration-color: #EEEEE0;
   text-decoration-thickness: 6px;
   text-underline-offset: 3px;
+  text-decoration-skip-ink: none;
 `;
 
 const StyledLargeText = styled.p`
