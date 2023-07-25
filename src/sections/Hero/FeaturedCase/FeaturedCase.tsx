@@ -7,6 +7,8 @@ import { Container } from '../../../components/Container';
 import media from '../../../globalStyles/media';
 // @ts-expect-error Image import
 import image from '../../../images/forminer.webp';
+// @ts-expect-error Image import
+import background from '../../../images/cta-background.webp';
 
 const Section = styled.section`
   padding: 10px;
@@ -15,11 +17,9 @@ const Section = styled.section`
   justify-content: center;
   padding-top: 0;
   min-height: calc(100vh - 60px);
-  ${({ bgColor }) =>
-    bgColor &&
-    css`
-      background-color: ${bgColor};
-    `};
+  background-image: url(${background});
+  background-size: cover;
+  background-position: center center;
 `;
 
 const StyledContainer = styled(Container)`
@@ -38,7 +38,7 @@ const StyledGridItem = styled(Grid)`
 `;
 
 const ContentWrapper = styled.div`
-  padding-top: 20px;
+  padding-top: 60px;
   ${media.greaterThan('md')`
     padding: 0 24px 0 0;
   `}
@@ -50,7 +50,7 @@ const StyledGridContainer = styled(Grid)`
     padding-bottom: 16px;
     ${media.greaterThan('md')`
     min-width: 700px;
-    padding-top: 16px;
+    padding-top: 64px;
     
   `}
     ${media.greaterThan('lg')`
@@ -68,7 +68,6 @@ type FeaturedCaseProps = {
   children: ReactNode;
 };
 
-const bgColor = '#0d5dbf';
 const direction = 'row-reverse';
 
 export const FeaturedCase = ({ children }: FeaturedCaseProps) => {
@@ -77,8 +76,8 @@ export const FeaturedCase = ({ children }: FeaturedCaseProps) => {
   const changeOrder = useMediaQuery(theme.breakpoints.up('lg'));
 
   return (
-    <Section bgColor={bgColor}>
-      <StyledContainer bgColor={bgColor}>
+    <Section>
+      <StyledContainer>
         <StyledGridContainer direction={direction} alignItems="start" container>
           {!changeOrder && (
             <Grid xs={12} sm={12} md={12} lg={6} item>
