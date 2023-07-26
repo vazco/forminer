@@ -4,8 +4,7 @@
  * work well for content-centric websites.
  */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Muli:wght@300;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;600;700&display=swap');
 
 /* You can override the default Infima variables here. */
 :root {
@@ -69,13 +68,13 @@ table {
 /* Make "Buy Now" link styled as button */
 .buy-now-nav-item {
   outline: none;
-  background: rgb(16, 116, 239) !important;
+  background: #00141E !important;
   cursor: pointer;
   font-weight: 600;
   height: 100%;
   min-width: 110px;
   padding: 6px;
-  border: 2px solid rgb(16, 116, 239);
+  border: 2px solid #00141E;
   border-radius: 32px;
   display: flex;
   justify-content: center;
@@ -86,9 +85,9 @@ table {
 }
 
 .buy-now-nav-item:hover {
-  background: white !important;
-  color: rgb(16, 116, 239) !important;
-  border: 2px solid rgb(16, 116, 239);
+  background: transparent !important;
+  color: #00141E !important;
+  border: 2px solid #00141E;
   border-radius: 32px;
 }
 
@@ -104,6 +103,10 @@ table {
 
 .pricing-nav-item:hover {
   color: #1074ef;
+}
+
+.navbar__link:hover {
+  color: white;
 }
 
 .navbar-sidebar__items .pricing-nav-item {
@@ -142,6 +145,12 @@ table {
 
 .navbar {
   justify-content: center;
+  position: absolute !important;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  box-shadow: none;
+  background-color: transparent !important;
 }
 
 .navbar__inner {

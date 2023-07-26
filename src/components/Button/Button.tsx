@@ -38,21 +38,21 @@ const commonStyles = css`
       `;
     } else if (variant === 'solid') {
       return css`
-        background-color: ${theme.color.white};
-        color: ${theme.color.primary};
-        border: 2px solid ${theme.color.white};
+        background-color: ${theme.color.black};
+        color: ${theme.color.white};
+        border: 2px solid ${theme.color.black};
         &:hover {
           background-color: inherit;
-          color: ${theme.color.white};
+          color: ${theme.color.black};
         }
       `;
     } else if (variant === 'outlined') {
       return css`
-        color: ${theme.color.white};
-        border: 2px solid ${theme.color.white};
+        color: ${theme.color.black};
+        border: 2px solid ${theme.color.black};
         &:hover {
-          background-color: ${theme.color.white};
-          color: ${theme.color.primary};
+          background-color: ${theme.color.black};
+          color: ${theme.color.white};
         }
       `;
     }

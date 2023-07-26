@@ -1,41 +1,36 @@
 import { rem } from 'polished';
 import React from 'react';
 import styled from 'styled-components';
+import media from '../../globalStyles/media';
 
 import { Button } from '../../components/Button';
 import { Container } from '../../components/Container';
 import { Link } from '../../components/Link';
-import media from '../../globalStyles/media';
 import { BOX_BORDER_RADIUS } from '../../globalStyles/sharedStyles/box';
+// @ts-expect-error Image import
+import ctaBackground from '../../images/cta-background.webp';
 
 const HighlightPanel = styled.div`
   h3 {
-    color: ${({ theme }) => theme.color.white};
+    color: ${({ theme }) => theme.color.black};
     margin: 0;
-    text-align: center;
     width: 100%;
-    ${media.greaterThan('xl')`
-      font-size: ${rem('40px')};
-      line-height: ${rem('50px')};
-    `}
   }
 `;
 
 const ContentWrapper = styled.div`
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   align-items: center;
-  padding: 40px 0;
+  gap: ${rem('100px')};
+  padding: 40px;
   ${BOX_BORDER_RADIUS};
-  ${media.greaterThan('xl')`
-    padding: 75px 0;
+  background-image: url(${ctaBackground});
+  background-size: cover;
+  background-position: center center;
+  ${media.lessThan("sm")`
+    gap: ${rem('40px')};
+    flex-direction: column;
   `}
-  background-color: ${({ theme }) => theme.color.darkBlue};
-`;
-
-const StyledHeading = styled.h3`
-  margin-bottom: 24px !important;
 `;
 
 type CTASectionProps = {
@@ -49,9 +44,9 @@ export const CTASection = ({ heading, buttonText }: CTASectionProps) => {
     <HighlightPanel>
       <Container>
         <ContentWrapper>
-          <StyledHeading>{heading}</StyledHeading>
+          <h3>{heading}</h3>
           <Link to="mailto:hello@forminer.com" newTab={false}>
-            <Button variant="outlined">{buttonText}</Button>
+            <Button variant="solid">{buttonText}</Button>
           </Link>
         </ContentWrapper>
       </Container>

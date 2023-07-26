@@ -1,15 +1,10 @@
 import React, { ReactNode } from 'react';
 import styled from 'styled-components';
 
-import media from '../../globalStyles/media';
-
 const StyledContainer = styled.div`
   max-width: 1360px;
   margin: 0 auto;
-  ${media.lessThan('xl')`
-    padding-left: 16px;
-    padding-right: 16px;
-  `}
+  padding: 0px 16px;
 `;
 
 type ContainerProps = {

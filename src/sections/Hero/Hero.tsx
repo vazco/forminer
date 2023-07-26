@@ -37,6 +37,14 @@ const ButtonsWrapperOffset = styled.div`
   `}
 `;
 
+const TextUnderline = styled.span`
+  text-decoration: underline;
+  text-decoration-color: #EEEEE0;
+  text-decoration-thickness: 6px;
+  text-underline-offset: 3px;
+  text-decoration-skip-ink: none;
+`;
+
 const StyledLargeText = styled.p`
   ${media.greaterThan('xl')`
     font-size: ${rem('30px')};
@@ -51,7 +59,6 @@ const StyledLargeText = styled.p`
 
   font-weight: 300;
   max-width: 660px;
-  color: white;
 
   &:last-child {
     margin-bottom: 0;
@@ -59,10 +66,9 @@ const StyledLargeText = styled.p`
 `;
 
 const SupportedLibrariesTitle = styled.h4`
-  color: white;
   ${media.between('xs', 'sm')`
-  margin-top: ${rem('40px')};
-`}
+    margin-top: ${rem('40px')};
+  `}
   ${media.between('sm', 'md')`
     margin-top: ${rem('30px')};
   `}
@@ -88,28 +94,23 @@ export const Hero = () => {
 
   return (
     <FeaturedCase>
-      <h1 style={{ color: 'white', fontWeight: 600 }}>Forminer</h1>
-      <StyledLargeText>
-        <strong>Save up to 1500 hours</strong> while building form-heavy React
-        apps with our easy to integrate package
-      </StyledLargeText>
+      <h2 style={{ fontWeight: 900 }}>
+        Empower your users with <TextUnderline>seamless form building</TextUnderline>
+      </h2>
       <CustomBulletList>
-        <CustomBulletListItem theme="white">
+        <CustomBulletListItem>
           <span>
-            <strong>Powerful solution</strong> - custom fields, full state
-            machine, conditional fields, schema-first approach, and many more...
+            Save up to <strong>1500 hours</strong> on development
           </span>
         </CustomBulletListItem>
-        <CustomBulletListItem theme="white">
+        <CustomBulletListItem>
           <span>
-            <strong>Traffic-independent payment</strong> - pick a one-time
-            payment or subscription, not based on the number of users
+            Enjoy the <strong>traffic-independent payment</strong> model
           </span>
         </CustomBulletListItem>
-        <CustomBulletListItem theme="white">
+        <CustomBulletListItem>
           <span>
-            <strong>Good support</strong> - basing on our popular OpenSource
-            package, uniforms, guarantees no vendor locking
+            Customize it or leverage <strong>already-prepped forms' UI</strong>
           </span>
         </CustomBulletListItem>
       </CustomBulletList>
@@ -127,7 +128,7 @@ export const Hero = () => {
         </Button>
         <Link to="/docs" internal>
           <Button variant="outlined" size="lg">
-            See technical documentation
+            Explore docs
           </Button>
         </Link>
       </ButtonsWrapperOffset>

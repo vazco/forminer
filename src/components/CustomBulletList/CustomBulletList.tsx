@@ -3,8 +3,7 @@ import React, { ReactNode } from 'react';
 import styled from 'styled-components';
 
 import media from '../../globalStyles/media';
-import TickBlue from '../../images/svg/tick-blue.svg';
-import TickWhite from '../../images/svg/tick-white.svg';
+import CheckmarkIcon from '../../images/svg/checkmark.svg';
 
 const List = styled.ul`
   list-style-type: none;
@@ -15,30 +14,24 @@ const List = styled.ul`
   }
 `;
 
-const StyledTickWhite = styled(TickWhite)`
-  content: '';
-  position: absolute;
-  left: 0;
-  width: 36px;
-  height: 36px;
-`;
-
-const StyledTickBlue = styled(TickBlue)`
-  content: '';
-  position: absolute;
-  left: 0;
-  width: 36px;
-  height: 36px;
+const CheckmarkWrapper = styled.div`
+  color: ${({ color = '#00141E' }) => color};
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  margin-right: 20px;
+  & svg {
+    width: 100%;
+    height: 100%;
+  }
 `;
 
 const ListItem = styled.li`
   position: relative;
-  padding: 0 0 0 50px;
   min-height: 36px;
   display: flex;
   align-items: center;
-  color: ${(props: CustomBulletListItemProps) =>
-    props.theme === 'white' ? 'white' : 'inherit'};
+  color: inherit;
 
   ${media.lessThan('sm')`
     margin-bottom: ${rem('12px')};
@@ -61,15 +54,13 @@ type CustomBulletListProps = {
 
 type CustomBulletListItemProps = {
   children: ReactNode;
-  theme: 'blue' | 'white';
 };
 
-export const CustomBulletListItem = ({
-  children,
-  theme,
-}: CustomBulletListItemProps) => (
-  <ListItem theme={theme}>
-    {theme === 'white' ? <StyledTickWhite /> : <StyledTickBlue />}
+export const CustomBulletListItem = ({ children }: CustomBulletListItemProps) => (
+  <ListItem>
+    <CheckmarkWrapper>
+      <CheckmarkIcon />
+    </CheckmarkWrapper>
     {children}
   </ListItem>
 );
