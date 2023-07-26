@@ -37,11 +37,13 @@ const IndexPage = () => {
           <CTASection
             heading="How does Forminer help overcome your challenges?"
             buttonText="Explore docs"
+            link="/docs"
           />
           <PowerfulFeatures />
           <CTASection
             heading="Ready to see Forminer in action?"
             buttonText="Explore demo"
+            link="/demo"
           />
           <UseCases />
           <WhatDoYouGet />
