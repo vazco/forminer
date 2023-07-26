@@ -27,7 +27,7 @@ const ContentWrapper = styled.div`
   background-image: url(${ctaBackground});
   background-size: cover;
   background-position: center center;
-  ${media.lessThan("sm")`
+  ${media.lessThan('sm')`
     gap: ${rem('40px')};
     flex-direction: column;
   `}
@@ -37,15 +37,16 @@ type CTASectionProps = {
   heading: string;
   buttonText: string;
   sectionId?: string;
+  link: string;
 };
 
-export const CTASection = ({ heading, buttonText }: CTASectionProps) => {
+export const CTASection = ({ heading, buttonText, link }: CTASectionProps) => {
   return (
     <HighlightPanel>
       <Container>
         <ContentWrapper>
           <h3>{heading}</h3>
-          <Link to="mailto:hello@forminer.com" newTab={false}>
+          <Link to={link} newTab={false} internal>
             <Button variant="solid">{buttonText}</Button>
           </Link>
         </ContentWrapper>
