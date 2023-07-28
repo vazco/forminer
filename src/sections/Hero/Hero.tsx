@@ -76,7 +76,7 @@ export const Hero = () => {
   return (
     <FeaturedCase>
       <h2 style={{ fontWeight: 900 }}>
-        Empower your users with
+        Empower your users with{' '}
         <TextUnderline>seamless form building</TextUnderline>
       </h2>
       <CustomBulletList>
