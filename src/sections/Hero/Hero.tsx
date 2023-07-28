@@ -46,26 +46,6 @@ const TextUnderline = styled.span`
   text-decoration-skip-ink: none;
 `;
 
-const StyledLargeText = styled.p`
-  ${media.greaterThan('xl')`
-    font-size: ${rem('30px')};
-    line-height: ${rem('40px')};
-  `}
-  ${media.between('md', 'xl')`
-    font-size: ${rem('23px')};
-    line-height: ${rem('30px')};
-  `}
-  font-size: ${rem('20px')};
-  line-height: ${rem('30px')};
-
-  font-weight: 300;
-  max-width: 660px;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-`;
-
 const SupportedLibrariesTitle = styled.h4`
   ${media.between('xs', 'sm')`
     margin-top: ${rem('40px')};
@@ -112,7 +92,8 @@ export const Hero = () => {
         </CustomBulletListItem>
         <CustomBulletListItem>
           <span>
-            Customize it or leverage <strong>already-prepped forms' UI</strong>
+            Customize it or leverage
+            <strong>already-prepped forms&apos; UI</strong>
           </span>
         </CustomBulletListItem>
       </CustomBulletList>

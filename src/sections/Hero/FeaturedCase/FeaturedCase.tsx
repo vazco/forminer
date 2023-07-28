@@ -1,13 +1,13 @@
 import { useMediaQuery, useTheme } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
+import Lottie from 'lottie-react';
 import React, { ReactNode } from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 import { Container } from '../../../components/Container';
 import media from '../../../globalStyles/media';
 // @ts-expect-error Image import
 import background from '../../../images/cta-background.webp';
-import Lottie from 'lottie-react';
 import forminerHeadAnimation from '../../../lotties/forminer-head-animation.json';
 
 const Section = styled.section`
@@ -74,7 +74,7 @@ export const FeaturedCase = ({ children }: FeaturedCaseProps) => {
           )}
           {showImage && (
             <Grid xs={12} sm={12} md={12} lg={6} item>
-              <Lottie animationData={forminerHeadAnimation} loop={true} />
+              <Lottie animationData={forminerHeadAnimation} loop />
             </Grid>
           )}
 

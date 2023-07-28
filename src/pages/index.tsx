@@ -1,4 +1,3 @@
-import Head from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import React from 'react';
 

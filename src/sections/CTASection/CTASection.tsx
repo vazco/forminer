@@ -1,11 +1,11 @@
 import { rem } from 'polished';
 import React from 'react';
 import styled from 'styled-components';
-import media from '../../globalStyles/media';
 
 import { Button } from '../../components/Button';
 import { Container } from '../../components/Container';
 import { Link } from '../../components/Link';
+import media from '../../globalStyles/media';
 import { BOX_BORDER_RADIUS } from '../../globalStyles/sharedStyles/box';
 // @ts-expect-error Image import
 import ctaBackground from '../../images/cta-background.webp';
