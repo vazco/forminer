@@ -41,15 +41,21 @@ const StyledGridContainer = styled(Grid)`
     width: 100%;
     padding-bottom: 16px;
     ${media.greaterThan('md')`
-    min-width: 700px;
-    padding-top: 64px;
-    display: flex;
-    align-items: center;
+      min-width: 700px;
+      padding-top: 90px;
+      display: flex;
+      align-items: center;
     `}
     ${media.greaterThan('lg')`
-    min-width: 1000px;
-  `}
+      min-width: 1000px;
+    `}
   }
+`;
+
+const AbsoluteImageContainer = styled.div`
+  position: absolute;
+  width: 50%;
+  height: 50%;
 `;
 
 type FeaturedCaseProps = {
@@ -60,28 +66,26 @@ const direction = 'row-reverse';
 
 export const FeaturedCase = ({ children }: FeaturedCaseProps) => {
   const theme = useTheme();
-  const showImage = useMediaQuery(theme.breakpoints.up('md'));
-  const changeOrder = useMediaQuery(theme.breakpoints.up('lg'));
-
+  const showImage = useMediaQuery(theme.breakpoints.up('lg'));
+  const showAbsoluteImage = useMediaQuery(
+    '(min-width: 900px) and (max-width: 1023px)',
+  );
   return (
     <Section>
       <StyledContainer>
         <StyledGridContainer direction={direction} alignItems="start" container>
-          {!changeOrder && (
-            <Grid xs={12} sm={12} md={12} lg={6} item>
-              <ContentWrapper reversed>{children}</ContentWrapper>
-            </Grid>
-          )}
           {showImage && (
             <Grid xs={12} sm={12} md={12} lg={6} item>
               <Lottie animationData={forminerHeadAnimation} loop />
             </Grid>
           )}
-
-          {changeOrder && (
-            <Grid xs={12} sm={12} md={12} lg={6} item>
-              <ContentWrapper reversed>{children}</ContentWrapper>
-            </Grid>
+          <Grid xs={12} sm={12} md={12} lg={6} item>
+            <ContentWrapper reversed>{children}</ContentWrapper>
+          </Grid>
+          {showAbsoluteImage && (
+            <AbsoluteImageContainer>
+              <Lottie animationData={forminerHeadAnimation} loop />
+            </AbsoluteImageContainer>
           )}
         </StyledGridContainer>
       </StyledContainer>
