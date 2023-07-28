@@ -92,7 +92,7 @@ export const Hero = () => {
         </CustomBulletListItem>
         <CustomBulletListItem>
           <span>
-            Customize it or leverage
+            Customize it or leverage{' '}
             <strong>already-prepped forms&apos; UI</strong>
           </span>
         </CustomBulletListItem>
