@@ -21,14 +21,6 @@ const IndexPage = () => {
   return (
     <>
       <SEO />
-      <Head>
-        <link
-          rel="preload"
-          href={require('../images/forminer.webp')}
-          as="image"
-          type="image/webp"
-        />
-      </Head>
       <Layout>
         <LayoutBase>
           <Hero />

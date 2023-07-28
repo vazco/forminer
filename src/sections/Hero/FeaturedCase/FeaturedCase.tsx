@@ -6,9 +6,9 @@ import styled, { css } from 'styled-components';
 import { Container } from '../../../components/Container';
 import media from '../../../globalStyles/media';
 // @ts-expect-error Image import
-import image from '../../../images/forminer.webp';
-// @ts-expect-error Image import
 import background from '../../../images/cta-background.webp';
+import Lottie from 'lottie-react';
+import forminerHeadAnimation from '../../../lotties/forminer-head-animation.json';
 
 const Section = styled.section`
   padding: 10px;
@@ -29,14 +29,6 @@ const StyledContainer = styled(Container)`
   position: relative;
 `;
 
-const StyledGridItem = styled(Grid)`
-  && {
-    justify-content: center;
-    align-items: center;
-    margin-top: 80px;
-  }
-`;
-
 const ContentWrapper = styled.div`
   padding-top: 60px;
   ${media.greaterThan('md')`
@@ -51,17 +43,13 @@ const StyledGridContainer = styled(Grid)`
     ${media.greaterThan('md')`
     min-width: 700px;
     padding-top: 64px;
-    
-  `}
+    display: flex;
+    align-items: center;
+    `}
     ${media.greaterThan('lg')`
     min-width: 1000px;
   `}
   }
-`;
-
-const StyledImage = styled.img`
-  max-width: 100%;
-  height: auto;
 `;
 
 type FeaturedCaseProps = {
@@ -85,12 +73,9 @@ export const FeaturedCase = ({ children }: FeaturedCaseProps) => {
             </Grid>
           )}
           {showImage && (
-            <StyledGridItem xs={12} sm={12} md={12} lg={6} item>
-              <StyledImage
-                src={image}
-                alt="Forminer - Build form in React without any problems"
-              />
-            </StyledGridItem>
+            <Grid xs={12} sm={12} md={12} lg={6} item>
+              <Lottie animationData={forminerHeadAnimation} loop={true} />
+            </Grid>
           )}
 
           {changeOrder && (

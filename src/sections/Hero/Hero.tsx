@@ -25,21 +25,22 @@ const ButtonsWrapperOffset = styled.div`
 
   ${media.between('md', 'lg')`
     gap: ${rem('10px')} ${rem('5px')}; 
-`}
+  `}
 
   ${media.between('lg', 'xl')`
     gap: ${rem('10px')} ${rem('12px')};
   `}
 
-  ${media.lessThan('sm')`
+  @media (max-width: 427px) {
     margin-top: ${rem('30px')};
     flex-direction: column;
-  `}
+    justify-content: center;
+  }
 `;
 
 const TextUnderline = styled.span`
   text-decoration: underline;
-  text-decoration-color: #EEEEE0;
+  text-decoration-color: #eeeee0;
   text-decoration-thickness: 6px;
   text-underline-offset: 3px;
   text-decoration-skip-ink: none;
@@ -95,7 +96,8 @@ export const Hero = () => {
   return (
     <FeaturedCase>
       <h2 style={{ fontWeight: 900 }}>
-        Empower your users with <TextUnderline>seamless form building</TextUnderline>
+        Empower your users with
+        <TextUnderline>seamless form building</TextUnderline>
       </h2>
       <CustomBulletList>
         <CustomBulletListItem>
