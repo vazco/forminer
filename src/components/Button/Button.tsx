@@ -1,99 +1,15 @@
+import classNames from 'classNames';
 import noop from 'lodash/noop';
-import { rem } from 'polished';
 // eslint-disable-next-line no-unused-vars -- false positive error
-import React, { ReactNode, MouseEvent } from 'react';
-import styled, { css } from 'styled-components';
-
-const resetDefault = css`
-  padding: 0;
-  border: none;
-  outline: none;
-  font: inherit;
-  color: inherit;
-  background: none;
-`;
-
-const commonStyles = css`
-  cursor: pointer;
-  font-weight: 700;
-  min-width: 180px;
-  padding: 16px;
-  border-radius: 32px;
-  transition: all 0.2s ease-out;
-  &:hover {
-    text-decoration: none;
-  }
-
-  ${({ theme, variant, reversed }) => {
-    if (reversed && variant === 'solid') {
-      return css`
-        background-color: ${theme.color.primary};
-        color: ${theme.color.white};
-        border: 2px solid white;
-        &:hover {
-          background-color: ${theme.color.white};
-          color: ${theme.color.primary};
-          border: 2px solid ${({ theme }) => theme.color.primary};
-        }
-      `;
-    } else if (variant === 'solid') {
-      return css`
-        background-color: ${theme.color.black};
-        color: ${theme.color.white};
-        border: 2px solid ${theme.color.black};
-        &:hover {
-          background-color: inherit;
-          color: ${theme.color.black};
-        }
-      `;
-    } else if (variant === 'outlined') {
-      return css`
-        color: ${theme.color.black};
-        border: 2px solid ${theme.color.black};
-        &:hover {
-          background-color: ${theme.color.black};
-          color: ${theme.color.white};
-        }
-      `;
-    }
-    return css``;
-  }}
-
-  ${({ size }) => {
-    if (size === 'md') {
-      return css`
-        font-size: ${rem('16px')};
-        line-height: ${rem('26px')};
-      `;
-    } else if (size === 'sm') {
-      return css`
-        font-size: ${rem('14px')};
-        line-height: ${rem('24px')};
-      `;
-    } else if (size === 'lg') {
-      return css`
-        font-size: ${rem('18px')};
-        line-height: ${rem('28px')};
-      `;
-    }
-    return css``;
-  }}
-`;
-
-const StyledButton = styled.button`
-  ${resetDefault}
-  ${commonStyles}
-`;
+import React, { ReactNode, MouseEvent, CSSProperties } from 'react';
 
 type ButtonProps = {
   children: ReactNode;
   className?: string;
   disabled?: boolean;
   onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
-  reversed?: boolean;
-  size?: string;
-  type?: string;
   variant?: string;
+  style?: CSSProperties;
 };
 
 export const Button = ({
@@ -101,22 +17,23 @@ export const Button = ({
   className,
   disabled = false,
   onClick = noop,
-  reversed = false,
-  size = 'md',
-  type = 'button',
-  variant = 'solid',
+  variant,
+  style,
 }: ButtonProps) => {
   return (
-    <StyledButton
-      className={className}
+    <button
+      className={classNames(
+        className,
+        'button',
+        variant === 'solid' && 'button__solid',
+        variant === 'outlined' && 'button__outlined',
+        variant === 'pricing' && 'button__pricing',
+      )}
       disabled={disabled}
       onClick={onClick}
-      reversed={reversed}
-      size={size}
-      type={type}
-      variant={variant}
+      style={style}
     >
       {children}
-    </StyledButton>
+    </button>
   );
 };

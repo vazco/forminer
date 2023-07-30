@@ -1,14 +1,14 @@
 import { useMediaQuery, useTheme } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
 import React, { ReactNode } from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 import { Container } from '../../../components/Container';
 import media from '../../../globalStyles/media';
 // @ts-expect-error Image import
-import image from '../../../images/forminer.webp';
-// @ts-expect-error Image import
 import background from '../../../images/cta-background.webp';
+// @ts-expect-error Image import
+import image from '../../../images/forminer.webp';
 
 const Section = styled.section`
   padding: 10px;

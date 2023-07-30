@@ -38,12 +38,14 @@ const IndexPage = () => {
             heading="How does Forminer help overcome your challenges?"
             buttonText="Explore docs"
             link="/docs"
+            btnClassName="btn-banner-explore-docs"
           />
           <PowerfulFeatures />
           <CTASection
             heading="Ready to see Forminer in action?"
             buttonText="Explore demo"
             link="/demo"
+            btnClassName="btn-banner-explore-demo"
           />
           <UseCases />
           <WhatDoYouGet />
