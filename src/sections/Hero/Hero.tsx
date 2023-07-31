@@ -25,44 +25,25 @@ const ButtonsWrapperOffset = styled.div`
 
   ${media.between('md', 'lg')`
     gap: ${rem('10px')} ${rem('5px')}; 
-`}
+  `}
 
   ${media.between('lg', 'xl')`
     gap: ${rem('10px')} ${rem('12px')};
   `}
 
-  ${media.lessThan('sm')`
+  @media (max-width: 427px) {
     margin-top: ${rem('30px')};
     flex-direction: column;
-  `}
+    justify-content: center;
+  }
 `;
 
 const TextUnderline = styled.span`
   text-decoration: underline;
-  text-decoration-color: #EEEEE0;
+  text-decoration-color: #eeeee0;
   text-decoration-thickness: 6px;
   text-underline-offset: 3px;
   text-decoration-skip-ink: none;
-`;
-
-const StyledLargeText = styled.p`
-  ${media.greaterThan('xl')`
-    font-size: ${rem('30px')};
-    line-height: ${rem('40px')};
-  `}
-  ${media.between('md', 'xl')`
-    font-size: ${rem('23px')};
-    line-height: ${rem('30px')};
-  `}
-  font-size: ${rem('20px')};
-  line-height: ${rem('30px')};
-
-  font-weight: 300;
-  max-width: 660px;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
 `;
 
 const SupportedLibrariesTitle = styled.h4`
@@ -95,7 +76,8 @@ export const Hero = () => {
   return (
     <FeaturedCase>
       <h2 style={{ fontWeight: 900 }}>
-        Empower your users with <TextUnderline>seamless form building</TextUnderline>
+        Empower your users with{' '}
+        <TextUnderline>seamless form building</TextUnderline>
       </h2>
       <CustomBulletList>
         <CustomBulletListItem>
@@ -110,7 +92,8 @@ export const Hero = () => {
         </CustomBulletListItem>
         <CustomBulletListItem>
           <span>
-            Customize it or leverage <strong>already-prepped forms' UI</strong>
+            Customize it or leverage{' '}
+            <strong>already-prepped forms&apos; UI</strong>
           </span>
         </CustomBulletListItem>
       </CustomBulletList>
