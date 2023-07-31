@@ -108,8 +108,8 @@ export const Pricing = () => {
         Interested in using Forminer? Find the plan that suits you best.
       </DescriptionComponent>
       <PricingWrapperComponent>
-        {pricingCards.map((pricingCard, pricingCardIdx) => (
-          <PricingCard key={pricingCardIdx} {...pricingCard} />
+        {pricingCards.map(pricingCard => (
+          <PricingCard key={pricingCard.title} {...pricingCard} />
         ))}
       </PricingWrapperComponent>
     </SectionLayout>

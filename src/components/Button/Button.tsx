@@ -1,37 +1,24 @@
-import classNames from 'classNames';
-import noop from 'lodash/noop';
-// eslint-disable-next-line no-unused-vars -- false positive error
-import React, { ReactNode, MouseEvent, CSSProperties } from 'react';
+import clsx from 'clsx';
+import React, { ButtonHTMLAttributes } from 'react';
 
 type ButtonProps = {
-  children: ReactNode;
-  className?: string;
-  disabled?: boolean;
-  onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
   variant?: string;
-  style?: CSSProperties;
-};
+} & ButtonHTMLAttributes<HTMLButtonElement>;
 
 export const Button = ({
   children,
   className,
-  disabled = false,
-  onClick = noop,
   variant,
-  style,
+  ...props
 }: ButtonProps) => {
   return (
     <button
-      className={classNames(
-        className,
-        'button',
-        variant === 'solid' && 'button__solid',
-        variant === 'outlined' && 'button__outlined',
-        variant === 'pricing' && 'button__pricing',
-      )}
-      disabled={disabled}
-      onClick={onClick}
-      style={style}
+      className={clsx(className, 'button', {
+        button__solid: variant === 'solid',
+        button__outlined: variant === 'outlined',
+        button__pricing: variant === 'pricing',
+      })}
+      {...props}
     >
       {children}
     </button>
