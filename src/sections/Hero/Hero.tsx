@@ -25,16 +25,17 @@ const ButtonsWrapperOffset = styled.div`
 
   ${media.between('md', 'lg')`
     gap: ${rem('10px')} ${rem('5px')}; 
-`}
+  `}
 
   ${media.between('lg', 'xl')`
     gap: ${rem('10px')} ${rem('12px')};
   `}
 
-  ${media.lessThan('sm')`
+  @media (max-width: 427px) {
     margin-top: ${rem('30px')};
     flex-direction: column;
-  `}
+    justify-content: center;
+  }
 `;
 
 const TextUnderline = styled.span`
