@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { PricingCard } from '../../components/PricingCard';
+// eslint-disable-next-line no-unused-vars -- false positive error
+import { PricingCard, PricingCardData } from '../../components/PricingCard';
 import { SectionLayout } from '../../components/SectionLayout';
 import media from '../../globalStyles/media';
 
@@ -27,19 +28,7 @@ const DescriptionComponent = styled.div`
   margin-bottom: 32px;
 `;
 
-type PricingCard = {
-  color: string;
-  title: string;
-  price?: string;
-  denominator?: string;
-  benefits: string[];
-  buttonText: string;
-  buttonLink: string;
-  isMostPopular?: boolean;
-  btnClassName: string;
-};
-
-const pricingCards: PricingCard[] = [
+const pricingCards: PricingCardData[] = [
   {
     color: '#818A96',
     title: 'Trial',

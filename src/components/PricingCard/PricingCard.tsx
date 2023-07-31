@@ -6,7 +6,7 @@ import CheckmarkIcon from '../../images/svg/checkmark.svg';
 import TalkIcon from '../../images/svg/talk.svg';
 import { Button } from '../Button';
 
-type PricingCardProps = {
+export type PricingCardData = {
   color: string;
   buttonText: string;
   buttonLink: string;
@@ -15,8 +15,15 @@ type PricingCardProps = {
   denominator?: string;
   isMostPopular?: boolean;
   benefits: string[] | string;
-  btnClassName: string;
+  btnClassName:
+    | 'btn-trial'
+    | 'btn-buy-monthly'
+    | 'btn-buy-yearly'
+    | 'btn-buy-lifelong'
+    | 'btn-buy-custom';
 };
+
+type PricingCardProps = PricingCardData;
 
 const TitleComponent = styled.div`
   font-weight: 900;
