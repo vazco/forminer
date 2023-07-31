@@ -21,7 +21,11 @@ export const SectionLayout = ({
 }: SectionLayoutProps) => (
   <Section alternativeBackground={alternativeBackground} id={id}>
     <Container>
-      {heading && <AccentHeading isStrong size="lg" center={centerHeading}>{heading}</AccentHeading>}
+      {heading && (
+        <AccentHeading size="lg" center={centerHeading} isStrong>
+          {heading}
+        </AccentHeading>
+      )}
       {children}
     </Container>
   </Section>

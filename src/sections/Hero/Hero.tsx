@@ -106,11 +106,15 @@ export const Hero = () => {
         </>
       )}
       <ButtonsWrapperOffset>
-        <Button onClick={scrollToPricing} size="lg">
+        <Button
+          className="btn-hero-check-pricing"
+          variant="solid"
+          onClick={scrollToPricing}
+        >
           Check pricing
         </Button>
         <Link to="/docs" internal>
-          <Button variant="outlined" size="lg">
+          <Button className="btn-hero-explore-docs" variant="outlined">
             Explore docs
           </Button>
         </Link>

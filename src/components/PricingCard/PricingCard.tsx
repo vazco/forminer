@@ -1,10 +1,12 @@
+import { Link } from '@material-ui/core';
 import React from 'react';
 import styled from 'styled-components';
+
 import CheckmarkIcon from '../../images/svg/checkmark.svg';
 import TalkIcon from '../../images/svg/talk.svg';
-import { Link } from '@material-ui/core';
+import { Button } from '../Button';
 
-type PricingCardProps = {
+export type PricingCardData = {
   color: string;
   buttonText: string;
   buttonLink: string;
@@ -13,7 +15,15 @@ type PricingCardProps = {
   denominator?: string;
   isMostPopular?: boolean;
   benefits: string[] | string;
+  btnClassName:
+    | 'btn-trial'
+    | 'btn-buy-monthly'
+    | 'btn-buy-yearly'
+    | 'btn-buy-lifelong'
+    | 'btn-buy-custom';
 };
+
+type PricingCardProps = PricingCardData;
 
 const TitleComponent = styled.div`
   font-weight: 900;
@@ -50,6 +60,8 @@ const BulletpointWrapComponent = styled.div`
 `;
 
 const LinkComponent = styled(Link)`
+  display: flex;
+  justify-content: center;
   &:hover {
     text-decoration: none !important;
   }
@@ -80,7 +92,7 @@ const BadgeComponent = styled.div`
 `;
 
 const BenefitsComponent = styled.div`
-  text-align: ${({ isBenefitsList }) => isBenefitsList ? 'center' : 'left'};
+  text-align: ${({ isBenefitsList }) => (isBenefitsList ? 'center' : 'left')};
   display: flex;
   flex-flow: column;
   flex-grow: 1;
@@ -101,19 +113,6 @@ const BulletPointComponent = styled.div`
   }
 `;
 
-const ButtonComponent = styled.button`
-  background-color: ${({ color }) => color};
-  display: block;
-  margin: auto;
-  color: white;
-  border-radius: 30px;
-  border: 0px;
-  padding: 15px 30px;
-  font-weight: 700;
-  font-size: 18px;
-  cursor: pointer;
-`;
-
 export const PricingCard = ({
   color,
   title,
@@ -123,12 +122,15 @@ export const PricingCard = ({
   denominator,
   isMostPopular,
   buttonLink,
+  btnClassName,
 }: PricingCardProps) => {
   const isBenefitsList = typeof benefits === 'string';
 
   return (
     <CardComponent color={color}>
-      {isMostPopular && <BadgeComponent color={color}>Most popular</BadgeComponent>}
+      {isMostPopular && (
+        <BadgeComponent color={color}>Most popular</BadgeComponent>
+      )}
       <TitleComponent>{title}</TitleComponent>
       {price ? (
         <PriceComponent>
@@ -161,7 +163,13 @@ export const PricingCard = ({
             ))}
       </BenefitsComponent>
       <LinkComponent href={buttonLink}>
-        <ButtonComponent color={color}>{buttonText}</ButtonComponent>
+        <Button
+          className={btnClassName}
+          variant="pricing"
+          style={{ backgroundColor: color }}
+        >
+          {buttonText}
+        </Button>
       </LinkComponent>
     </CardComponent>
   );

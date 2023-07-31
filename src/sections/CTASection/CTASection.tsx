@@ -6,7 +6,6 @@ import { Button } from '../../components/Button';
 import { Container } from '../../components/Container';
 import { Link } from '../../components/Link';
 import media from '../../globalStyles/media';
-import { BOX_BORDER_RADIUS } from '../../globalStyles/sharedStyles/box';
 // @ts-expect-error Image import
 import ctaBackground from '../../images/cta-background.webp';
 
@@ -23,7 +22,7 @@ const ContentWrapper = styled.div`
   align-items: center;
   gap: ${rem('100px')};
   padding: 40px;
-  ${BOX_BORDER_RADIUS};
+  border-radius: 8px;
   background-image: url(${ctaBackground});
   background-size: cover;
   background-position: center center;
@@ -38,16 +37,24 @@ type CTASectionProps = {
   buttonText: string;
   sectionId?: string;
   link: string;
+  btnClassName: string;
 };
 
-export const CTASection = ({ heading, buttonText, link }: CTASectionProps) => {
+export const CTASection = ({
+  heading,
+  buttonText,
+  link,
+  btnClassName,
+}: CTASectionProps) => {
   return (
     <HighlightPanel>
       <Container>
         <ContentWrapper>
           <h3>{heading}</h3>
           <Link to={link} newTab={false} internal>
-            <Button variant="solid">{buttonText}</Button>
+            <Button className={btnClassName} variant="solid">
+              {buttonText}
+            </Button>
           </Link>
         </ContentWrapper>
       </Container>

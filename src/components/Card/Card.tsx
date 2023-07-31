@@ -1,15 +1,12 @@
-import React from 'react';
-
-import { ReactNode } from "react";
+import React, { ReactNode } from 'react';
 import styled from 'styled-components';
-import { BOX_BORDER_RADIUS } from '../../globalStyles/sharedStyles/box';
 
 const CardComponent = styled.div`
   width: 100%;
   padding: 36px 48px;
   text-align: center;
   background-color: #eee;
-  ${BOX_BORDER_RADIUS};
+  border-radius: 8px;
 `;
 
 const TitleComponent = styled.div`
@@ -43,9 +40,7 @@ export const Card = ({ icon, title, description }: CardProps) => {
     <CardComponent>
       <IconComponent>{icon}</IconComponent>
       <TitleComponent>{title}</TitleComponent>
-      <DescriptionComponent>
-        {description}
-      </DescriptionComponent>
+      <DescriptionComponent>{description}</DescriptionComponent>
     </CardComponent>
   );
 };

@@ -1,6 +1,6 @@
 import React from 'react';
-import { BOX_BORDER_RADIUS } from '../../globalStyles/sharedStyles/box';
 import styled from 'styled-components';
+
 import media from '../../globalStyles/media';
 import CheckmarkIcon from '../../images/svg/checkmark.svg';
 
@@ -13,7 +13,7 @@ const CardComponent = styled.div`
   width: 100%;
   padding: 36px 48px;
   background-color: #eee;
-  ${BOX_BORDER_RADIUS};
+  border-radius: 8px;
   ${media.lessThan('md')`
     padding: 24px;
   `}
