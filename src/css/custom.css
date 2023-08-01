@@ -37,6 +37,10 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
+.homepage-main-container {
+  margin-top: -60px;
+}
+
 video {
   max-width: 100%;
   /* Center videos. */
@@ -152,18 +156,17 @@ table {
   justify-content: center;
   width: 100%;
   transition: background-color 0.3s;
-  background-image: url('../images/cta-background.webp');
   box-shadow: none !important;
+  background-color: transparent !important;
 }
 
 .navbar.navbar-outside-homepage {
-  background-image: none !important;
+  background-color: var(--theme-color-white) !important;
   box-shadow: var(--ifm-navbar-shadow) !important;
 }
 
 .navbar.scroll {
-  background-color: var(--theme-color-white);
-  background-image: none !important;
+  background-color: var(--theme-color-white) !important;
   box-shadow: var(--ifm-navbar-shadow) !important;
 }
 

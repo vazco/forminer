@@ -48,7 +48,7 @@ export const LayoutBase = ({ children }: LayoutBaseProps) => {
       {/*<SEO metaTags={seoMetaTags} />*/}
       <GlobalStyle />
       <ThemeProvider theme={theme}>
-        <main>{children}</main>
+        <main className="homepage-main-container">{children}</main>
         {/*<Cookies />*/}
       </ThemeProvider>
     </MuiThemeProvider>
