@@ -1,9 +1,13 @@
+import { useHistory } from '@docusaurus/router';
 import { MuiThemeProvider } from '@material-ui/core/styles';
 import React, { ReactNode, useEffect } from 'react';
 import { ThemeProvider } from 'styled-components';
 
 import { GlobalStyle, theme, MuiTheme } from '../../globalStyles/theme';
-import { handleNavbarChange } from '../../utils/navbarChangeHandler';
+import {
+  handleNavbarBackground,
+  handleNavbarScroll,
+} from '../../utils/navbarChangeHandlers';
 
 // import { Cookies } from '~components/molecules/Cookies';
 // import SEO from '~components/organisms/SEO';
@@ -14,36 +18,17 @@ type LayoutBaseProps = {
 };
 
 export const LayoutBase = ({ children }: LayoutBaseProps) => {
+  const history = useHistory();
+
   useEffect(() => {
-    window.addEventListener('scroll', handleNavbarChange);
+    history.location.pathname === '/' && handleNavbarBackground();
+  }, [history]);
 
-    const setupMutationObserver = () => {
-      const observer = new MutationObserver(mutationsList => {
-        for (const mutation of mutationsList) {
-          if (mutation.type === 'childList') {
-            const forminerDemo = document.querySelector('.forminer-demo');
-            const forminerDocs = document.querySelector('.forminer-docs');
-            if (forminerDemo || forminerDocs) {
-              handleNavbarChange();
-            }
-          }
-        }
-      });
-
-      observer.observe(document.documentElement, {
-        childList: true,
-        subtree: true,
-      });
-
-      return () => {
-        observer.disconnect();
-      };
-    };
-
-    setTimeout(setupMutationObserver, 100);
+  useEffect(() => {
+    window.addEventListener('scroll', handleNavbarScroll);
 
     return () => {
-      window.removeEventListener('scroll', handleNavbarChange);
+      window.removeEventListener('scroll', handleNavbarScroll);
     };
   }, []);
 

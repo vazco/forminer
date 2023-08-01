@@ -156,13 +156,13 @@ table {
   justify-content: center;
   width: 100%;
   transition: background-color 0.3s;
-  box-shadow: none !important;
-  background-color: transparent !important;
-}
-
-.navbar.navbar-outside-homepage {
   background-color: var(--theme-color-white) !important;
   box-shadow: var(--ifm-navbar-shadow) !important;
+}
+
+.navbar.homepage-navbar {
+  box-shadow: none !important;
+  background-color: transparent !important;
 }
 
 .navbar.scroll {
