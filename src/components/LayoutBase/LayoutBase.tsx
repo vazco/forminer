@@ -1,13 +1,9 @@
-import { useHistory } from '@docusaurus/router';
 import { MuiThemeProvider } from '@material-ui/core/styles';
-import React, { ReactNode, useEffect } from 'react';
+import React, { ReactNode } from 'react';
 import { ThemeProvider } from 'styled-components';
 
 import { GlobalStyle, theme, MuiTheme } from '../../globalStyles/theme';
-import {
-  handleNavbarBackground,
-  handleNavbarScroll,
-} from '../../utils/navbarChangeHandlers';
+import { useNavbarStyles } from '../../hooks/useNavbarStyles';
 
 // import { Cookies } from '~components/molecules/Cookies';
 // import SEO from '~components/organisms/SEO';
@@ -18,19 +14,7 @@ type LayoutBaseProps = {
 };
 
 export const LayoutBase = ({ children }: LayoutBaseProps) => {
-  const history = useHistory();
-
-  useEffect(() => {
-    history.location.pathname === '/' && handleNavbarBackground();
-  }, [history]);
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleNavbarScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleNavbarScroll);
-    };
-  }, []);
+  useNavbarStyles();
 
   return (
     <MuiThemeProvider theme={MuiTheme}>
