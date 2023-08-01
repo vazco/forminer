@@ -18,11 +18,15 @@ export const LayoutBase = ({ children }: LayoutBaseProps) => {
     window.addEventListener('scroll', handleNavbarChange);
 
     const setupMutationObserver = () => {
-      const observer = new MutationObserver(() => {
-        const forminerDemo = document.querySelector('.forminer-demo');
-        const forminerDocs = document.querySelector('.forminer-docs');
-        if (forminerDemo || forminerDocs) {
-          handleNavbarChange();
+      const observer = new MutationObserver(mutationsList => {
+        for (const mutation of mutationsList) {
+          if (mutation.type === 'childList') {
+            const forminerDemo = document.querySelector('.forminer-demo');
+            const forminerDocs = document.querySelector('.forminer-docs');
+            if (forminerDemo || forminerDocs) {
+              handleNavbarChange();
+            }
+          }
         }
       });
 
