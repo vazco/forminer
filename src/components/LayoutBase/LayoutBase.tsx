@@ -34,6 +34,10 @@ export const LayoutBase = ({ children }: LayoutBaseProps) => {
         childList: true,
         subtree: true,
       });
+
+      return () => {
+        observer.disconnect();
+      };
     };
 
     setTimeout(setupMutationObserver, 100);
