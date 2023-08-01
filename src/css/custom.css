@@ -111,7 +111,7 @@ table {
 }
 
 .navbar__link:hover {
-  color: var(--theme-color-white);
+  color: var(--theme-color-dark-blue);
 }
 
 .navbar-sidebar__items .pricing-nav-item {
@@ -150,12 +150,21 @@ table {
 
 .navbar {
   justify-content: center;
-  position: absolute !important;
-  top: 0px;
-  left: 0px;
   width: 100%;
-  box-shadow: none;
-  background-color: transparent !important;
+  transition: background-color 0.3s;
+  background-image: url('../images/cta-background.webp');
+  box-shadow: none !important;
+}
+
+.navbar.navbar-outside-homepage {
+  background-image: none !important;
+  box-shadow: var(--ifm-navbar-shadow) !important;
+}
+
+.navbar.scroll {
+  background-color: var(--theme-color-white);
+  background-image: none !important;
+  box-shadow: var(--ifm-navbar-shadow) !important;
 }
 
 .navbar__inner {

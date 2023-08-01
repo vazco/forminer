@@ -15,6 +15,7 @@
 const sidebars = {
   docs: [
     {
+      className: 'forminer-docs',
       type: 'category',
       label: 'Forminer Docs',
       link: {

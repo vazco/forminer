@@ -5,6 +5,7 @@ const Demo = () => {
   return (
     <Layout title="Forminer demo" wrapperClassName="demo-container">
       <iframe
+        className="forminer-demo"
         title="Forminer demo"
         src="https://vazco.github.io/forminer-project-demo/"
       />
