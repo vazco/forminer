@@ -37,6 +37,10 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
+.homepage-main-container {
+  margin-top: -60px;
+}
+
 video {
   max-width: 100%;
   /* Center videos. */
@@ -111,7 +115,7 @@ table {
 }
 
 .navbar__link:hover {
-  color: var(--theme-color-white);
+  color: var(--theme-color-dark-blue);
 }
 
 .navbar-sidebar__items .pricing-nav-item {
@@ -150,12 +154,20 @@ table {
 
 .navbar {
   justify-content: center;
-  position: absolute !important;
-  top: 0px;
-  left: 0px;
   width: 100%;
-  box-shadow: none;
+  transition: background-color 0.3s;
+  background-color: var(--theme-color-white) !important;
+  box-shadow: var(--ifm-navbar-shadow) !important;
+}
+
+.navbar.homepage-navbar {
+  box-shadow: none !important;
   background-color: transparent !important;
+}
+
+.navbar.scroll {
+  background-color: var(--theme-color-white) !important;
+  box-shadow: var(--ifm-navbar-shadow) !important;
 }
 
 .navbar__inner {

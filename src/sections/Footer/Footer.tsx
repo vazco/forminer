@@ -1,3 +1,4 @@
+import Link from '@docusaurus/Link';
 import { useMediaQuery, useTheme } from '@material-ui/core';
 import Box from '@material-ui/core/Box';
 // eslint-disable-next-line no-unused-vars -- false positive error
@@ -92,7 +93,7 @@ const SectionListButton = styled.button`
   padding: 0;
 `;
 
-const SectionListLink = styled.a`
+const SectionListLink = styled(Link)`
   ${commonText}
   text-decoration: none !important;
 `;
@@ -120,15 +121,15 @@ const siteMapData = [
 const firstStepsData = [
   {
     name: 'Installation',
-    link: 'https://forminer.com/docs/installation',
+    link: '/docs/installation',
   },
   {
     name: 'Handling custom components',
-    link: 'https://forminer.com/docs/custom-components',
+    link: '/docs/custom-components',
   },
   {
     name: 'Integration',
-    link: 'https://forminer.com/docs/integration',
+    link: '/docs/integration',
   },
 ];
 
@@ -195,7 +196,7 @@ export const Footer = () => {
               <ul>
                 {firstStepsData.map(item => (
                   <SectionListItem key={item.link}>
-                    <SectionListLink href={item.link}>
+                    <SectionListLink to={item.link} internal>
                       {item.name}
                     </SectionListLink>
                   </SectionListItem>

@@ -3,6 +3,7 @@ import React, { ReactNode } from 'react';
 import { ThemeProvider } from 'styled-components';
 
 import { GlobalStyle, theme, MuiTheme } from '../../globalStyles/theme';
+import { useNavbarStyles } from '../../hooks/useNavbarStyles';
 
 // import { Cookies } from '~components/molecules/Cookies';
 // import SEO from '~components/organisms/SEO';
@@ -13,12 +14,14 @@ type LayoutBaseProps = {
 };
 
 export const LayoutBase = ({ children }: LayoutBaseProps) => {
+  useNavbarStyles();
+
   return (
     <MuiThemeProvider theme={MuiTheme}>
       {/*<SEO metaTags={seoMetaTags} />*/}
       <GlobalStyle />
       <ThemeProvider theme={theme}>
-        <main>{children}</main>
+        <main className="homepage-main-container">{children}</main>
         {/*<Cookies />*/}
       </ThemeProvider>
     </MuiThemeProvider>
