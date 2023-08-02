@@ -11,17 +11,17 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     // TODO: Can't resolve error on run
-//    "paths": {
-//      "~globalStyles/*": ["globalStyles/*"],
-//      "~src/*": ["./*"],
-//      "~components/*": ["components/*"],
-//      "~constants/*": ["constants/*"],
-//      "~contexts/*": ["contexts/*"],
-//      "~hooks/*": ["hooks/*"],
-//      "~images/*": ["images/*"],
-//      "~lib/*": ["lib/*"],
-//      "~pagesParts/*": ["pages-parts/*"]
-//    },
+    //    "paths": {
+    //      "~globalStyles/*": ["globalStyles/*"],
+    //      "~src/*": ["./*"],
+    //      "~components/*": ["components/*"],
+    //      "~constants/*": ["constants/*"],
+    //      "~contexts/*": ["contexts/*"],
+    //      "~hooks/*": ["hooks/*"],
+    //      "~images/*": ["images/*"],
+    //      "~lib/*": ["lib/*"],
+    //      "~pagesParts/*": ["pages-parts/*"]
+    //    },
     "strict": true,
     "target": "ES6"
   },

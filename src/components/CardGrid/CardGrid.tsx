@@ -1,5 +1,6 @@
 import React, { ReactElement } from 'react';
 import styled from 'styled-components';
+
 import { Card } from '../../components/Card';
 import media from '../../globalStyles/media';
 
@@ -31,7 +32,12 @@ type CardGridProps = {
 export const CardGrid = ({ cards }: CardGridProps) => (
   <CardWrapperComponent>
     {cards.map(c => (
-      <Card icon={c.icon} title={c.title} description={c.description} key={c.title} />
+      <Card
+        key={c.title}
+        icon={c.icon}
+        title={c.title}
+        description={c.description}
+      />
     ))}
   </CardWrapperComponent>
 );
