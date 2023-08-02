@@ -56,7 +56,9 @@ type CustomBulletListItemProps = {
   children: ReactNode;
 };
 
-export const CustomBulletListItem = ({ children }: CustomBulletListItemProps) => (
+export const CustomBulletListItem = ({
+  children,
+}: CustomBulletListItemProps) => (
   <ListItem>
     <CheckmarkWrapper>
       <CheckmarkIcon />
