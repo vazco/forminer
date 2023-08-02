@@ -1,12 +1,13 @@
 import React from 'react';
-import { SectionLayout } from '../../components/SectionLayout';
 import styled from 'styled-components';
+
+import { ListCard } from '../../components/ListCard';
+import { SectionLayout } from '../../components/SectionLayout';
 import media from '../../globalStyles/media';
 // @ts-expect-error Image import
 import ProcessesClient from '../../images/processes-client.webp';
 // @ts-expect-error Image import
 import ProcessesTeam from '../../images/processes-team.webp';
-import { ListCard } from '../../components/ListCard';
 
 const id = 'use-cases';
 
@@ -28,7 +29,7 @@ const CardWrapComponent = styled.div`
 
 export const UseCases = () => {
   return (
-    <SectionLayout heading="Most popular use cases" centerHeading id={id}>
+    <SectionLayout heading="Most popular use cases" id={id} centerHeading>
       <CardsWrapComponent>
         <CardWrapComponent>
           <img src={ProcessesClient} alt="Client processes" />
