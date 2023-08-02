@@ -1,10 +1,9 @@
 name: Verify
 
 on:
-  pull_request:
   push:
     branches:
-      - master
+      - '*'
 
 jobs:
   verify:
