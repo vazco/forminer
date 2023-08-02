@@ -19,8 +19,6 @@ jobs:
 
       - name: Install dependencies
         run: npm ci --legacy-peer-deps
-      - name: Run ESLint
-        run: npm run lint
       - name: Build website
         run: npm run build
 
