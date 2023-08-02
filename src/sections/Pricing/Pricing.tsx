@@ -5,6 +5,11 @@ import styled from 'styled-components';
 import { PricingCard, PricingCardData } from '../../components/PricingCard';
 import { SectionLayout } from '../../components/SectionLayout';
 import media from '../../globalStyles/media';
+import CheckmarkIcon from '../../images/svg/checkmark.svg';
+import DiamondIcon from '../../images/svg/diamond.svg';
+import DollarIcon from '../../images/svg/dollar.svg';
+import GiftIcon from '../../images/svg/gift.svg';
+import StarIcon from '../../images/svg/star.svg';
 
 const PricingWrapperComponent = styled.div`
   display: grid;
@@ -34,8 +39,14 @@ const pricingCards: PricingCardData[] = [
     title: 'Trial',
     price: 'Free',
     benefits: [
-      'Use it in PoC (Proof of Concept) to see how it fits your project.',
-      'Once ready to use it in your operations, purchase and enjoy it on production.',
+      {
+        icon: <CheckmarkIcon />,
+        text: 'Use it in PoC (Proof of Concept) to see how it fits your project.',
+      },
+      {
+        icon: <CheckmarkIcon />,
+        text: 'Once ready to use it in your operations, purchase and enjoy it on production.',
+      },
     ],
     buttonText: 'Try it out',
     buttonLink:
@@ -43,11 +54,23 @@ const pricingCards: PricingCardData[] = [
     btnClassName: 'btn-trial',
   },
   {
-    color: '#DBDB40',
+    color: '#00ABFF',
     title: 'Monthly',
     price: '$149',
     denominator: 'month',
-    benefits: ["Forminer's complete package 💪"],
+    benefits: [
+      {
+        icon: <StarIcon />,
+        text: 'All features included.',
+        additionalStyles: {
+          backgroundColor: '#ECF0F1',
+          borderRadius: 32,
+          padding: 7,
+          transition: 'all 0.2s ease-out',
+        },
+        changeOnHover: true,
+      },
+    ],
     buttonText: 'Buy now',
     buttonLink:
       'https://transactions.sendowl.com/subscriptions/21901/AC6D4F49/view',
@@ -55,34 +78,81 @@ const pricingCards: PricingCardData[] = [
     btnClassName: 'btn-buy-monthly',
   },
   {
-    color: '#00ABFF',
+    color: '#0092DB',
     title: 'Yearly',
     price: '$1490',
     denominator: 'year',
-    benefits: ["Forminer's complete package 💪"],
+    benefits: [
+      {
+        icon: <StarIcon />,
+        text: 'All features included.',
+        additionalStyles: {
+          backgroundColor: '#ECF0F1',
+          borderRadius: 32,
+          padding: 7,
+          transition: 'all 0.2s ease-out',
+        },
+        changeOnHover: true,
+      },
+      {
+        icon: <GiftIcon />,
+        text: 'Two extra free months.',
+        additionalStyles: {
+          padding: 7,
+        },
+      },
+    ],
     buttonText: 'Buy now',
     buttonLink:
       'https://transactions.sendowl.com/subscriptions/21900/D0E5583D/view',
     btnClassName: 'btn-buy-yearly',
   },
   {
-    color: '#004AAD',
+    color: '#0070A8',
     title: 'Lifelong',
     price: '$4900',
     denominator: '∞',
-    benefits: ["Forminer's complete package 💪"],
+    benefits: [
+      {
+        icon: <StarIcon />,
+        text: 'All features included.',
+        additionalStyles: {
+          backgroundColor: '#ECF0F1',
+          borderRadius: 32,
+          padding: 7,
+          transition: 'all 0.2s ease-out',
+        },
+        changeOnHover: true,
+      },
+      {
+        icon: <DollarIcon />,
+        text: 'Pay once and enjoy it forever.',
+        additionalStyles: {
+          padding: 7,
+        },
+      },
+    ],
     buttonText: 'Buy now',
     buttonLink:
       'https://transactions.sendowl.com/products/78872705/34727BAC/view',
     btnClassName: 'btn-buy-lifelong',
   },
   {
-    color: '#00141E',
+    color: '#C4BE14',
     title: 'Custom',
     benefits: [
-      'Multi-project licenses',
-      'Custom extensions',
-      'Training sessions & consultancy',
+      {
+        icon: <DiamondIcon />,
+        text: 'Multi-project licenses',
+      },
+      {
+        icon: <DiamondIcon />,
+        text: 'Custom extensions',
+      },
+      {
+        icon: <DiamondIcon />,
+        text: 'Training sessions & consultancy',
+      },
     ],
     buttonText: 'Contact us',
     buttonLink: 'https://www.vazco.eu/contact-us',
