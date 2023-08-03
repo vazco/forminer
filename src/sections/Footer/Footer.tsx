@@ -1,14 +1,14 @@
 import Link from '@docusaurus/Link';
 import { useMediaQuery, useTheme } from '@material-ui/core';
 import Box from '@material-ui/core/Box';
-// eslint-disable-next-line no-unused-vars -- false positive error
-import React, { MouseEvent } from 'react';
+import React from 'react';
 import styled, { css } from 'styled-components';
 
 import { Container } from '../../components/Container';
 import media from '../../globalStyles/media';
 // @ts-expect-error Image import
 import ctaBackground from '../../images/cta-background.webp';
+import { scrollToSection } from '../../utils/scrollToSection';
 
 const StyledFooter = styled.footer`
   overflow: hidden;
@@ -136,18 +136,6 @@ const firstStepsData = [
 export const Footer = () => {
   const theme = useTheme();
   const columnView = useMediaQuery(theme.breakpoints.down('sm'));
-
-  const scrollToSection = (
-    event: MouseEvent<HTMLButtonElement>,
-    sectionId: string,
-  ) => {
-    event.preventDefault();
-    const pricingSection = document.getElementById(sectionId);
-
-    if (pricingSection) {
-      pricingSection.scrollIntoView();
-    }
-  };
 
   return (
     <StyledFooter>

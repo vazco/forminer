@@ -33,6 +33,13 @@ const DescriptionComponent = styled.div`
   margin-bottom: 32px;
 `;
 
+const allFeaturesIncludedStyles = {
+  backgroundColor: '#ECF0F1',
+  borderRadius: 32,
+  padding: 7,
+  transition: 'all 0.2s ease-out',
+};
+
 const pricingCards: PricingCardData[] = [
   {
     color: '#818A96',
@@ -62,13 +69,8 @@ const pricingCards: PricingCardData[] = [
       {
         icon: <StarIcon />,
         text: 'All features included.',
-        additionalStyles: {
-          backgroundColor: '#ECF0F1',
-          borderRadius: 32,
-          padding: 7,
-          transition: 'all 0.2s ease-out',
-        },
-        changeOnHover: true,
+        additionalStyles: allFeaturesIncludedStyles,
+        isButton: true,
       },
     ],
     buttonText: 'Buy now',
@@ -86,13 +88,8 @@ const pricingCards: PricingCardData[] = [
       {
         icon: <StarIcon />,
         text: 'All features included.',
-        additionalStyles: {
-          backgroundColor: '#ECF0F1',
-          borderRadius: 32,
-          padding: 7,
-          transition: 'all 0.2s ease-out',
-        },
-        changeOnHover: true,
+        additionalStyles: allFeaturesIncludedStyles,
+        isButton: true,
       },
       {
         icon: <GiftIcon />,
@@ -116,13 +113,8 @@ const pricingCards: PricingCardData[] = [
       {
         icon: <StarIcon />,
         text: 'All features included.',
-        additionalStyles: {
-          backgroundColor: '#ECF0F1',
-          borderRadius: 32,
-          padding: 7,
-          transition: 'all 0.2s ease-out',
-        },
-        changeOnHover: true,
+        additionalStyles: allFeaturesIncludedStyles,
+        isButton: true,
       },
       {
         icon: <DollarIcon />,

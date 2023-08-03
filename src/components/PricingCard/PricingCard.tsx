@@ -1,16 +1,17 @@
 import { Link } from '@material-ui/core';
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 // @ts-expect-error png import
 import customPricingIcon from '../../images/custom-pricing.webp';
+import { scrollToSection } from '../../utils/scrollToSection';
 import { Button } from '../Button';
 
 type Benefit = {
   icon: JSX.Element;
   text: string;
   additionalStyles?: { [key: string]: string | number };
-  changeOnHover?: boolean;
+  isButton?: boolean;
 };
 
 export type PricingCardData = {
@@ -129,10 +130,18 @@ const BulletPointComponent = styled.div`
   }
 `;
 
-const BenefitTextWrapper = styled.div`
-  transition: all 0.2s ease-in-out;
-  font-weight: ${({ isCardHovered, changeOnHover }) =>
-    isCardHovered && changeOnHover && 600};
+const BenefitButton = styled.button`
+  transition: font-weight 0.2s ease-in-out;
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  &:hover {
+    font-weight: 600;
+  }
 `;
 
 export const PricingCard = ({
@@ -146,24 +155,10 @@ export const PricingCard = ({
   buttonLink,
   btnClassName,
 }: PricingCardProps) => {
-  const [isCardHovered, setCardHovered] = useState(false);
-
-  const handleCardMouseEnter = () => {
-    setCardHovered(true);
-  };
-
-  const handleCardMouseLeave = () => {
-    setCardHovered(false);
-  };
-
   const isBenefitsList = typeof benefits === 'string';
 
   return (
-    <CardComponent
-      color={color}
-      onMouseEnter={handleCardMouseEnter}
-      onMouseLeave={handleCardMouseLeave}
-    >
+    <CardComponent color={color}>
       {isMostPopular && (
         <BadgeComponent color={color}>Most popular</BadgeComponent>
       )}
@@ -197,12 +192,15 @@ export const PricingCard = ({
                 <BulletPointComponent color={color}>
                   {benefit.icon}
                 </BulletPointComponent>
-                <BenefitTextWrapper
-                  isCardHovered={isCardHovered}
-                  changeOnHover={benefit.changeOnHover}
-                >
-                  {benefit.text}
-                </BenefitTextWrapper>
+                {benefit.isButton ? (
+                  <BenefitButton
+                    onClick={event => scrollToSection(event, 'what-do-you-get')}
+                  >
+                    {benefit.text}
+                  </BenefitButton>
+                ) : (
+                  <div>{benefit.text}</div>
+                )}
               </BulletpointWrapComponent>
             ))}
       </BenefitsComponent>
