@@ -42,7 +42,7 @@ const Companies = styled.div`
 `;
 
 const CompanyWrap = styled.div`
-  width: 200px;
+  width: 250px;
   height: 20px;
   ${media.lessThan('lg')`
     padding: 0px;
@@ -56,7 +56,7 @@ const CompanyImage = styled.img`
 export const TrustedBy = () => (
   <Container>
     <Content>
-      <div>Solution trusted by:</div>
+      <div style={{ width: 150 }}>Solution trusted by:</div>
       <Companies>
         <CompanyWrap>
           <CompanyImage src={cbre} alt="CBRE" />

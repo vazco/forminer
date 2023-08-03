@@ -9,7 +9,7 @@ import bootstrapIcon from '../../images/technologies/bt.webp';
 // @ts-expect-error png import
 import materialIcon from '../../images/technologies/material-ui.webp';
 // @ts-expect-error png import
-import semanticIcon from '../../images/technologies/semanticUI.webp';
+import semanticIcon from '../../images/technologies/semantic-ui.webp';
 
 const ListContainer = styled.div`
   display: grid;
