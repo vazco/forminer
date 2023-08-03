@@ -41,6 +41,10 @@
   margin-top: -60px;
 }
 
+section {
+  padding: 100px 0px !important;
+}
+
 video {
   max-width: 100%;
   /* Center videos. */
@@ -112,6 +116,10 @@ table {
 
 .pricing-nav-item:hover {
   color: var(--ifm-color-primary);
+}
+
+.navbar__item {
+  margin-left: 24px !important;
 }
 
 .navbar__link:hover {

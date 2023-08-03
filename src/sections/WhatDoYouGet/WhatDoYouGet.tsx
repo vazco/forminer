@@ -57,7 +57,7 @@ const UnderlineComponent = styled.div`
   text-decoration-thickness: 3px;
   font-size: 28px;
   text-align: center;
-  margin-bottom: 32px;
+  margin-bottom: 70px;
 `;
 
 export const WhatDoYouGet = () => {

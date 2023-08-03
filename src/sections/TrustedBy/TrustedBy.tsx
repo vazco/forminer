@@ -14,6 +14,7 @@ import kodefly from '../../images/kodefly.webp';
 const Container = styled.div`
   width: 100%;
   padding: 20px 0px;
+  margin: 0px 0px 100px 0px;
   background-color: #eeeeee;
 `;
 

@@ -53,9 +53,6 @@ const StyledImage = styled.img`
   object-position: left;
   margin: 0 !important;
   filter: grayscale(100%);
-  &:hover {
-    filter: grayscale(0%);
-  }
 `;
 
 const items = [

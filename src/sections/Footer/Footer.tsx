@@ -59,7 +59,7 @@ const ShowcaseCardContainer = styled.div`
   justify-content: center;
   align-items: center;
   margin-bottom: 1em;
-  border: 2px dashed ${({ theme }) => theme.color.black};
+  border: 2px solid ${({ theme }) => theme.color.black};
   ${media.greaterThan('md')`
     max-width: 20%
   `}
@@ -169,7 +169,7 @@ export const Footer = () => {
                 src="img/forminer-logo.svg"
               />
               <ShowcaseCardText>
-                Powerful tool for building forms in React
+                Empowering your users to build forms seamlessly
               </ShowcaseCardText>
             </ShowcaseCardContainer>
             <StyledContainer>

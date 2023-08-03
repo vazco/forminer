@@ -1,7 +1,6 @@
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
-import Grid from '@material-ui/core/Grid';
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
@@ -11,11 +10,27 @@ import { List, ListItem } from '../../components/List';
 import { SectionLayout } from '../../components/SectionLayout';
 import PlusIcon from '../../images/svg/add-black.svg';
 
+const FAQContainer = styled(Container)`
+  && {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+`;
+
 const MaxWidth = styled.div`
-  max-width: 500px;
+  max-width: 700px;
+`;
+
+const FAQTitleContainer = styled.div`
+  && {
+    vertical-align: middle;
+  }
 `;
 
 const Topic = styled.p`
+  color: ${({ theme }) => theme.color.black};
   margin: 0;
   font-weight: 500;
 `;
@@ -102,6 +117,7 @@ const items = [
 ];
 
 const StyledDetails = styled(ExpansionPanelDetails)`
+  color: ${({ theme }) => theme.color.black};
   && {
     padding: 0;
   }
@@ -116,57 +132,52 @@ export const FAQSection = () => {
 
   return (
     <SectionLayout alternativeBackground>
-      <Container>
-        <Grid spacing={3} container>
-          <Grid xs={12} lg={6} item>
-            <MaxWidth>
-              <UnifiedHeading level={2} size="lg" isStrong>
-                Frequently asked questions
-              </UnifiedHeading>
-            </MaxWidth>
-          </Grid>
-          <Grid xs={12} lg={6} item>
-            {items.map(({ question, answer }, index) => {
-              const isExpanded = expanded === `panel${index}`;
-
-              return (
-                <StyledPanel
-                  key={`panel${index}`}
-                  expanded={isExpanded}
-                  onChange={handleChange(`panel${index}`)}
-                  lastChild={items.length === index + 1}
-                  square
-                >
-                  <StyledSummary aria-controls={`panel${index}d-content`}>
-                    <Topic>{question}</Topic>
-                    <StyledPlusIcon isExpanded={isExpanded} />
-                  </StyledSummary>
-                  <StyledDetails>
-                    {Array.isArray(answer) ? (
-                      <List>
-                        {answer.map(({ content, list }) => (
-                          <ListItem key={content}>
-                            {content}
-                            {Array.isArray(list) && (
-                              <List>
-                                {list.map(text => (
-                                  <ListItem key={text}>{text}</ListItem>
-                                ))}
-                              </List>
-                            )}
-                          </ListItem>
-                        ))}
-                      </List>
-                    ) : (
-                      <p>{answer}</p>
-                    )}
-                  </StyledDetails>
-                </StyledPanel>
-              );
-            })}
-          </Grid>
-        </Grid>
-      </Container>
+      <FAQContainer>
+        <FAQTitleContainer>
+          <UnifiedHeading marginBottom={70} level={2} size="lg" isStrong>
+            Frequently asked questions
+          </UnifiedHeading>
+        </FAQTitleContainer>
+        <MaxWidth>
+          {items.map(({ question, answer }, index) => {
+            const isExpanded = expanded === `panel${index}`;
+            return (
+              <StyledPanel
+                key={`panel${index}`}
+                expanded={isExpanded}
+                onChange={handleChange(`panel${index}`)}
+                lastChild={items.length === index + 1}
+                square
+              >
+                <StyledSummary aria-controls={`panel${index}d-content`}>
+                  <Topic>{question}</Topic>
+                  <StyledPlusIcon isExpanded={isExpanded} />
+                </StyledSummary>
+                <StyledDetails>
+                  {Array.isArray(answer) ? (
+                    <List>
+                      {answer.map(({ content, list }) => (
+                        <ListItem key={content}>
+                          {content}
+                          {Array.isArray(list) && (
+                            <List>
+                              {list.map(text => (
+                                <ListItem key={text}>{text}</ListItem>
+                              ))}
+                            </List>
+                          )}
+                        </ListItem>
+                      ))}
+                    </List>
+                  ) : (
+                    <p>{answer}</p>
+                  )}
+                </StyledDetails>
+              </StyledPanel>
+            );
+          })}
+        </MaxWidth>
+      </FAQContainer>
     </SectionLayout>
   );
 };

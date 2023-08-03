@@ -46,7 +46,8 @@ const TextUnderline = styled.span`
   text-decoration-skip-ink: none;
 `;
 
-const SupportedLibrariesTitle = styled.h4`
+const SupportedLibrariesTitle = styled.p`
+  font-weight: 600;
   ${media.between('xs', 'sm')`
     margin-top: ${rem('40px')};
   `}

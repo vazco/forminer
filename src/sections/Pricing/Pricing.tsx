@@ -25,7 +25,7 @@ const PricingWrapperComponent = styled.div`
 const DescriptionComponent = styled.div`
   font-size: 28px;
   text-align: center;
-  margin-bottom: 32px;
+  margin-bottom: 70px;
 `;
 
 const pricingCards: PricingCardData[] = [
