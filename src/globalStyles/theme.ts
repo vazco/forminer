@@ -35,7 +35,7 @@ export const theme = {
     grey: '#fafafb',
     darkGrey: '#f4f5f6',
     white: '#fff',
-    black: '#00141E',
+    stormyBlue: '#00141E',
   },
 };
 
@@ -51,7 +51,7 @@ html {
 main {
   font-family: 'Inter', sans-serif;
   font-weight: 300;
-  color: ${theme.color.black};
+  color: ${theme.color.stormyBlue};
   overflow-x: hidden;
   
   h1, h2, h3, h4, h5 {

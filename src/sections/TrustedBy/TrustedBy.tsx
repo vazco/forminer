@@ -14,8 +14,11 @@ import kodefly from '../../images/kodefly.webp';
 const Container = styled.div`
   width: 100%;
   padding: 20px 0px;
-  margin: 0px 0px 100px 0px;
   background-color: #eeeeee;
+  margin: 0px 0px 75px 0px;
+  ${media.greaterThan('md')`
+  margin: 0px 0px 100px 0px;
+  `}
 `;
 
 const Content = styled.div`
@@ -53,10 +56,14 @@ const CompanyImage = styled.img`
   height: 100%;
 `;
 
+const HeaderContainer = styled.div`
+  width: 150px;
+`;
+
 export const TrustedBy = () => (
   <Container>
     <Content>
-      <div style={{ width: 150 }}>Solution trusted by:</div>
+      <HeaderContainer>Solution trusted by:</HeaderContainer>
       <Companies>
         <CompanyWrap>
           <CompanyImage src={cbre} alt="CBRE" />

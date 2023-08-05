@@ -30,7 +30,7 @@ const FAQTitleContainer = styled.div`
 `;
 
 const Topic = styled.p`
-  color: ${({ theme }) => theme.color.black};
+  color: ${({ theme }) => theme.color.stormyBlue};
   margin: 0;
   font-weight: 500;
 `;
@@ -117,7 +117,7 @@ const items = [
 ];
 
 const StyledDetails = styled(ExpansionPanelDetails)`
-  color: ${({ theme }) => theme.color.black};
+  color: ${({ theme }) => theme.color.stormyBlue};
   && {
     padding: 0;
   }
@@ -143,7 +143,7 @@ export const FAQSection = () => {
             const isExpanded = expanded === `panel${index}`;
             return (
               <StyledPanel
-                key={`panel${index}`}
+                key={question}
                 expanded={isExpanded}
                 onChange={handleChange(`panel${index}`)}
                 lastChild={items.length === index + 1}

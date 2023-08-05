@@ -10,12 +10,10 @@ import media from '../../globalStyles/media';
 import ctaBackground from '../../images/cta-background.webp';
 
 const HighlightPanel = styled.div`
-  padding: 0px 0px 100px 0px !important;
-  h3 {
-    color: ${({ theme }) => theme.color.black};
-    margin: 0;
-    width: 100%;
-  }
+  padding: 0px 0px 75px 0px;
+  ${media.greaterThan('md')`
+  padding: 0px 0px 100px 0px;
+  `}
 `;
 
 const ContentWrapper = styled.div`
@@ -23,15 +21,20 @@ const ContentWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 80px 40px;
-  gap: ${rem('50px')};
+  gap: ${rem(50)};
   border-radius: 8px;
   background-image: url(${ctaBackground});
   background-size: cover;
   background-position: center center;
   ${media.lessThan('sm')`
-    gap: ${rem('40px')};
+    gap: ${rem(40)};
     flex-direction: column;
   `}
+`;
+
+const CTAHeading = styled.h2`
+  margin: 0px;
+  font-weight: 600;
 `;
 
 type CTASectionProps = {
@@ -52,7 +55,7 @@ export const CTASection = ({
     <HighlightPanel>
       <Container>
         <ContentWrapper>
-          <h2 style={{ margin: '0px', fontWeight: 600 }}>{heading}</h2>
+          <CTAHeading>{heading}</CTAHeading>
           <Link to={link} newTab={false} internal>
             <Button className={btnClassName} variant="solid">
               {buttonText}
