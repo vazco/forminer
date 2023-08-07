@@ -114,6 +114,10 @@ table {
   color: var(--ifm-color-primary);
 }
 
+.navbar__item {
+  margin-left: 24px !important;
+}
+
 .navbar__link:hover {
   color: var(--theme-color-dark-blue);
 }

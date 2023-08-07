@@ -12,6 +12,7 @@ type Benefit = {
   text: string;
   additionalStyles?: { [key: string]: string | number };
   isButton?: boolean;
+  className?: string;
 };
 
 export type PricingCardData = {
@@ -188,6 +189,7 @@ export const PricingCard = ({
               <BulletpointWrapComponent
                 key={benefit.text}
                 style={benefit.additionalStyles}
+                className={benefit.className}
               >
                 <BulletPointComponent color={color}>
                   {benefit.icon}

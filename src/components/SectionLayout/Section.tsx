@@ -13,12 +13,9 @@ const AlternativeBackgroundContainer = styled.div`
 const StyledSection = styled(AlternativeBackgroundContainer)`
   position: relative;
   overflow: hidden;
-  padding-top: 60px;
-  padding-bottom: 60px;
-
+  padding: 75px 0px;
   ${media.greaterThan('md')`
-    padding-top: 75px;
-    padding-bottom: 75px;
+  padding: 100px 0px;
   `}
 `;
 

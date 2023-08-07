@@ -30,7 +30,7 @@ const PricingWrapperComponent = styled.div`
 const DescriptionComponent = styled.div`
   font-size: 28px;
   text-align: center;
-  margin-bottom: 32px;
+  margin-bottom: 70px;
 `;
 
 const allFeaturesIncludedStyles = {
@@ -71,6 +71,7 @@ const pricingCards: PricingCardData[] = [
         text: 'All features included.',
         additionalStyles: allFeaturesIncludedStyles,
         isButton: true,
+        className: 'btn-all-features-monthly',
       },
     ],
     buttonText: 'Buy now',
@@ -90,6 +91,7 @@ const pricingCards: PricingCardData[] = [
         text: 'All features included.',
         additionalStyles: allFeaturesIncludedStyles,
         isButton: true,
+        className: 'btn-all-features-yearly',
       },
       {
         icon: <GiftIcon />,
@@ -115,6 +117,7 @@ const pricingCards: PricingCardData[] = [
         text: 'All features included.',
         additionalStyles: allFeaturesIncludedStyles,
         isButton: true,
+        className: 'btn-all-features-lifelong',
       },
       {
         icon: <DollarIcon />,

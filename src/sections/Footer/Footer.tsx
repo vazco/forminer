@@ -16,7 +16,7 @@ const StyledFooter = styled.footer`
   ${media.greaterThan('md')`
     padding: 30px 0;
   `}
-  color: ${({ theme }) => theme.color.black};
+  color: ${({ theme }) => theme.color.stormyBlue};
   background-image: url(${ctaBackground});
   background-size: cover;
   background-position: center center;
@@ -56,10 +56,10 @@ const ShowcaseCardContainer = styled.div`
   padding: 1.5em;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   margin-bottom: 1em;
-  border: 2px dashed ${({ theme }) => theme.color.black};
+  border: 1px solid ${({ theme }) => theme.color.stormyBlue};
   ${media.greaterThan('md')`
     max-width: 20%
   `}
@@ -67,8 +67,8 @@ const ShowcaseCardContainer = styled.div`
 
 const ShowcaseCardText = styled.p`
   text-align: center;
-  padding-top: 1.5em;
   font-size: 16px;
+  margin-bottom: 0px !important;
 `;
 
 const SectionListItem = styled.li`
@@ -80,10 +80,10 @@ const commonText = css`
   border: none;
   font-size: 16px;
   font-weight: 300;
-  color: ${({ theme }) => theme.color.black};
+  color: ${({ theme }) => theme.color.stormyBlue};
   transition: all 0.2s ease-out;
   &:hover {
-    color: ${({ theme }) => theme.color.black};
+    color: ${({ theme }) => theme.color.stormyBlue};
     cursor: pointer;
   }
 `;
@@ -157,7 +157,7 @@ export const Footer = () => {
                 src="img/forminer-logo.svg"
               />
               <ShowcaseCardText>
-                Powerful tool for building forms in React
+                Empowering your users to build forms seamlessly
               </ShowcaseCardText>
             </ShowcaseCardContainer>
             <StyledContainer>

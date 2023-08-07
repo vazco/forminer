@@ -39,7 +39,7 @@ const BulletpointWrapComponent = styled.div`
 `;
 
 const BulletPointComponent = styled.div`
-  color: ${({ theme }) => theme.color.black};
+  color: ${({ theme }) => theme.color.stormyBlue};
   width: 20px;
   height: 20px;
   flex-shrink: 0;

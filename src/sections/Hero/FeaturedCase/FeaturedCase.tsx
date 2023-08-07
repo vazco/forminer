@@ -11,7 +11,7 @@ import background from '../../../images/cta-background.webp';
 import forminerHeadAnimation from '../../../lotties/forminer-head-animation.json';
 
 const Section = styled.section`
-  padding: 10px;
+  padding: 10px !important;
   display: flex;
   align-items: center;
   justify-content: center;
