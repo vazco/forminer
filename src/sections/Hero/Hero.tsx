@@ -52,9 +52,9 @@ export const Hero = () => {
       </CustomBulletList>
       {!changeOrder && (
         <>
-          <h4 className="hero__supported-libraries-title">
+          <p className="hero__supported-libraries-title">
             Supported design libraries:
-          </h4>
+          </p>
           <SupportedDesignLibraries />
         </>
       )}
@@ -74,9 +74,9 @@ export const Hero = () => {
       </div>
       {changeOrder && (
         <>
-          <h4 className="hero__supported-libraries-title">
+          <p className="hero__supported-libraries-title">
             Supported design libraries:
-          </h4>
+          </p>
           <SupportedDesignLibraries />
         </>
       )}

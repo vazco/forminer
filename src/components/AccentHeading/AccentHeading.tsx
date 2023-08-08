@@ -21,9 +21,9 @@ export const AccentHeading = ({
     display: flex;
     align-items: flex-start;
     text-align: ${center ? 'center' : 'initial'};
-    margin-bottom: 24px;
+    margin-bottom: 48px;
     ${media.greaterThan('md')`
-      margin-bottom: 35px;
+      margin-bottom: 70px;
     `}
   `;
 

@@ -66,7 +66,7 @@ export const Footer = () => {
                 src="img/forminer-logo.svg"
               />
               <p className="footer-styled__showcase-card-text">
-                Powerful tool for building forms in React
+                Empowering your users to build forms seamlessly
               </p>
             </div>
             <div className="footer-styled__column-container">

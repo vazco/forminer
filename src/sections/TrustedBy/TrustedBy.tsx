@@ -31,7 +31,7 @@ const companies = [
 export const TrustedBy = () => (
   <div className="trusted-by__container">
     <div className="trusted-by__content">
-      <div>Solution trusted by:</div>
+      <div className="trusted-by__header">Solution trusted by:</div>
       <div className="trusted-by__companies">
         {companies.map(company => (
           <div key={company.src} className="trusted-by__company">
