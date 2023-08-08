@@ -9,8 +9,6 @@ import FormIsDataIcon from '../../images/svg/form-is-data.svg';
 import ValidationIcon from '../../images/svg/validation.svg';
 import WysiwygIcon from '../../images/svg/wysiwyg.svg';
 
-const id = 'powerful-features';
-
 const cards = [
   {
     icon: <DndIcon />,
@@ -54,7 +52,7 @@ export const PowerfulFeatures = () => {
   return (
     <SectionLayout
       heading="What makes our form builder so powerful?"
-      id={id}
+      id="powerful-features"
       centerHeading
     >
       <CardGrid cards={cards} />

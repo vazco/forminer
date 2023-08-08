@@ -1,37 +1,13 @@
 import React from 'react';
-import styled from 'styled-components';
 
 // eslint-disable-next-line no-unused-vars -- false positive error
 import { PricingCard, PricingCardData } from '../../components/PricingCard';
 import { SectionLayout } from '../../components/SectionLayout';
-import media from '../../globalStyles/media';
 import CheckmarkIcon from '../../images/svg/checkmark.svg';
 import DiamondIcon from '../../images/svg/diamond.svg';
 import DollarIcon from '../../images/svg/dollar.svg';
 import GiftIcon from '../../images/svg/gift.svg';
 import StarIcon from '../../images/svg/star.svg';
-
-const PricingWrapperComponent = styled.div`
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  ${media.lessThan('xl')`
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  `}
-  ${media.lessThan('lg')`
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  `}
-  ${media.lessThan('md')`
-    grid-template-columns: 1fr;
-    gap: 20px;
-  `}
-  gap: 10px;
-`;
-
-const DescriptionComponent = styled.div`
-  font-size: 28px;
-  text-align: center;
-  margin-bottom: 32px;
-`;
 
 const allFeaturesIncludedStyles = {
   backgroundColor: '#ECF0F1',
@@ -155,14 +131,14 @@ const pricingCards: PricingCardData[] = [
 export const Pricing = () => {
   return (
     <SectionLayout heading="Pricing" id="pricing" centerHeading>
-      <DescriptionComponent>
+      <div className="pricing__description">
         Interested in using Forminer? Find the plan that suits you best.
-      </DescriptionComponent>
-      <PricingWrapperComponent>
+      </div>
+      <div className="pricing__cards">
         {pricingCards.map(pricingCard => (
           <PricingCard key={pricingCard.title} {...pricingCard} />
         ))}
-      </PricingWrapperComponent>
+      </div>
     </SectionLayout>
   );
 };
