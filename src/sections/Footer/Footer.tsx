@@ -1,107 +1,13 @@
 import Link from '@docusaurus/Link';
 import { useMediaQuery, useTheme } from '@material-ui/core';
 import Box from '@material-ui/core/Box';
+import clsx from 'clsx';
 import React from 'react';
-import styled, { css } from 'styled-components';
 
 import { Container } from '../../components/Container';
-import media from '../../globalStyles/media';
 // @ts-expect-error Image import
 import ctaBackground from '../../images/cta-background.webp';
 import { scrollToSection } from '../../utils/scrollToSection';
-
-const StyledFooter = styled.footer`
-  overflow: hidden;
-  padding: 20px 0;
-  ${media.greaterThan('md')`
-    padding: 30px 0;
-  `}
-  color: ${({ theme }) => theme.color.stormyBlue};
-  background-image: url(${ctaBackground});
-  background-size: cover;
-  background-position: center center;
-`;
-
-const TopSection = styled.div`
-  margin-top: 42px;
-  padding-bottom: 56px;
-`;
-
-const StyledContainer = styled.div`
-  padding: 12px;
-  display: flex;
-  flex-direction: column;
-  ${media.greaterThan('md')`
-    width: 20%
-  `}
-`;
-
-const StyledContainerCentered = styled.div`
-  padding: 12px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-`;
-
-const CopyrightContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-top: 40px;
-`;
-
-const ShowcaseCardContainer = styled.div`
-  padding: 1.5em;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  margin-bottom: 1em;
-  border: 1px solid ${({ theme }) => theme.color.stormyBlue};
-  ${media.greaterThan('md')`
-    max-width: 20%
-  `}
-`;
-
-const ShowcaseCardText = styled.p`
-  text-align: center;
-  font-size: 16px;
-  margin-bottom: 0px !important;
-`;
-
-const SectionListItem = styled.li`
-  margin-bottom: 10;
-`;
-
-const commonText = css`
-  background-color: inherit;
-  border: none;
-  font-size: 16px;
-  font-weight: 300;
-  color: ${({ theme }) => theme.color.stormyBlue};
-  transition: all 0.2s ease-out;
-  &:hover {
-    color: ${({ theme }) => theme.color.stormyBlue};
-    cursor: pointer;
-  }
-`;
-
-const SectionListButton = styled.button`
-  ${commonText}
-  padding: 0;
-`;
-
-const SectionListLink = styled(Link)`
-  ${commonText}
-  text-decoration: none !important;
-`;
-
-const Mail = styled.a`
-  ${commonText}
-  text-decoration: none !important;
-`;
 
 const siteMapData = [
   {
@@ -138,9 +44,12 @@ export const Footer = () => {
   const columnView = useMediaQuery(theme.breakpoints.down('sm'));
 
   return (
-    <StyledFooter>
+    <footer
+      className="footer-styled"
+      style={{ backgroundImage: `url(${ctaBackground})` }}
+    >
       <Container>
-        <TopSection>
+        <div className="footer-styled__top-section">
           <Box
             gridColumnGap={20}
             display="flex"
@@ -149,52 +58,64 @@ export const Footer = () => {
             justifyContent="space-between"
             flexWrap="wrap"
           >
-            <ShowcaseCardContainer>
+            <div className="footer-styled__showcase-card-container">
               <img
                 width={75}
                 height={75}
                 alt="forminer logo"
                 src="img/forminer-logo.svg"
               />
-              <ShowcaseCardText>
+              <p className="footer-styled__showcase-card-text">
                 Empowering your users to build forms seamlessly
-              </ShowcaseCardText>
-            </ShowcaseCardContainer>
-            <StyledContainer>
+              </p>
+            </div>
+            <div className="footer-styled__column-container">
               <h5>Product</h5>
               <ul>
-                <SectionListItem>
-                  <SectionListButton
+                <li className="footer-styled__column-item">
+                  <button
+                    className={clsx(
+                      'footer-styled__common-text',
+                      'footer-styled__column-button',
+                    )}
                     onClick={event => scrollToSection(event, 'pricing')}
                   >
                     Pricing
-                  </SectionListButton>
-                </SectionListItem>
+                  </button>
+                </li>
                 {siteMapData.map(item => (
-                  <SectionListItem key={item.link}>
-                    <SectionListLink href={item.link}>
+                  <li key={item.link} className="footer-styled__column-item">
+                    <Link
+                      className="footer-styled__common-text"
+                      href={item.link}
+                    >
                       {item.name}
-                    </SectionListLink>
-                  </SectionListItem>
+                    </Link>
+                  </li>
                 ))}
               </ul>
-            </StyledContainer>
-            <StyledContainer>
+            </div>
+            <div className="footer-styled__column-container">
               <h5>First steps</h5>
               <ul>
                 {firstStepsData.map(item => (
-                  <SectionListItem key={item.link}>
-                    <SectionListLink to={item.link} internal>
+                  <li key={item.link} className="footer-styled__column-item">
+                    <Link className="footer-styled__common-text" to={item.link}>
                       {item.name}
-                    </SectionListLink>
-                  </SectionListItem>
+                    </Link>
+                  </li>
                 ))}
               </ul>
-            </StyledContainer>
-            <StyledContainerCentered>
+            </div>
+            <div className="footer-styled__column-container__centered">
               <h5>Start a conversation!</h5>
-              <Mail href="mailto:hello@forminer.com">hello@forminer.com</Mail>
-              <CopyrightContainer>
+              <a
+                className="footer-styled__common-text"
+                href="mailto:hello@forminer.com"
+              >
+                hello@forminer.com
+              </a>
+              <div className="footer-styled__copyright-container">
                 <a
                   href="https://www.vazco.eu/"
                   target="_blank"
@@ -211,11 +132,11 @@ export const Footer = () => {
                   style={{ marginBottom: 0, fontSize: 16 }}
                 >{`Copyright © 2020 - ${new Date().getFullYear()}`}</p>
                 <p style={{ fontSize: 16 }}>All Rights Reserved</p>
-              </CopyrightContainer>
-            </StyledContainerCentered>
+              </div>
+            </div>
           </Box>
-        </TopSection>
+        </div>
       </Container>
-    </StyledFooter>
+    </footer>
   );
 };

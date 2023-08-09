@@ -1,41 +1,10 @@
-import { rem } from 'polished';
 import React from 'react';
-import styled from 'styled-components';
 
 import { Button } from '../../components/Button';
 import { Container } from '../../components/Container';
 import { Link } from '../../components/Link';
-import media from '../../globalStyles/media';
 // @ts-expect-error Image import
 import ctaBackground from '../../images/cta-background.webp';
-
-const HighlightPanel = styled.div`
-  padding: 0px 0px 75px 0px;
-  ${media.greaterThan('md')`
-  padding: 0px 0px 100px 0px;
-  `}
-`;
-
-const ContentWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 80px 40px;
-  gap: ${rem(50)};
-  border-radius: 8px;
-  background-image: url(${ctaBackground});
-  background-size: cover;
-  background-position: center center;
-  ${media.lessThan('sm')`
-    gap: ${rem(40)};
-    flex-direction: column;
-  `}
-`;
-
-const CTAHeading = styled.h2`
-  margin: 0px;
-  font-weight: 600;
-`;
 
 type CTASectionProps = {
   heading: string;
@@ -52,17 +21,20 @@ export const CTASection = ({
   btnClassName,
 }: CTASectionProps) => {
   return (
-    <HighlightPanel>
+    <div className="cta-section__highlight-panel">
       <Container>
-        <ContentWrapper>
-          <CTAHeading>{heading}</CTAHeading>
+        <div
+          className="cta-section__content-wrapper"
+          style={{ backgroundImage: `url(${ctaBackground})` }}
+        >
+          <h2 className="cta-section__heading">{heading}</h2>
           <Link to={link} newTab={false} internal>
             <Button className={btnClassName} variant="solid">
               {buttonText}
             </Button>
           </Link>
-        </ContentWrapper>
+        </div>
       </Container>
-    </HighlightPanel>
+    </div>
   );
 };

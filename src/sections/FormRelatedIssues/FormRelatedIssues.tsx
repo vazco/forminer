@@ -6,8 +6,6 @@ import CustomizeFormsIcon from '../../images/svg/customize-forms.svg';
 import SavingTimeIcon from '../../images/svg/saving-time.svg';
 import ScalabilityIcon from '../../images/svg/scalability.svg';
 
-const id = 'form-related-issues';
-
 const cards = [
   {
     icon: <SavingTimeIcon />,
@@ -33,7 +31,7 @@ export const FormRelatedIssues = () => {
   return (
     <SectionLayout
       heading="Take form-related issues off your mind"
-      id={id}
+      id="form-related-issues"
       centerHeading
     >
       <CardGrid cards={cards} />

@@ -2,81 +2,12 @@ import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import React, { useState } from 'react';
-import styled from 'styled-components';
 
-import { UnifiedHeading } from '../../components/AccentHeading';
+import { AccentHeading } from '../../components/AccentHeading';
 import { Container } from '../../components/Container';
 import { List, ListItem } from '../../components/List';
 import { SectionLayout } from '../../components/SectionLayout';
 import PlusIcon from '../../images/svg/add-black.svg';
-
-const FAQContainer = styled(Container)`
-  && {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-`;
-
-const MaxWidth = styled.div`
-  max-width: 700px;
-`;
-
-const FAQTitleContainer = styled.div`
-  && {
-    vertical-align: middle;
-  }
-`;
-
-const Topic = styled.p`
-  color: ${({ theme }) => theme.color.stormyBlue};
-  margin: 0;
-  font-weight: 500;
-`;
-
-// eslint-disable-next-line no-unused-vars -- false positive error
-const StyledPanel = styled(({ lastChild, ...other }) => (
-  <ExpansionPanel {...other} />
-))`
-  && {
-    box-shadow: none;
-    background-color: transparent;
-    margin: 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
-
-    ${({ lastChild }) => lastChild && 'border-bottom: 0;'}
-    &.Mui-expanded {
-      margin-top: 0;
-    }
-
-    &:before {
-      display: none;
-    }
-  }
-`;
-
-const StyledSummary = styled(ExpansionPanelSummary)`
-  && {
-    padding: 60px 0;
-
-    .MuiExpansionPanelSummary-content {
-      margin: 0;
-      padding-right: 30px;
-      position: relative;
-      display: flex;
-      justify-content: space-between;
-    }
-  }
-`;
-
-const StyledPlusIcon = styled(PlusIcon)`
-  width: 24px;
-  height: 24px;
-  margin-top: 2px;
-  transition: transform 0.2s ease-out;
-  ${({ isExpanded }) => isExpanded && 'transform: rotate(-225deg);'}
-`;
 
 const items = [
   {
@@ -116,13 +47,6 @@ const items = [
   },
 ];
 
-const StyledDetails = styled(ExpansionPanelDetails)`
-  color: ${({ theme }) => theme.color.stormyBlue};
-  && {
-    padding: 0;
-  }
-`;
-
 export const FAQSection = () => {
   const [expanded, setExpanded] = useState('');
 
@@ -132,28 +56,34 @@ export const FAQSection = () => {
 
   return (
     <SectionLayout alternativeBackground>
-      <FAQContainer>
-        <FAQTitleContainer>
-          <UnifiedHeading marginBottom={70} level={2} size="lg" isStrong>
-            Frequently asked questions
-          </UnifiedHeading>
-        </FAQTitleContainer>
-        <MaxWidth>
+      <Container className="faq__container">
+        <AccentHeading marginBottom={70} level={2} size="lg" center isStrong>
+          Frequently asked questions
+        </AccentHeading>
+        <div className="faq__questions__max-width ">
           {items.map(({ question, answer }, index) => {
             const isExpanded = expanded === `panel${index}`;
             return (
-              <StyledPanel
+              <ExpansionPanel
                 key={question}
                 expanded={isExpanded}
                 onChange={handleChange(`panel${index}`)}
-                lastChild={items.length === index + 1}
+                className="faq__question-and-answer"
                 square
               >
-                <StyledSummary aria-controls={`panel${index}d-content`}>
-                  <Topic>{question}</Topic>
-                  <StyledPlusIcon isExpanded={isExpanded} />
-                </StyledSummary>
-                <StyledDetails>
+                <ExpansionPanelSummary
+                  className="faq__question-and-answer__question"
+                  aria-controls={`panel${index}d-content`}
+                >
+                  <p className="faq__question">{question}</p>
+                  <PlusIcon
+                    className="faq__question-and-answer__question__plus-icon"
+                    style={{
+                      transform: isExpanded ? 'rotate(-225deg)' : 'none',
+                    }}
+                  />
+                </ExpansionPanelSummary>
+                <ExpansionPanelDetails className="faq__question-and-answer__answer">
                   {Array.isArray(answer) ? (
                     <List>
                       {answer.map(({ content, list }) => (
@@ -172,12 +102,12 @@ export const FAQSection = () => {
                   ) : (
                     <p>{answer}</p>
                   )}
-                </StyledDetails>
-              </StyledPanel>
+                </ExpansionPanelDetails>
+              </ExpansionPanel>
             );
           })}
-        </MaxWidth>
-      </FAQContainer>
+        </div>
+      </Container>
     </SectionLayout>
   );
 };

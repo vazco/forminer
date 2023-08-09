@@ -116,7 +116,7 @@ a {
   color: ${theme.color.primary};
   text-decoration: none;
   :hover {
-    text-decoration: underline;
+    text-decoration: none;
   }
 }
 

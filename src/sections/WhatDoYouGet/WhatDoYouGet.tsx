@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 
 import { CardGrid } from '../../components/CardGrid';
 import { SectionLayout } from '../../components/SectionLayout';
@@ -9,8 +8,6 @@ import MultiTenantIcon from '../../images/svg/multi-tenant.svg';
 import ReadyToUseIcon from '../../images/svg/ready-to-use.svg';
 import SupportIcon from '../../images/svg/support.svg';
 import UnlimitedUsersIcon from '../../images/svg/unlimited-users.svg';
-
-const id = 'what-do-you-get';
 
 const cards = [
   {
@@ -51,22 +48,17 @@ const cards = [
   },
 ];
 
-const UnderlineComponent = styled.div`
-  text-decoration: underline;
-  text-decoration-color: #00abff;
-  text-decoration-thickness: 3px;
-  font-size: 28px;
-  text-align: center;
-  margin-bottom: 70px;
-`;
-
 export const WhatDoYouGet = () => {
   return (
-    <SectionLayout heading="What do you get?" id={id} centerHeading>
-      <UnderlineComponent>
+    <SectionLayout
+      heading="What do you get?"
+      id="what-do-you-get"
+      centerHeading
+    >
+      <div className="what-do-you-get__subtitle">
         Forminer is code - React components that let you making core changes
         seamlessly.
-      </UnderlineComponent>
+      </div>
       <CardGrid cards={cards} />
     </SectionLayout>
   );
