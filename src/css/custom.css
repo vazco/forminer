@@ -519,7 +519,7 @@ table {
 }
 
 .footer-styled__column-item {
-  margin-bottom: 10;
+  margin-bottom: 10px;
 }
 
 .footer-styled__common-text {
@@ -538,14 +538,6 @@ table {
 
 .footer-styled__column-button {
   padding: 0;
-}
-
-.footer-styled__column-link {
-  text-decoration: none !important;
-}
-
-.footer-styled__column-mail {
-  text-decoration: none !important;
 }
 
 .faq__container {

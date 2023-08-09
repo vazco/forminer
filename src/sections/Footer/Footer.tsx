@@ -86,10 +86,7 @@ export const Footer = () => {
                 {siteMapData.map(item => (
                   <li key={item.link} className="footer-styled__column-item">
                     <Link
-                      className={clsx(
-                        'footer-styled__common-text',
-                        'footer-styled__column-link',
-                      )}
+                      className="footer-styled__common-text"
                       href={item.link}
                     >
                       {item.name}
@@ -103,13 +100,7 @@ export const Footer = () => {
               <ul>
                 {firstStepsData.map(item => (
                   <li key={item.link} className="footer-styled__column-item">
-                    <Link
-                      className={clsx(
-                        'footer-styled__common-text',
-                        'footer-styled__column-link',
-                      )}
-                      to={item.link}
-                    >
+                    <Link className="footer-styled__common-text" to={item.link}>
                       {item.name}
                     </Link>
                   </li>
@@ -119,10 +110,7 @@ export const Footer = () => {
             <div className="footer-styled__column-container__centered">
               <h5>Start a conversation!</h5>
               <a
-                className={clsx(
-                  'footer-styled__common-text',
-                  'footer-styled__column-mail',
-                )}
+                className="footer-styled__common-text"
                 href="mailto:hello@forminer.com"
               >
                 hello@forminer.com
