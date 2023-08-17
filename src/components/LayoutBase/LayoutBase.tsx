@@ -4,6 +4,7 @@ import { ThemeProvider } from 'styled-components';
 
 import { GlobalStyle, theme, MuiTheme } from '../../globalStyles/theme';
 import { useNavbarStyles } from '../../hooks/useNavbarStyles';
+import { VideoAsk } from '../VideoAsk';
 
 // import { Cookies } from '~components/molecules/Cookies';
 // import SEO from '~components/organisms/SEO';
@@ -19,6 +20,7 @@ export const LayoutBase = ({ children }: LayoutBaseProps) => {
   return (
     <MuiThemeProvider theme={MuiTheme}>
       {/*<SEO metaTags={seoMetaTags} />*/}
+      <VideoAsk />
       <GlobalStyle />
       <ThemeProvider theme={theme}>
         <main className="homepage-main-container">{children}</main>
