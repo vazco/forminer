@@ -1,7 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
 
-import media from '../../globalStyles/media';
 import CheckmarkIcon from '../../images/svg/checkmark.svg';
 
 type ListCardProps = {
@@ -9,60 +7,20 @@ type ListCardProps = {
   points: string[];
 };
 
-const CardComponent = styled.div`
-  width: 100%;
-  padding: 36px 48px;
-  background-color: #eee;
-  border-radius: 8px;
-  ${media.lessThan('md')`
-    padding: 24px;
-  `}
-`;
-
-const TitleComponent = styled.div`
-  text-align: center;
-  font-weight: 900;
-  font-size: 18px;
-  margin-bottom: 24px;
-`;
-
-const BulletsWrapComponent = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-`;
-
-const BulletpointWrapComponent = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 10px;
-`;
-
-const BulletPointComponent = styled.div`
-  color: ${({ theme }) => theme.color.stormyBlue};
-  width: 20px;
-  height: 20px;
-  flex-shrink: 0;
-  & svg {
-    width: 100%;
-    height: 100%;
-  }
-`;
-
 export const ListCard = ({ title, points }: ListCardProps) => {
   return (
-    <CardComponent>
-      <TitleComponent>{title}</TitleComponent>
-      <BulletsWrapComponent>
+    <div className="list-card__card">
+      <div className="list-card__title">{title}</div>
+      <div className="list-card__bullets-container">
         {points.map(point => (
-          <BulletpointWrapComponent key={point}>
-            <BulletPointComponent>
+          <div key={point} className="list-card__bulletpoint-container">
+            <div className="list-card__bulletpoint">
               <CheckmarkIcon />
-            </BulletPointComponent>
+            </div>
             <div>{point}</div>
-          </BulletpointWrapComponent>
+          </div>
         ))}
-      </BulletsWrapComponent>
-    </CardComponent>
+      </div>
+    </div>
   );
 };

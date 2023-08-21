@@ -1,28 +1,16 @@
+import clsx from 'clsx';
 import React, { ReactNode } from 'react';
-import styled from 'styled-components';
-
-const StyledContainer = styled.div`
-  max-width: 1360px;
-  margin: 0 auto;
-  padding: 0px 16px;
-`;
 
 type ContainerProps = {
   children: ReactNode;
   className?: string;
-  wide?: boolean;
   id?: string;
 };
 
-export const Container = ({
-  children,
-  id,
-  className,
-  wide = false,
-}: ContainerProps) => {
+export const Container = ({ children, id, className }: ContainerProps) => {
   return (
-    <StyledContainer id={id} className={className} wide={wide}>
+    <div id={id} className={clsx(className, 'container')}>
       {children}
-    </StyledContainer>
+    </div>
   );
 };

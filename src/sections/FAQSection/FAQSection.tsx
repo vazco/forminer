@@ -57,7 +57,7 @@ export const FAQSection = () => {
   return (
     <SectionLayout alternativeBackground>
       <Container className="faq__container">
-        <AccentHeading marginBottom={70} level={2} size="lg" center isStrong>
+        <AccentHeading marginBottom={70} size="lg" center isStrong>
           Frequently asked questions
         </AccentHeading>
         <div className="faq__questions__max-width ">

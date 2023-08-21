@@ -4,11 +4,6 @@ import { createGlobalStyle } from 'styled-components';
 import { normalize } from 'styled-normalize';
 
 import media from './media';
-import {
-  HEADING_LG_STYLES,
-  HEADING_MD_STYLES,
-  HEADING_XL_STYLES,
-} from './sharedStyles/headings';
 
 export const MuiTheme = createMuiTheme({
   breakpoints: {
@@ -69,13 +64,31 @@ h4, h5 {
 }
 
 h1 {
-  ${HEADING_XL_STYLES}
+  font-size: 40px;
+  line-height: 50px;
+
+  ${media.greaterThan('md')`
+    font-size: 54px;
+    line-height: 64px;
+  `}
 }
 h2 {
-  ${HEADING_LG_STYLES}
+  font-size: 26px;
+  line-height: 36px;
+
+  ${media.greaterThan('md')`
+    font-size: 40px;
+    line-height: 50px;
+  `}
 }
 h3 {
-  ${HEADING_MD_STYLES}
+  font-size: 20px;
+  line-height: 30px;
+
+  ${media.greaterThan('md')`
+    font-size: 28px;
+    line-height: 38px;
+  `}
 }
 h4 {
   font-size: ${rem('18px')};
