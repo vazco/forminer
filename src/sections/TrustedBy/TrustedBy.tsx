@@ -5,8 +5,6 @@ import campusSkills from '../../images/campus-skills.webp';
 // @ts-expect-error Image import
 import cbre from '../../images/cbre.webp';
 // @ts-expect-error Image import
-import eriez from '../../images/eriez.webp';
-// @ts-expect-error Image import
 import kodefly from '../../images/kodefly.webp';
 
 const companies = [
@@ -17,10 +15,6 @@ const companies = [
   {
     src: campusSkills,
     alt: 'CampusSkills',
-  },
-  {
-    src: eriez,
-    alt: 'Eriez',
   },
   {
     src: kodefly,
