@@ -226,13 +226,14 @@ table {
 
 .use-cases__cards-container {
   display: flex;
-  gap: 120px;
+  gap: 40px;
+  flex-direction: column;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .use-cases__cards-container {
-    gap: 40px;
-    flex-direction: column;
+    gap: 120px;
+    flex-direction: row;
   }
 }
 
@@ -247,7 +248,7 @@ table {
   width: 100%;
   padding: 20px 0px;
   background-color: #eeeeee;
-  margin: 0px 0px 75px 0px;
+  margin: 0px 0px 100px 0px;
 }
 
 .trusted-by__content {
@@ -256,10 +257,18 @@ table {
   width: 100%;
   margin: 0px auto;
   padding: 0px 16px;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.trusted-by__content img {
+  margin-left: 0px;
 }
 
 .trusted-by__companies {
   display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
 .trusted-by__company {
@@ -269,33 +278,30 @@ table {
 
 .trusted-by__company img {
   height: 100%;
+  padding: 0px;
 }
 
 .trusted-by__header {
   width: 150px;
 }
 
-@media (max-width: 1024px) {
+@media (min-width: 1024px) {
   .trusted-by__container {
-    margin: 0px 0px 100px 0px;
+    margin: 0px 0px 75px 0px;
   }
 
   .trusted-by__content {
-    flex-direction: column;
-    gap: 15px;
+    flex-direction: row;
+    gap: 0;
   }
 
   .trusted-by__content img {
-    margin-left: 0px;
+    margin-left: auto;
   }
 
   .trusted-by__companies {
-    flex-direction: column;
-    gap: 30px;
-  }
-
-  .trusted-by__company {
-    padding: 0px;
+    flex-direction: row;
+    gap: 0;
   }
 }
 
@@ -338,25 +344,25 @@ table {
 
 .pricing__cards {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   gap: 10px;
 }
 
-@media (max-width: 1360px) {
-  .pricing__cards {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 1024px) {
+@media (min-width: 768px) {
   .pricing__cards {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 1024px) {
   .pricing__cards {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1360px) {
+  .pricing__cards {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 }
 
@@ -377,27 +383,33 @@ table {
   font-weight: 600;
 }
 
-@media (min-width: 576px) and (max-width: 768px) {
+@media (min-width: 576px) {
   .hero__supported-libraries-title {
     margin-top: 30px;
   }
 }
 
+@media (min-width: 768px) {
+  .hero__supported-libraries-title {
+    margin-top: 40px;
+  }
+}
+
 .hero__CTA-buttons-container {
   display: flex;
-  flex-direction: row;
+  margin-top: 30px;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  justify-content: start;
   flex-wrap: wrap;
-  margin-top: 45px;
   gap: 10px 15px;
 }
 
-@media (max-width: 427px) {
+@media (min-width: 427px) {
   .hero__CTA-buttons-container {
-    margin-top: 30px;
-    flex-direction: column;
-    justify-content: center;
+    margin-top: 45px;
+    flex-direction: row;
+    justify-content: start;
   }
 }
 
@@ -616,16 +628,17 @@ table {
   align-items: center;
   justify-content: space-between;
   padding: 80px 40px;
-  gap: 50px;
   border-radius: 8px;
   background-size: cover;
   background-position: center center;
+  gap: 40px;
+  flex-direction: column;
 }
 
-@media (max-width: 576px) {
+@media (min-width: 576px) {
   .cta-section__content-wrapper {
-    gap: 40px;
-    flex-direction: column;
+    gap: 50px;
+    flex-direction: row;
   }
 }
 
@@ -763,14 +776,14 @@ table {
 
 .list-card__card {
   width: 100%;
-  padding: 36px 48px;
+  padding: 24px;
   background-color: #eee;
   border-radius: 8px;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .list-card__card {
-    padding: 24px;
+    padding: 36px 48px;
   }
 }
 
@@ -859,22 +872,22 @@ table {
 
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 40px;
+  grid-template-columns: 1fr;
+  gap: 20px;
   width: 100%;
   margin: auto;
 }
 
-@media (max-width: 1024px) {
+@media (min-width: 768px) {
   .card-grid {
-    gap: 20px;
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 1024px) {
   .card-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 40px;
   }
 }
 
