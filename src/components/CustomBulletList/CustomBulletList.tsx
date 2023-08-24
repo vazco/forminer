@@ -1,52 +1,6 @@
-import { rem } from 'polished';
 import React, { ReactNode } from 'react';
-import styled from 'styled-components';
 
-import media from '../../globalStyles/media';
 import CheckmarkIcon from '../../images/svg/checkmark.svg';
-
-const List = styled.ul`
-  list-style-type: none;
-  padding: 0;
-  margin-top: ${rem('24px')};
-  &:last-child {
-    margin: 0;
-  }
-`;
-
-const CheckmarkWrapper = styled.div`
-  color: ${({ color = '#00141E' }) => color};
-  width: 20px;
-  height: 20px;
-  flex-shrink: 0;
-  margin-right: 20px;
-  & svg {
-    width: 100%;
-    height: 100%;
-  }
-`;
-
-const ListItem = styled.li`
-  position: relative;
-  min-height: 36px;
-  display: flex;
-  align-items: center;
-  color: inherit;
-
-  ${media.lessThan('sm')`
-    margin-bottom: ${rem('12px')};
-  `}
-  ${media.lessThan('xl')`
-    margin-bottom: ${rem('18px')};
-  `}
-  margin-bottom: ${rem('24px')};
-
-  span {
-    display: inline-block;
-    align-self: center;
-    margin: 0;
-  }
-`;
 
 type CustomBulletListProps = {
   children: ReactNode;
@@ -59,14 +13,14 @@ type CustomBulletListItemProps = {
 export const CustomBulletListItem = ({
   children,
 }: CustomBulletListItemProps) => (
-  <ListItem>
-    <CheckmarkWrapper>
+  <li className="custom-bullet-list__item">
+    <div className="custom-bullet-list__checkmark">
       <CheckmarkIcon />
-    </CheckmarkWrapper>
+    </div>
     {children}
-  </ListItem>
+  </li>
 );
 
 export const CustomBulletList = ({ children }: CustomBulletListProps) => (
-  <List>{children}</List>
+  <ul className="custom-bullet-list__list">{children}</ul>
 );
