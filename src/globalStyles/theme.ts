@@ -22,18 +22,6 @@ export const MuiTheme = createMuiTheme({
   },
 });
 
-export const theme = {
-  color: {
-    primary: '#1074ef',
-    darkBlue: '#0d5dbf',
-    body: '#000000',
-    grey: '#fafafb',
-    darkGrey: '#f4f5f6',
-    white: '#fff',
-    stormyBlue: '#00141E',
-  },
-};
-
 export const GlobalStyle = createGlobalStyle`
 ${normalize}
 html {
@@ -46,7 +34,7 @@ html {
 main {
   font-family: 'Inter', sans-serif;
   font-weight: 300;
-  color: ${theme.color.stormyBlue};
+  color: #00141E;
   overflow-x: hidden;
   
   h1, h2, h3, h4, h5 {
@@ -126,7 +114,7 @@ p {
 
 a {
   font-weight: 500;
-  color: ${theme.color.primary};
+  color: #1074ef;
   text-decoration: none;
   :hover {
     text-decoration: none;
