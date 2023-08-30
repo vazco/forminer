@@ -101,6 +101,7 @@ const config = {
       hotjar: {
         applicationId: '3212446',
       },
+      image: 'img/og-image.png',
     }),
 };
 
