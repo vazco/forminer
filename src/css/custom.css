@@ -507,7 +507,6 @@ table {
   justify-content: space-evenly;
   align-items: center;
   margin-bottom: 1em;
-  border: 1px solid var(--theme-color-stormy-blue);
 }
 
 @media (min-width: 768px) {
@@ -714,11 +713,6 @@ table {
   border-radius: 36px;
   width: 100%;
   padding: 20px;
-  transition: all 0.2s ease-out;
-}
-
-.pricing-card__card:hover {
-  transform: scale(1.03);
 }
 
 .pricing-card__badge {
@@ -760,7 +754,6 @@ table {
 }
 
 .pricing-card__benefit-button {
-  transition: font-weight 0.2s ease-in-out;
   background: none;
   color: inherit;
   border: none;
@@ -770,8 +763,19 @@ table {
   outline: inherit;
 }
 
-.pricing-card__benefit-button:hover {
-  font-weight: 600;
+.btn-all-features-monthly,
+.btn-all-features-yearly,
+.btn-all-features-lifelong {
+  background-color: #ecf0f1;
+  border-radius: 32px;
+  padding: 7px;
+  transition: 'background-color 0.2s ease-in-out';
+}
+
+.btn-all-features-monthly:hover,
+.btn-all-features-yearly:hover,
+.btn-all-features-lifelong:hover {
+  background-color: #d1dbde;
 }
 
 .list-card__card {
