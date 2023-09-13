@@ -2,6 +2,7 @@ import React from 'react';
 
 import GithubIcon from '../../images/svg/github.svg';
 import LinkedinIcon from '../../images/svg/linkedin.svg';
+import QuoteIcon from '../../images/svg/quote.svg';
 
 export type TestimonialData = {
   company: string;
@@ -32,7 +33,12 @@ export const Testimonial = ({
 
   return (
     <div className="testimonial">
-      <img src={avatar} alt={who} className="testimonial__avatar" />
+      <div className="testimonial__avatar-container">
+        <div className="testimonial__quote-icon">
+          <QuoteIcon />
+        </div>
+        <img src={avatar} alt={who} className="testimonial__avatar" />
+      </div>
       <p className="testimonial__who">{who}</p>
       <p>
         {position} at <b>{company}</b>

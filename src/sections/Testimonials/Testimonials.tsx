@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { AccentHeading } from '../../components/AccentHeading';
+import { SectionLayout } from '../../components/SectionLayout';
 // eslint-disable-next-line no-unused-vars -- Type import
 import { Testimonial, TestimonialData } from '../../components/Testimonial';
 // @ts-expect-error Image import
@@ -28,16 +28,12 @@ const testimonials: TestimonialData[] = [
 
 export const Testimonials = () => {
   return (
-    <div className="testimonials__section-container">
-      <p>They speak about us</p>
-      <AccentHeading size="lg" center isStrong>
-        Testimonials
-      </AccentHeading>
+    <SectionLayout heading="Testimonials" id="testimonials" centerHeading>
       <div className="testimonials">
         {testimonials.map(testimonial => (
           <Testimonial key={testimonial.who} testimonial={testimonial} />
         ))}
       </div>
-    </div>
+    </SectionLayout>
   );
 };
