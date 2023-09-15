@@ -28,7 +28,11 @@ const testimonials: TestimonialData[] = [
 
 export const Testimonials = () => {
   return (
-    <SectionLayout heading="Testimonials" id="testimonials" centerHeading>
+    <SectionLayout
+      heading="What do tech professionals think about Forminer?"
+      id="testimonials"
+      centerHeading
+    >
       <div className="testimonials">
         {testimonials.map(testimonial => (
           <Testimonial key={testimonial.who} testimonial={testimonial} />

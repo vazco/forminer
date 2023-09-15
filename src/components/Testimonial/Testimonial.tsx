@@ -44,18 +44,10 @@ export const Testimonial = ({
         {position} at <b>{company}</b>
       </p>
       <div className="testimonial__icons-container">
-        <a
-          className="testimonial__icon-container"
-          href={linkGithub}
-          target="_blank"
-        >
+        <a href={linkGithub} target="_blank">
           <GithubIcon to={linkGithub} />
         </a>
-        <a
-          className="testimonial__icon-container"
-          href={linkLinkedin}
-          target="_blank"
-        >
+        <a href={linkLinkedin} target="_blank">
           <LinkedinIcon to={linkLinkedin} />
         </a>
       </div>

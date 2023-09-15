@@ -1001,19 +1001,6 @@ table {
   margin-top: 16px;
 }
 
-.testimonial__icon-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  box-shadow: 0 6px 16px 0 var(--theme-color-dark-grey);
-  border: none;
-  width: 35px;
-  height: 35px;
-  background-color: white;
-  cursor: pointer;
-}
-
 .testimonial__description {
   line-height: 1.75;
   text-align: center;
