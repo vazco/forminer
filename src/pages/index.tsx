@@ -15,6 +15,7 @@ import {
   UseCases,
   TrustedBy,
 } from '../sections';
+import { Testimonials } from '../sections/Testimonials';
 
 const IndexPage = () => {
   return (
@@ -24,6 +25,7 @@ const IndexPage = () => {
         <LayoutBase>
           <Hero />
           <TrustedBy />
+          <Testimonials />
           <FormRelatedIssues />
           <CTASection
             heading="How does Forminer help overcome your challenges?"

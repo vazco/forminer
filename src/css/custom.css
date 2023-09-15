@@ -970,3 +970,53 @@ table {
     line-height: 38px;
   }
 }
+
+.testimonials {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.testimonial {
+  max-width: 800px;
+  height: 100%;
+  padding: 0 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.testimonial__avatar-container {
+  position: relative;
+}
+
+.testimonial__avatar {
+  width: 110px;
+  border-radius: 10px;
+  margin: 24px 0;
+}
+
+.testimonial__icons-container {
+  width: 130px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  margin-top: 16px;
+}
+
+.testimonial__description {
+  line-height: 1.75;
+  text-align: center;
+  margin: 0;
+}
+
+.testimonial__who {
+  font-weight: 500;
+}
+
+.testimonial__quote-icon {
+  position: absolute;
+  left: -35%;
+  top: -2%;
+}
