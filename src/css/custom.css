@@ -23,6 +23,9 @@
   --theme-color-dark-grey: #f4f5f6;
   --theme-color-white: #fff;
   --theme-color-stormy-blue: #00141e;
+  --theme-color-error: #dc2727;
+
+  --theme-color-stripe: #01aaff;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -964,5 +967,117 @@ table {
   .unified-heading__md {
     font-size: 28px;
     line-height: 38px;
+  }
+}
+
+.trial__wraper {
+  font-family: Inter;
+  min-height: 100vh;
+  height: auto;
+}
+
+.trial__wraper h3 {
+  font-weight: 500;
+}
+
+.trial__branded-container {
+  background-color: var(--theme-color-stripe);
+  padding: 16px;
+  height: 187px;
+}
+
+.trial__inner-container-left,
+.trial__inner-container-right {
+  width: min(100%, 380px);
+  margin: 0 auto;
+  transition: opacity 1s;
+}
+
+.trial__inner-container-left.hidden,
+.trial__inner-container-right.hidden {
+  opacity: 0;
+}
+
+.trial__logo > img {
+  margin: 0;
+}
+
+.trial__product-label {
+  margin-top: 30px;
+  color: rgba(26, 26, 26, 0.6);
+  text-align: center;
+}
+
+.trial__form-container {
+  padding: 24px 16px 16px 16px;
+  font-size: 10px;
+}
+
+.trial__checkbox-container {
+  margin-bottom: 10px;
+}
+
+.trial__checkbox {
+  vertical-align: -2px;
+  margin-right: 8px;
+}
+
+.trial__error-text {
+  color: var(--theme-color-error);
+  height: 10px;
+  transition: opacity 0.2s, height 0.4s;
+}
+
+.trial__error-text.hidden {
+  opacity: 0;
+  height: 0;
+}
+
+.trial__btn-container {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.trial__btn {
+  align-items: center;
+  background-color: var(--theme-color-stripe);
+  border-radius: 6px;
+  color: black;
+  display: inline-flex;
+  font-size: 13px;
+  height: 44px;
+  justify-content: center;
+  width: 100%;
+  cursor: pointer;
+  border: none;
+}
+
+.trial__btn:hover {
+  color: black;
+  text-decoration: none;
+}
+
+@media (min-width: 992px) {
+  .trial__wraper {
+    display: flex;
+  }
+
+  .trial__branded-container,
+  .trial__form-container {
+    width: 100%;
+    height: inherit;
+    padding: 0;
+  }
+
+  .trial__inner-container-left {
+    margin: max(calc(50vh - 243px), 48px) 80px 0 auto;
+  }
+
+  .trial__inner-container-right {
+    margin: max(calc(50vh - 243px), 48px) auto 0 80px;
+  }
+
+  .trial__product-label {
+    text-align: left;
   }
 }

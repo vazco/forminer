@@ -32,8 +32,7 @@ const pricingCards: PricingCardData[] = [
       },
     ],
     buttonText: 'Try it out',
-    buttonLink:
-      'https://transactions.sendowl.com/products/78972481/998CD884/view',
+    buttonLink: '/trial',
     btnClassName: 'btn-trial',
   },
   {
