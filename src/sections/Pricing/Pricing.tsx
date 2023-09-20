@@ -8,6 +8,7 @@ import DiamondIcon from '../../images/svg/diamond.svg';
 import DollarIcon from '../../images/svg/dollar.svg';
 import GiftIcon from '../../images/svg/gift.svg';
 import StarIcon from '../../images/svg/star.svg';
+import { STRIPE_PAYMENT_LINKS } from '../../utils/constants';
 
 const allFeaturesIncludedStyles = {
   backgroundColor: '#ECF0F1',
@@ -50,8 +51,7 @@ const pricingCards: PricingCardData[] = [
       },
     ],
     buttonText: 'Buy now',
-    buttonLink:
-      'https://transactions.sendowl.com/subscriptions/21901/AC6D4F49/view',
+    buttonLink: STRIPE_PAYMENT_LINKS.MONTHLY,
     isMostPopular: true,
     btnClassName: 'btn-buy-monthly',
   },
@@ -77,8 +77,7 @@ const pricingCards: PricingCardData[] = [
       },
     ],
     buttonText: 'Buy now',
-    buttonLink:
-      'https://transactions.sendowl.com/subscriptions/21900/D0E5583D/view',
+    buttonLink: STRIPE_PAYMENT_LINKS.YEARLY,
     btnClassName: 'btn-buy-yearly',
   },
   {
@@ -103,8 +102,7 @@ const pricingCards: PricingCardData[] = [
       },
     ],
     buttonText: 'Buy now',
-    buttonLink:
-      'https://transactions.sendowl.com/products/78872705/34727BAC/view',
+    buttonLink: STRIPE_PAYMENT_LINKS.LIFELONG,
     btnClassName: 'btn-buy-lifelong',
   },
   {
