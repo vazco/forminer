@@ -978,6 +978,7 @@ table {
 
 .trial__wrapper h3 {
   font-weight: 500;
+  color: #303030;
 }
 
 .trial__branded-container {
@@ -1004,7 +1005,7 @@ table {
 
 .trial__product-label {
   margin-top: 29px;
-  color: rgba(26, 26, 26, 0.6);
+  color: #2e5274;
   text-align: center;
 }
 
@@ -1020,6 +1021,7 @@ table {
 .trial__form-container {
   padding: 24px 16px 16px 16px;
   font-size: 10px;
+  color: #5e5e5f;
 }
 
 .trial__checkbox-container {
@@ -1048,12 +1050,13 @@ table {
 }
 
 .trial__btn {
+  all: unset;
   align-items: center;
   background-color: var(--theme-color-stripe);
   border-radius: 6px;
-  color: black;
+  color: #1e4363;
   display: inline-flex;
-  font-size: 13px;
+  font-size: 16px;
   height: 44px;
   justify-content: center;
   width: 100%;
@@ -1062,7 +1065,7 @@ table {
 }
 
 .trial__btn:hover {
-  color: black;
+  color: #1e4363;
   text-decoration: none;
 }
 
