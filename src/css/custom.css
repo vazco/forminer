@@ -970,13 +970,13 @@ table {
   }
 }
 
-.trial__wraper {
+.trial__wrapper {
   font-family: Inter;
   min-height: 100vh;
   height: auto;
 }
 
-.trial__wraper h3 {
+.trial__wrapper h3 {
   font-weight: 500;
 }
 
@@ -1003,9 +1003,18 @@ table {
 }
 
 .trial__product-label {
-  margin-top: 30px;
+  margin-top: 29px;
   color: rgba(26, 26, 26, 0.6);
   text-align: center;
+}
+
+.trial__price-label {
+  display: block;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 35px;
+  text-align: center;
+  letter-spacing: 0.1px;
 }
 
 .trial__form-container {
@@ -1058,7 +1067,7 @@ table {
 }
 
 @media (min-width: 992px) {
-  .trial__wraper {
+  .trial__wrapper {
     display: flex;
   }
 
@@ -1077,7 +1086,13 @@ table {
     margin: max(calc(50vh - 243px), 48px) auto 0 80px;
   }
 
-  .trial__product-label {
+  .trial__product-label,
+  .trial__price-label {
     text-align: left;
+  }
+
+  .trial__price-label {
+    font-size: 36px;
+    line-height: 45px;
   }
 }
