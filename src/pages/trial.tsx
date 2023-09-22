@@ -32,7 +32,6 @@ const Trial = () => {
             <img src="img/forminer.svg" height={28} alt="Forminer logo" />
           </a>
           <div className="trial__product-label">Forminer | Trial</div>
-          <span className="trial__price-label">$0.00</span>
         </div>
       </div>
       <div className="trial__form-container">

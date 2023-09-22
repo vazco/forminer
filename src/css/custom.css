@@ -1009,15 +1009,6 @@ table {
   text-align: center;
 }
 
-.trial__price-label {
-  display: block;
-  font-size: 28px;
-  font-weight: 600;
-  line-height: 35px;
-  text-align: center;
-  letter-spacing: 0.1px;
-}
-
 .trial__form-container {
   padding: 24px 16px 16px 16px;
   font-size: 10px;
@@ -1089,13 +1080,7 @@ table {
     margin: max(calc(50vh - 243px), 48px) auto 0 80px;
   }
 
-  .trial__product-label,
-  .trial__price-label {
+  .trial__product-label {
     text-align: left;
-  }
-
-  .trial__price-label {
-    font-size: 36px;
-    line-height: 45px;
   }
 }
