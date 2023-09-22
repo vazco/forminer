@@ -10,13 +10,6 @@ import GiftIcon from '../../images/svg/gift.svg';
 import StarIcon from '../../images/svg/star.svg';
 import { STRIPE_PAYMENT_LINKS } from '../../utils/constants';
 
-const allFeaturesIncludedStyles = {
-  backgroundColor: '#ECF0F1',
-  borderRadius: 32,
-  padding: 7,
-  transition: 'all 0.2s ease-out',
-};
-
 const pricingCards: PricingCardData[] = [
   {
     color: '#818A96',
@@ -45,7 +38,6 @@ const pricingCards: PricingCardData[] = [
       {
         icon: <StarIcon />,
         text: 'All features included.',
-        additionalStyles: allFeaturesIncludedStyles,
         isButton: true,
         className: 'btn-all-features-monthly',
       },
@@ -64,7 +56,6 @@ const pricingCards: PricingCardData[] = [
       {
         icon: <StarIcon />,
         text: 'All features included.',
-        additionalStyles: allFeaturesIncludedStyles,
         isButton: true,
         className: 'btn-all-features-yearly',
       },
@@ -89,7 +80,6 @@ const pricingCards: PricingCardData[] = [
       {
         icon: <StarIcon />,
         text: 'All features included.',
-        additionalStyles: allFeaturesIncludedStyles,
         isButton: true,
         className: 'btn-all-features-lifelong',
       },
