@@ -1097,7 +1097,7 @@ table {
 .trial__btn {
   all: unset;
   align-items: center;
-  background-color: var(--theme-color-stripe);
+  background-color: var(--theme-color-stripe) !important;
   border-radius: 6px;
   color: #1e4363;
   display: inline-flex;
