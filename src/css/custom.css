@@ -26,6 +26,7 @@
   --theme-color-error: #dc2727;
 
   --theme-color-stripe: #01aaff;
+  --theme-color-stripe-side: #eeeeee;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -1036,7 +1037,7 @@ table {
 }
 
 .trial__branded-container {
-  background-color: var(--theme-color-stripe);
+  background-color: var(--theme-color-stripe-side);
   padding: 16px;
   height: 187px;
 }
@@ -1059,7 +1060,7 @@ table {
 
 .trial__product-label {
   margin-top: 29px;
-  color: #2e5274;
+  color: hsla(0,0%, 10% , 0.5 );
   text-align: center;
 }
 
