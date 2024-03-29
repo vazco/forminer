@@ -36,16 +36,6 @@ const sidebars = {
         'troubleshooting',
       ],
     },
-    {
-      type: 'category',
-      label: 'Coming soon',
-      collapsed: false,
-      collapsible: false,
-      items: [
-        { type: 'link', label: 'Nesting of fields', href: '#' },
-        { type: 'link', label: 'Recipes / use cases', href: '#' },
-      ],
-    },
   ],
 };
 

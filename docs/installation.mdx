@@ -8,22 +8,21 @@ The Forminer installation process is pretty straightforward and requires only a 
 
 ## Unzip the Forminer package and add it to your project
 
-The Forminer code will be delivered to you as a zip file. Unzip it and copy the `Forminer` directory to the `[project-name]/src` directory.
-
-## Install [required dependencies](technical-requirements.mdx#dependencies)
-
-Within your project install the dependencies as listed below:
+The Forminer code will be delivered to you as a zip file. Unzip it and copy it into the project. We suggest creating a `packages` directory for locally installed NPM packages.
 
 ```shell
-npm i --save-exact ajv@7.1.1 ajv-errors@2.0.0 ajv-formats@1.5.1 classnames@2.2.6 react-dnd@14.0.4 react-dnd-html5-backend@14.0.2 react-dnd-mouse-backend@1.0.0-rc.2 react-dnd-multi-backend@6.0.2 react-dnd-touch-backend@14.1.1 react-popper@1.3.11 uniforms@3.4.0 uniforms-bridge-json-schema@3.4.0
-
-npm i --save-exact --save-dev @types/classnames@2.2.11 @types/lodash@4.14.168 @types/invariant@2.2.34
+npm install ./packages/forminer
+yarn add file:./packages/forminer
+pnpm add ./packages/forminer
 ```
 
-Remember to add `--save-exact` flag in order to install packages at exact versions.
+## Install required dependencies
 
-Additionally, you should install one of the selected [uniforms](https://uniforms.tools/) themes that match your needs.
-Last but not least, you can also install [Sass](https://www.npmjs.com/package/sass) if you'd like to use the style sheet delivered with the Forminer code.
+You should install one of the selected [uniforms](https://uniforms.tools/) themes that match your needs.
+
+```shell
+npm install uniforms-???@3.10.2
+```
 
 ## Deep dive
 

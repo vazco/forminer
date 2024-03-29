@@ -17,11 +17,10 @@ As it also impacts the way how it's handled in the code, we'll split this docume
 The Forminer UI (labels, titles, tooltips, etc.) is completely translatable with a centralized i18n system. At its core is the `Translations` type, defining all of the required strings (e.g., `StyleTooltip`) and formatters (e.g., `RemovePageConfirmation`). Once you have a complete `Translations` object, pass it to the `Forminer` component in the `translations` prop:
 
 ```tsx
-import { NS } from '../Forminer/const/namespace';
-import { Translations } from '../Forminer/const/types';
+import { translations, Translations } from 'forminer';
 
-const translations: Translations = {
-  // ...
+const newTranslations: Translations = {
+  ...translations,
   RemovePageConfirmation(pageNumber) {
     return `Are you sure you want to remove entire Page ${pageNumber}? Your fields might be lost.`;
   },
@@ -29,8 +28,6 @@ const translations: Translations = {
     'Define CSS styles to be used in rendered container of the field.JSON format',
 };
 ```
-
-See `example-demo/lib/translations.tsx` for an example configuration to start with.
 
 ## Translating the forms
 
