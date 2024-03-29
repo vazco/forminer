@@ -1,0 +1,72 @@
+---
+description: How Forminer can works with lists
+---
+
+import listOfSuggestionsVideo from '../assets/15564803.mov';
+import listOfDropdownsVideo from '../assets/15237133.mov';
+import multipleSelectVideo from '../assets/15138835.mov';
+
+# Handling lists
+
+Forminer does not handle lists (array data type) out-of-the-box, but it's possible to work around it. In this guide we'll look into a couple of common form patterns.
+
+## List of inputs
+
+The most basic list would be a list of inputs. It looks as follows:
+
+<video controls>
+  <source src={listOfSuggestionsVideo} />
+</video>
+
+To make it usable, we have to patch the `makeBridge` function that builds the final form's JSON schema definition out of the Forminer's form definition. The change is fairly small:
+
+```diff
+ // Actually register the field.
+-jsonSchema.properties[name] = definition;
++if (view?.props?.isMulti) {
++  jsonSchema.properties[name] = { type: 'array', items: definition };
++} else {
++  jsonSchema.properties[name] = definition;
++}
+```
+
+Now all we have to do is to set the `isMulti` custom property on any of the inputs:
+
+![](../assets/15335427.webp)
+
+## Dropdown with multiple values
+
+Another popular list input is a dropdown with multiple values. Normally, a dropdown allows us to select only a single value. If we'd add a standard Forminer's dropdown and apply the "List of inputs" workaround, we'd get the following result:
+
+<video controls>
+  <source src={listOfDropdownsVideo} />
+</video>
+
+While perfectly suitable for some cases, it doesn't make sense for others. Instead, we'd like to have a dropdown that allows selecting multiple values. All of the uniforms themes do handle it, but it has to be configured. To make it work, we'll adjust the `makeBridge` helper similarly:
+
+```diff
+// Actually register the field.
+-jsonSchema.properties[name] = definition;
++if (view?.props?.isMulti) {
++  jsonSchema.properties[name] = { type: 'array', items: definition };
++  if (definition.enum) {
++    jsonSchema.properties[name].default = [];
++    jsonSchema.properties[name].uniforms = { allowedValues: definition.enum };
++    delete definition.enum;
++  }
++} else {
++  jsonSchema.properties[name] = definition;
++}
+```
+
+Now we need to select the `SelectField` component as well as set the `isMulti: true` custom property:
+
+![](../assets/15400974.webp)
+
+<video controls>
+  <source src={multipleSelectVideo} />
+</video>
+
+## Other variants
+
+There's a lot of other possibilities to handle list inputs and we can't cover all of them in this guide. All of them have to consist of two parts: making sure that the JSON schema correctly validates our list, and the component renders it as we'd like. The former can be based on the examples above. The latter requires custom components (see [Handling custom components](custom-components) for details).
