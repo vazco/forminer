@@ -1,0 +1,26 @@
+{
+  "docs": [
+    {
+      "type": "category",
+      "label": "Forminer Docs",
+      "link": {
+        "type": "doc",
+        "id": "intro"
+      },
+      "collapsed": false,
+      "collapsible": false,
+      "items": [
+        "supported-stack",
+        "technical-requirements",
+        "installation",
+        "form-definition",
+        "display-if",
+        "custom-components",
+        "handling-lists",
+        "translations",
+        "integration",
+        "troubleshooting"
+      ]
+    }
+  ]
+}

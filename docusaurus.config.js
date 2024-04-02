@@ -33,6 +33,13 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
+          lastVersion: 'current',
+          versions: {
+            current: {
+              label: '2.x',
+              path: '2.x',
+            },
+          },
           routeBasePath: '/docs',
           sidebarPath: require.resolve('./sidebars.js'),
         },
@@ -93,10 +100,29 @@ const config = {
             className: 'buy-now-nav-item',
             position: 'right',
           },
+          {
+            type: 'docsVersionDropdown',
+            position: 'right',
+          },
         ],
       },
       prism: {
         theme: lightCodeTheme,
+        magicComments: [
+          {
+            className: 'theme-code-block-highlighted-line',
+            line: 'highlight-next-line',
+            block: { start: 'highlight-start', end: 'highlight-end' },
+          },
+          {
+            className: 'code-block-added',
+            line: 'highlight-next-line-added',
+          },
+          {
+            className: 'code-block-removed',
+            line: 'highlight-next-line-removed',
+          },
+        ],
       },
       hotjar: {
         applicationId: '3212446',

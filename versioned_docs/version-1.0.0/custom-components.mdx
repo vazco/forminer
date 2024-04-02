@@ -2,7 +2,7 @@
 description: Learn how to use your own components
 ---
 
-import mapFieldVideo from '../assets/10158082.mp4';
+import mapFieldVideo from '../../assets/10158082.mp4';
 
 # Handling custom components
 
@@ -73,7 +73,7 @@ Once your custom fields are ready, you need to pass this information on to `Form
 
 ```tsx
 import * as theme from 'uniforms-material';
-import { FieldType, createDefaultComponents } from 'forminer';
+import { FieldType, createDefaultComponents } from '../Forminer';
 
 const components = createDefaultComponents(theme);
 
@@ -91,7 +91,7 @@ It is worth mentioning that in the same way, you can also override standard fiel
 
 With a custom field defined as above, you can go to your Forminer instance and create a new text field. Inside of Edit field pane scroll down to the Advanced section and expand it to see the Component dropdown. Select your custom component and you're ready to go!
 
-![](../assets/1015827.gif)
+![](../../assets/1015827.gif)
 
 ## Example #2 - Map component
 
