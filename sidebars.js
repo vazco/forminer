@@ -33,6 +33,7 @@ const sidebars = {
         'handling-lists',
         'translations',
         'integration',
+        'styling-form-components',
         'troubleshooting',
       ],
     },
