@@ -57,7 +57,7 @@ function App() {
 export default App;
 ```
 
-Remove style import from `main.tsx` and `React.StrictMode` (for more information, please check [Troubleshooting](troubleshooting.mdx)).
+Remove style import from `main.tsx`.
 
 ```tsx
 import React from 'react';
@@ -67,10 +67,8 @@ import App from './App.tsx';
 import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  {/* highlight-next-line-removed */}
   <React.StrictMode>
     <App />
-  {/* highlight-next-line-removed */}
   </React.StrictMode>,
 );
 ```
@@ -206,7 +204,3 @@ npm run dev
 Then, verify your application works as expected. You should see the view presented below:
 
 ![](../assets/forminer-deep-dive-preview.webp)
-
-### Troubleshooting
-
-If you have problems running the application, please check the [Troubleshooting](troubleshooting.mdx) page.
