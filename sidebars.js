@@ -30,6 +30,7 @@ const sidebars = {
         'form-definition',
         'display-if',
         'custom-components',
+        'custom-containers',
         'handling-lists',
         'translations',
         'integration',
