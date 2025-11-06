@@ -35,7 +35,6 @@ const sidebars = {
         'translations',
         'integration',
         'styling-form-components',
-        // 'troubleshooting',
       ],
     },
   ],
